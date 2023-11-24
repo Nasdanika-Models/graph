@@ -12,15 +12,17 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.jupiter.api.Test;
-import org.nasdanika.common.ContentMapper;
+import org.nasdanika.common.FeatureMapper;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Transformer;
+import org.nasdanika.drawio.model.ModelElement;
+import org.nasdanika.drawio.model.Page;
 import org.nasdanika.graph.model.DocumentedNamedGraph;
 import org.nasdanika.graph.model.DocumentedNamedGraphElement;
 import org.nasdanika.graph.model.util.GraphDrawioFactory;
-import org.nasdanika.graph.model.util.GraphPropertyFeatureSetterContentMapper;
+import org.nasdanika.graph.model.util.GraphPropertySetterFeatureMapper;
 
 public class TestGraph {
 	
@@ -31,44 +33,42 @@ public class TestGraph {
 		ResourceSet resourceSet = org.nasdanika.html.model.app.gen.Util.createResourceSet(context, progressMonitor);
 		URI diagramURI = URI.createFileURI(new File("graph.drawio").getCanonicalPath());
 		Resource diagramModel = resourceSet.getResource(diagramURI, true);
-
-		ContentMapper<EObject, EObject> containmentContentMapper = new GraphPropertyFeatureSetterContentMapper() {
-			
-			@Override
-			protected FeatureSetter<EObject, EObject> getFeatureSetter(
-					EObject source, 
-					boolean isContents,
-					boolean isArgument, 
-					EStructuralFeature feature) {
-				
-				if (feature instanceof EReference && ((EReference) feature).isContainment())  {
-					return super.getFeatureSetter(source, isContents, isArgument, feature);					
-				}
-				
-				return null;
-			}
-			
-		}; // new ReflectiveContentMapper<EObject, EObject>(new FlowContainmentReferenceWires());
 		
-		ContentMapper<EObject, EObject> nonContainmentContentMapper = new GraphPropertyFeatureSetterContentMapper() {
-			
+		GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> graphDrawioFactory = new GraphDrawioFactory<>() {
 			@Override
-			protected FeatureSetter<EObject, EObject> getFeatureSetter(
-					EObject source, 
-					boolean isContents,
-					boolean isArgument, 
-					EStructuralFeature feature) {
+			protected FeatureMapper<EObject, EObject> getFeatureMapper(int phase, int pass) {
+				GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> self = this; 
 				
-				if (feature instanceof EReference && ((EReference) feature).isContainment())  {
-					return null;
-				}
-				
-				return super.getFeatureSetter(source, isContents, isArgument, feature);					
+				return new GraphPropertySetterFeatureMapper() {
+
+					@Override
+					protected Setter<EObject, EObject> getFeatureSetter(
+							EObject source, 
+							ConfigType configType,
+							ConfigSubType configSubType, 
+							EStructuralFeature feature) {
+						
+						if (feature instanceof EReference && ((EReference) feature).isContainment())  {							
+							return phase == 0 ? super.getFeatureSetter(source, configType, configSubType, feature) : null;					
+						}
+						
+						return phase == 0 ? null : super.getFeatureSetter(source, configType, configSubType, feature);					
+					}
+
+					@Override
+					protected boolean isTopLevelPage(Page page) {
+						return self.isTopLevelPage(page);
+					}
+
+					@Override
+					protected boolean isPageElement(ModelElement drawioModelElement) {
+						return self.isPageElement(drawioModelElement);
+					}
+					
+				};		
 			}
-			
 		};
 		
-		GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> graphDrawioFactory = new GraphDrawioFactory<>(containmentContentMapper, nonContainmentContentMapper);
 		Transformer<EObject,EObject> graphFactory = new Transformer<>(graphDrawioFactory);
 		Collection<EObject> diagramModelContents = new ArrayList<>();
 		diagramModel.getAllContents().forEachRemaining(e -> {
@@ -76,6 +76,7 @@ public class TestGraph {
 					|| e instanceof org.nasdanika.drawio.model.Page
 					|| e instanceof org.nasdanika.drawio.model.ModelElement) {
 				diagramModelContents.add(e);
+//				System.out.println(e);
 			}
 		});
 		Map<EObject, EObject> graphElements = graphFactory.transform(diagramModelContents, false, progressMonitor);
