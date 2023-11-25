@@ -6,14 +6,15 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.jupiter.api.Test;
-import org.nasdanika.common.FeatureMapper;
 import org.nasdanika.common.Context;
+import org.nasdanika.common.Mapper;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Transformer;
@@ -23,6 +24,7 @@ import org.nasdanika.graph.model.DocumentedNamedGraph;
 import org.nasdanika.graph.model.DocumentedNamedGraphElement;
 import org.nasdanika.graph.model.util.GraphDrawioFactory;
 import org.nasdanika.graph.model.util.GraphPropertySetterFeatureMapper;
+import org.nasdanika.persistence.Marked;
 
 public class TestGraph {
 	
@@ -36,7 +38,7 @@ public class TestGraph {
 		
 		GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> graphDrawioFactory = new GraphDrawioFactory<>() {
 			@Override
-			protected FeatureMapper<EObject, EObject> getFeatureMapper(int phase, int pass) {
+			protected Mapper<EObject, EObject> getMapper(int phase, int pass) {
 				GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> self = this; 
 				
 				return new GraphPropertySetterFeatureMapper() {
@@ -64,6 +66,11 @@ public class TestGraph {
 					protected boolean isPageElement(ModelElement drawioModelElement) {
 						return self.isPageElement(drawioModelElement);
 					}
+
+					@Override
+					protected EClassifier getType(String type, EObject context) {
+						return self.getType(type, context instanceof Marked ? (Marked) context : null);
+					}
 					
 				};		
 			}
@@ -83,9 +90,9 @@ public class TestGraph {
 		System.out.println(graphElements.size());
 		
 		URI graphURI = URI.createFileURI(new File("target/graph.xmi").getCanonicalPath());
-		Resource flowResource = resourceSet.createResource(graphURI);
-		diagramModel.getContents().stream().map(graphElements::get).forEach(flowResource.getContents()::add);
-		flowResource.save(null);		
+		Resource graphResource = resourceSet.createResource(graphURI);
+		diagramModel.getContents().stream().map(graphElements::get).forEach(graphResource.getContents()::add);
+		graphResource.save(null);		
 	}
 	
 //	@Test
