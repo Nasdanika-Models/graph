@@ -1,0 +1,61 @@
+[
+    {
+        "identifiers": ["uuid:8fd4ebb7-dfc7-40b6-aa3b-b682360106e6"],
+        "name": "Nasdanika Flow Model",
+        "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
+        "location": "https://flow.models.nasdanika.org",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:8fd4ebb7-dfc7-40b6-aa3b-b682360106e6"]
+        },
+        "identifiers": ["uuid:004ad3f7-f841-421b-ab3f-35665a00dfb0"],
+        "name": "Search",
+        "icon": "fas fa-search",
+        "location": "search.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:8fd4ebb7-dfc7-40b6-aa3b-b682360106e6"]
+        },
+        "identifiers": ["uuid:5068b028-1f24-4c12-aeff-bd6fd36d4d22"],
+        "name": "Glossary",
+        "icon": "fas fa-book",
+        "location": "glossary.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:8fd4ebb7-dfc7-40b6-aa3b-b682360106e6"]
+        },
+        "identifiers": ["uuid:cb716f56-01f9-42ae-8034-fd8daf20f17a"],
+        "name": "Sources",
+        "icon": "fab fa-github",
+        "location": "https://github.com/Nasdanika-Models/flow",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "location": "index.html",
+        "type": {
+            "name": "DocumentedNamedGraph",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    }
+]
