@@ -45,9 +45,9 @@ import org.nasdanika.html.model.app.Link;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
-import org.nasdanika.models.graph.processors.EcoreGenGraphProcessorsFactory;
 import org.nasdanika.models.ecore.graph.EcoreGraphFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
+import org.nasdanika.models.graph.processors.ecore.EcoreGenGraphProcessorsFactory;
 import org.nasdanika.ncore.NcorePackage;
 
 /**

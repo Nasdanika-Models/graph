@@ -1,4 +1,4 @@
-package org.nasdanika.models.graph.processors;
+package org.nasdanika.models.graph.processors.ecore;
 
 import org.nasdanika.common.Context;
 import org.nasdanika.models.echarts.graph.GraphPackage;
