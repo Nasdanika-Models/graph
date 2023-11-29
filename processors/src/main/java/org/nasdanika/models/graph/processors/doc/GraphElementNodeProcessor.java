@@ -14,7 +14,7 @@ import org.nasdanika.html.model.app.Label;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectNodeProcessor;
 
-public class GraphElementNodeProcessor<T extends GraphElement> extends EObjectNodeProcessor<T> {
+public class GraphElementNodeProcessor<T extends GraphElement> extends NodeProcessorBase<T> {
 			
 	public GraphElementNodeProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
@@ -22,16 +22,5 @@ public class GraphElementNodeProcessor<T extends GraphElement> extends EObjectNo
 			java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);
 	}	
-
-	/**
-	 * Suppressing default behavior, explicit specification of how to build.
-	 */	
-	@Override
-	protected void addReferenceChildren(
-			EReference eReference, 
-			Collection<Label> labels, 
-			Map<EReferenceConnection, Collection<Label>> outgoingLabels, 
-			ProgressMonitor progressMonitor) {
-	}
 		
 }

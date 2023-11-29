@@ -51,6 +51,7 @@ import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectReflectiveProcessorFactoryProvider;
 import org.nasdanika.models.graph.processors.doc.GraphNodeProcessorFactory;
+import org.nasdanika.ncore.NamedElement;
 import org.nasdanika.ncore.NcorePackage;
 import org.nasdanika.persistence.Marked;
 
@@ -120,7 +121,15 @@ public class TestGraph {
 		
 		URI graphURI = URI.createFileURI(new File("target/graph.xmi").getCanonicalPath());
 		Resource graphResource = resourceSet.createResource(graphURI);
-		diagramModel.getContents().stream().map(graphElements::get).forEach(graphResource.getContents()::add);
+		diagramModel.getContents().stream().map(graphElements::get).forEach(ge -> {
+			if (ge instanceof NamedElement) {
+				NamedElement nge = (NamedElement) ge;
+				if (org.nasdanika.common.Util.isBlank(nge.getName())) {
+					nge.setName("Test Graph");
+				}
+			}
+			graphResource.getContents().add(ge);
+		});
 		graphResource.save(null);		
 	}
 	

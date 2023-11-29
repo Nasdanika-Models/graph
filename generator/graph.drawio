@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-24T15:05:33.045Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="DfTtqpISjp0h4RZ-gcSC" version="22.1.2" type="device">
+<mxfile host="Electron" modified="2023-11-29T10:27:10.236Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="G36NYnO7vL1nyOmyfG4V" version="22.1.2" type="device">
   <diagram name="Page 1" id="c7488fd3-1785-93aa-aadb-54a6760d102a">
-    <mxGraphModel dx="1432" dy="855" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1606" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <object label="" kind="Process" id="0">
           <mxCell />
@@ -29,19 +29,19 @@
           </mxCell>
         </object>
         <object label="Connection A" type="DocumentedNamedConnection" feature-map="source: outgoingConnections&#xa;end: target" id="QcNr_ARYFHVEMTAtRfcl-1">
-          <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ahY_jtxTiWudsnOmn1jQ-1" target="ahY_jtxTiWudsnOmn1jQ-4">
+          <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ahY_jtxTiWudsnOmn1jQ-1" target="ahY_jtxTiWudsnOmn1jQ-4" edge="1">
             <mxGeometry relative="1" as="geometry">
               <mxPoint as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="Sub-Node 1.1.2" type="DocumentedNamedNode" semantic-id="sub-node-1-1-2" id="QcNr_ARYFHVEMTAtRfcl-2">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <object label="&lt;b&gt;%short-name%&lt;/b&gt; 1.1.2" type="DocumentedNamedNode" semantic-id="sub-node-1-1-2" placeholders="1" short-name="Sub-Node" feature-map="self:&#xa;  name: &quot;&#39;%short-name%&#39;&quot;" id="QcNr_ARYFHVEMTAtRfcl-2">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
             <mxGeometry x="385" y="315" width="110" height="110" as="geometry" />
           </mxCell>
         </object>
         <object label="" feature-map="source: elements" id="QcNr_ARYFHVEMTAtRfcl-3">
-          <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ahY_jtxTiWudsnOmn1jQ-1" target="QcNr_ARYFHVEMTAtRfcl-2">
+          <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ahY_jtxTiWudsnOmn1jQ-1" target="QcNr_ARYFHVEMTAtRfcl-2" edge="1">
             <mxGeometry relative="1" as="geometry" />
           </mxCell>
         </object>

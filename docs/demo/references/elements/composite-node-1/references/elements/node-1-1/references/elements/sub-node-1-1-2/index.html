@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="EN">
   <head>
-    <title>Test Graph</title>
+    <title>Sub-Node</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +35,7 @@
   gtag('config', 'G-9BRJVLK8CC');
 </script>    
 
-<script src="search-documents.js"></script>
+<script src="../../../../../../../../../search-documents.js"></script>
 
 <script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
 
@@ -79,20 +79,21 @@ window.nsdJsTreeSearchCallback = function(str, node) {
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="74ec5c35-c70e-437e-b99e-c6d51b898366" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../../../../../../../search.html" data-nsd-label-uuid="74ec5c35-c70e-437e-b99e-c6d51b898366" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="0932f49e-d256-43f2-8242-1f47453894d0" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../../../../../../../glossary.html" data-nsd-label-uuid="0932f49e-d256-43f2-8242-1f47453894d0" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col nsd-app-navbar">
-          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="9bd45bf5-7db9-4027-97c4-79871d31e40e" class="navbar-brand">Test Graph</span>
-            <button type="button" data-toggle="collapse" data-target="#nsd_1h" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../../../../../../../index.html" data-nsd-label-uuid="9bd45bf5-7db9-4027-97c4-79871d31e40e" class="navbar-brand">Test Graph</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_i" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_1h" class="collapse navbar-collapse"></div>
+            <div id="nsd_i" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
@@ -101,13 +102,13 @@ window.nsdJsTreeSearchCallback = function(str, node) {
           <input type="text" id="14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
           <div id="14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel"></div>
           <script>$(document).ready( function() {
-$('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html';"},"data-nsd-label-uuid":"64c62183-a57f-4a88-a23b-c7048ef6c32f","id":"nsd-app-nav-item-d1843d82-2ee6-4a86-a929-f78e019007bf","text":"Sub-Node","type":"leaf"}],"data-nsd-label-uuid":"06a58d39-6634-4c5c-aa6d-db1c63494744","id":"nsd-app-nav-item-5e141bbd-b878-44ad-b126-89d928d0caf3","text":"Node 1.1"}],"data-nsd-label-uuid":"2bbc1e54-6637-46dd-a0c3-8f165932bcd9","id":"nsd-app-nav-item-19462bc1-433d-4ead-adeb-368a2856a73c","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/references/elements/node-2-1/index.html';"},"data-nsd-label-uuid":"4a426683-186c-44ad-8260-84aafda8901c","id":"nsd-app-nav-item-ea3bc3ae-31f3-4091-8314-7f600737081e","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"245854ec-e188-4ae9-a6c8-94c18cad4efd","id":"nsd-app-nav-item-d2a081aa-2e8c-4dc2-b332-9d406b882509","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel"}}));
+$('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='../../../../../../index.html';"},"children":[{"a_attr":{"onclick":"window.location='../../../index.html';"},"children":[{"data-nsd-label-uuid":"64c62183-a57f-4a88-a23b-c7048ef6c32f","state":{"selected":true},"id":"nsd_j","text":"Sub-Node","type":"leaf"}],"data-nsd-label-uuid":"06a58d39-6634-4c5c-aa6d-db1c63494744","id":"nsd-app-nav-item-5e141bbd-b878-44ad-b126-89d928d0caf3","text":"Node 1.1"}],"data-nsd-label-uuid":"2bbc1e54-6637-46dd-a0c3-8f165932bcd9","id":"nsd-app-nav-item-19462bc1-433d-4ead-adeb-368a2856a73c","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='../../../../../../../composite-node-2/index.html';"},"children":[{"a_attr":{"onclick":"window.location='../../../../../../../composite-node-2/references/elements/node-2-1/index.html';"},"data-nsd-label-uuid":"4a426683-186c-44ad-8260-84aafda8901c","id":"nsd-app-nav-item-ea3bc3ae-31f3-4091-8314-7f600737081e","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"245854ec-e188-4ae9-a6c8-94c18cad4efd","id":"nsd-app-nav-item-d2a081aa-2e8c-4dc2-b332-9d406b882509","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel"}}));
 // Tokens: searchInputSelector, timer, treeSelector
 $('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel_searchInput').keyup(function () {
-    if (window['nsd_jstTreeSearchTimer_nsd_1n']) { 
-		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_1n']); 
+    if (window['nsd_jstTreeSearchTimer_nsd_o']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_o']); 
 	}
-    window['nsd_jstTreeSearchTimer_nsd_1n'] = setTimeout(function () {
+    window['nsd_jstTreeSearchTimer_nsd_o'] = setTimeout(function () {
       var v = $('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel_searchInput').val();
       $('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel').jstree(true).search(v);
     }, 250);
@@ -115,8 +116,30 @@ $('#14cbe7f0-a551-4565-a5af-78b4df2533c2-navigation-panel_searchInput').keyup(fu
 
 });</script>
         </div>
-        <div data-nsd-label-uuid="9bd45bf5-7db9-4027-97c4-79871d31e40e" data-nsd-action-uris="uuid:9bd45bf5-7db9-4027-97c4-79871d31e40e" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="64c62183-a57f-4a88-a23b-c7048ef6c32f" data-nsd-action-uris="uuid:64c62183-a57f-4a88-a23b-c7048ef6c32f" class="col nsd-app-content-panel">
           <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="../../../../../../index.html" data-nsd-label-uuid="2bbc1e54-6637-46dd-a0c3-8f165932bcd9">Composite Node 1</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a href="../../../index.html" data-nsd-label-uuid="06a58d39-6634-4c5c-aa6d-db1c63494744">Node 1.1</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="64c62183-a57f-4a88-a23b-c7048ef6c32f">Sub-Node</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <h1><span data-nsd-label-uuid="64c62183-a57f-4a88-a23b-c7048ef6c32f" class="nsd-app-content-panel-title">Sub-Node</span>
+                </h1>
+              </div>
+            </div>
             <div class="row nsd-app-content-panel-content-row">
               <div class="col">
                 <div class="container-fluid"></div>
