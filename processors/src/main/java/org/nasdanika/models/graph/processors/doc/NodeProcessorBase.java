@@ -11,7 +11,6 @@ import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
 import org.nasdanika.graph.emf.EReferenceConnection;
-import org.nasdanika.graph.model.Graph;
 import org.nasdanika.graph.model.ModelPackage;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
@@ -44,8 +43,7 @@ public class NodeProcessorBase<T extends EObject> extends EObjectNodeProcessor<T
 		Map<EReferenceConnection, Collection<Label>> outgoingLabels, 
 		ProgressMonitor progressMonitor) {
 	}
-	
-	
+		
 	@OutgoingReferenceBuilder(
 			value=ModelPackage.GRAPH__ELEMENTS,
 			classID = ModelPackage.GRAPH,

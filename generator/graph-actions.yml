@@ -1,7 +1,7 @@
 app-action:
   icon: https://docs.nasdanika.org/images/nasdanika-logo.png
   text: Nasdanika Graph Model
-  location: https://flow.models.nasdanika.org
+  location: https://graph.models.nasdanika.org
   children:
     - app-action-reference: "target/action-models/graph-actions.xmi#/"
     - app-action:
@@ -22,7 +22,7 @@ app-action:
               content-resource: classpath://org/nasdanika/html/model/app/gen/semantic-info.html
   navigation:
     - app-action:
-        location: https://github.com/Nasdanika-Models/flow
+        location: https://github.com/Nasdanika-Models/graph
         icon: fab fa-github
         text: Sources
           
