@@ -2,12 +2,14 @@ package org.nasdanika.models.graph.processors.doc;
 
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
+import org.nasdanika.graph.model.Connection;
+import org.nasdanika.graph.model.ConnectionTarget;
 import org.nasdanika.graph.model.Tunnel;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 
-public class TunnelNodeProcessor<T extends Tunnel<?,?>> extends ConnectionNodeProcessor<T> {
+public class TunnelNodeProcessor<T extends Tunnel<?,?>> extends ConnectionNodeProcessor<T> implements TunnelNodeProcessorMixIn<ConnectionTarget<?>, Connection<?>> {
 
 	public TunnelNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

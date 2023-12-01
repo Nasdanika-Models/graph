@@ -8,13 +8,14 @@ import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.emf.EReferenceConnection;
 import org.nasdanika.graph.model.Connection;
+import org.nasdanika.graph.model.ConnectionTarget;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.Label;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 import org.nasdanika.html.model.app.graph.emf.EObjectNodeProcessor;
 
-public class ConnectionNodeProcessor<T extends Connection<?>> extends EObjectNodeProcessor<T> {
+public class ConnectionNodeProcessor<T extends Connection<?>> extends EObjectNodeProcessor<T> implements ConnectionNodeProcessorMixIn<ConnectionTarget<?>> {
 
 	public ConnectionNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
