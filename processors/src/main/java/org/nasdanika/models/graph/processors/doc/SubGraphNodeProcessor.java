@@ -8,7 +8,7 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 
-public class SubGraphNodeProcessor<T extends SubGraph<?>> extends GraphElementNodeProcessor<T> implements SubGraphNodeProcessorMixIn<GraphElement> {
+public class SubGraphNodeProcessor<T extends SubGraph<?>> extends GraphElementNodeProcessor<T> implements SubGraphNodeProcessorMixIn<T> {
 
 	public SubGraphNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

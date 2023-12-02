@@ -2,9 +2,9 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.Connection;
+import org.nasdanika.graph.model.ConnectionTarget;
 
-public interface ConnectionTargetNodeProcessorMixIn<C extends Connection<?>> extends GraphElementNodeProcessorMixIn {
+public interface ConnectionTargetNodeProcessorMixIn<T extends ConnectionTarget<?>> extends GraphElementNodeProcessorMixIn<T> {
 
 //	EList<C> getIncomingConnections();
 

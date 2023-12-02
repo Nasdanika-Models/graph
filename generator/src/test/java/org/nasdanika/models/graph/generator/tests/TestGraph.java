@@ -101,6 +101,11 @@ public class TestGraph {
 					protected EClassifier getType(String type, EObject context) {
 						return self.getType(type, context instanceof Marked ? (Marked) context : null);
 					}
+
+					@Override
+					protected URI getBaseURI(ModelElement source) {
+						return self.getBaseURI(source);
+					}
 					
 				};		
 			}

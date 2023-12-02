@@ -8,7 +8,7 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 
-public class NodeNodeProcessor<T extends Node<?>> extends ConnectionSourceNodeProcessor<T> implements NodeNodeProcessorMixIn<Connection<?>> {
+public class NodeNodeProcessor<T extends Node<?>> extends ConnectionSourceNodeProcessor<T> implements NodeNodeProcessorMixIn<T> {
 
 	public NodeNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

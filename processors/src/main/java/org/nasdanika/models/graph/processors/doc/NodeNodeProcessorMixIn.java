@@ -2,8 +2,8 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.Connection;
+import org.nasdanika.graph.model.Node;
 
-public interface NodeNodeProcessorMixIn<C extends Connection<?>> extends ConnectionSourceNodeProcessorMixIn<C>, ConnectionTargetNodeProcessorMixIn<C> {
+public interface NodeNodeProcessorMixIn<T extends Node<?>> extends ConnectionSourceNodeProcessorMixIn<T>, ConnectionTargetNodeProcessorMixIn<T> {
 	
 } 

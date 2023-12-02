@@ -9,7 +9,7 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 
-public class CompositeConnectionSourceNodeProcessor<T extends CompositeConnectionSource<?,?>> extends SubGraphNodeProcessor<T> implements CompositeConnectionSourceNodeProcessorMixIn<GraphElement, Connection<?>> {
+public class CompositeConnectionSourceNodeProcessor<T extends CompositeConnectionSource<?,?>> extends SubGraphNodeProcessor<T> implements CompositeConnectionSourceNodeProcessorMixIn<T> {
 
 	public CompositeConnectionSourceNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 

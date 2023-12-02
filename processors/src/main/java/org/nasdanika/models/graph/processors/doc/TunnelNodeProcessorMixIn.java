@@ -2,10 +2,9 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.Connection;
-import org.nasdanika.graph.model.ConnectionTarget;
+import org.nasdanika.graph.model.Tunnel;
 
-public interface TunnelNodeProcessorMixIn<T extends ConnectionTarget<?>, C extends Connection<?>> extends ConnectionNodeProcessorMixIn<T> {
+public interface TunnelNodeProcessorMixIn<T extends Tunnel<?,?>> extends ConnectionNodeProcessorMixIn<T> {
 
 //	EList<C> getConnections();
 

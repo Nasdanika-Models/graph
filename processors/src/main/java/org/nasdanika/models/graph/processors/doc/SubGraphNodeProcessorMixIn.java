@@ -2,8 +2,8 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.GraphElement;
+import org.nasdanika.graph.model.SubGraph;
 
-public interface SubGraphNodeProcessorMixIn<E extends GraphElement> extends GraphElementNodeProcessorMixIn, GraphNodeProcessorMixIn<E> {
+public interface SubGraphNodeProcessorMixIn<T extends SubGraph<?>> extends GraphElementNodeProcessorMixIn<T>, GraphNodeProcessorMixIn<T> {
 	
 } 

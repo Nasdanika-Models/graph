@@ -2,9 +2,8 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.Connection;
-import org.nasdanika.graph.model.ConnectionTarget;
+import org.nasdanika.graph.model.DocumentedNamedTunnel;
 
-public interface DocumentedNamedTunnelNodeProcessorMixIn<T extends ConnectionTarget<?>, C extends Connection<?>> extends TunnelNodeProcessorMixIn<T, C>, DocumentedNamedConnectionNodeProcessorMixIn<T> {
+public interface DocumentedNamedTunnelNodeProcessorMixIn<T extends DocumentedNamedTunnel<?,?>> extends TunnelNodeProcessorMixIn<T>, DocumentedNamedConnectionNodeProcessorMixIn<T> {
 
 } 

@@ -2,9 +2,8 @@
  */
 package org.nasdanika.models.graph.processors.doc;
 
-import org.nasdanika.graph.model.Connection;
-import org.nasdanika.graph.model.GraphElement;
+import org.nasdanika.graph.model.DocumentedNamedCompositeConnectionTarget;
 
-public interface DocumentedNamedCompositeConnectionTargetNodeProcessorMixIn<E extends GraphElement, C extends Connection<?>> extends DocumentedNamedSubGraphNodeProcessorMixIn<E>, DocumentedNamedConnectionTargetNodeProcessorMixIn<C> {
+public interface DocumentedNamedCompositeConnectionTargetNodeProcessorMixIn<T extends DocumentedNamedCompositeConnectionTarget<?,?>> extends DocumentedNamedSubGraphNodeProcessorMixIn<T>, DocumentedNamedConnectionTargetNodeProcessorMixIn<T> {
 	
 } 

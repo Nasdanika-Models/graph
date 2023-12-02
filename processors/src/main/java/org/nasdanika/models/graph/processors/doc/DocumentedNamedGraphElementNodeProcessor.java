@@ -7,7 +7,7 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.html.model.app.Action;
 import org.nasdanika.html.model.app.graph.WidgetFactory;
 
-public class DocumentedNamedGraphElementNodeProcessor<T extends DocumentedNamedGraphElement> extends GraphElementNodeProcessor<T> implements DocumentedNamedGraphElementNodeProcessorMixIn {
+public class DocumentedNamedGraphElementNodeProcessor<T extends DocumentedNamedGraphElement> extends GraphElementNodeProcessor<T> implements DocumentedNamedGraphElementNodeProcessorMixIn<T> {
 
 	public DocumentedNamedGraphElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
