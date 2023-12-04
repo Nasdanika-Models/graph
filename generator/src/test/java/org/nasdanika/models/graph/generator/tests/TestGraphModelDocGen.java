@@ -59,7 +59,11 @@ public class TestGraphModelDocGen {
 	
 	@Test
 	public void testGenerateGraphModelDoc() throws IOException, DiagnosticException {
-		List<EPackage> ePackages = Arrays.asList(EcorePackage.eINSTANCE, NcorePackage.eINSTANCE, ModelPackage.eINSTANCE);
+		List<EPackage> ePackages = Arrays.asList(
+				EcorePackage.eINSTANCE, 
+				NcorePackage.eINSTANCE,
+				org.nasdanika.drawio.model.ModelPackage.eINSTANCE,
+				ModelPackage.eINSTANCE);
 		ProgressMonitor progressMonitor = new NullProgressMonitor(); // new PrintStreamProgressMonitor();
 		Transformer<EObject,Element> graphFactory = new Transformer<>(new EcoreGraphFactory());
 		Map<EObject, Element> graph = graphFactory.transform(ePackages, false, progressMonitor);
@@ -105,7 +109,8 @@ public class TestGraphModelDocGen {
 		
 		Map<EPackage, URI> packageURIMap = Map.ofEntries(
 			Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
-			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
+			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),		
+			Map.entry(org.nasdanika.drawio.model.ModelPackage.eINSTANCE, URI.createURI("https://drawio.models.nasdanika.org/")),		
 			Map.entry(ModelPackage.eINSTANCE, baseActionURI)	
 		);
 		
