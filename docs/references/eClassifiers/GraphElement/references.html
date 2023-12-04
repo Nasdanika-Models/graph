@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="EN">
   <head>
-    <title>Force Graph</title>
+    <title>References</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,16 +72,6 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 </script>
 </head>
   <body>
-    <div tabindex="-1" id="nsd_1w3" class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">Hover mouse over nodes elements to display tooltips.
-Double-click on nodes to navigate go documentation.
-Drag to rearrange, nodes will not stay in place once released.
-</div>
-        </div>
-      </div>
-    </div>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
@@ -102,9 +92,9 @@ Drag to rearrange, nodes will not stay in place once released.
           <ul class="navbar navbar-light navbar-expand-lg">
             <a href="../../../index.html" title="Base classes for graph-like models such as process/flow and architecture models" data-nsd-label-uuid="c3ef6ec1-c875-4083-9ea2-068055cc4978" class="navbar-brand">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EPackage.gif" class="nsd-app-label-icon">model</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_1vg" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_2pb" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_1vg" class="collapse navbar-collapse">
+            <div id="nsd_2pb" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                   <a href="../../../classifiers.html" data-nsd-label-uuid="69542cb6-f573-4107-8fa2-17e17a8cfe9a" class="nav-link">Classifiers</a>
@@ -155,7 +145,7 @@ Drag to rearrange, nodes will not stay in place once released.
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedCompositeNode</a>
             <a href="../DocumentedNamedConnection/index.html" title="Connection with a name and documentation" data-nsd-label-uuid="0cbbcbcd-85ab-423d-8105-68f1dc419a45" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedConnection</a>
-            <a href="index.html" title="Connection source with a name and documentation" data-nsd-label-uuid="d3b28ae6-c30d-4128-bcb4-6aeae11737fd" class="list-group-item list-group-action active">
+            <a href="../DocumentedNamedConnectionSource/index.html" title="Connection source with a name and documentation" data-nsd-label-uuid="d3b28ae6-c30d-4128-bcb4-6aeae11737fd" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedConnectionSource</a>
             <a href="../DocumentedNamedConnectionTarget/index.html" title="Connection target with a name and documentation" data-nsd-label-uuid="ed76d2c4-db75-4e06-a028-9a88bd78ee07" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedConnectionTarget</a>
@@ -171,7 +161,7 @@ Drag to rearrange, nodes will not stay in place once released.
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedTunnel</a>
             <a href="../Graph/index.html" title="Graph is a container of graph elements uniquely identified by a string identifier. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages." data-nsd-label-uuid="28d96b03-454e-40f3-b919-b2e45cb72050" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Graph</a>
-            <a href="../GraphElement/index.html" title="Graph element uniquely identified in the containing graph by a string identifier. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages." data-nsd-label-uuid="24aee7a6-31f6-4a5a-ba28-92e46999c948" class="list-group-item list-group-action">
+            <a href="index.html" title="Graph element uniquely identified in the containing graph by a string identifier. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages." data-nsd-label-uuid="24aee7a6-31f6-4a5a-ba28-92e46999c948" class="list-group-item list-group-action active">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"><i>GraphElement</i></a>
             <a href="../Node/index.html" title="Node is both connection source and target. I.e. it may have both incoming and outgoing connections." data-nsd-label-uuid="794afde5-fbc9-46ad-9454-fc16472d3aea" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Node</a>
@@ -181,19 +171,17 @@ Drag to rearrange, nodes will not stay in place once released.
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Tunnel</a>
           </div>
         </div>
-        <div data-nsd-label-uuid="5a31b832-7cd5-4779-a4e7-b61ab4d9a4bb" data-nsd-action-uris="uuid:5a31b832-7cd5-4779-a4e7-b61ab4d9a4bb" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="e438a6d8-9c93-4063-9114-948dafd45a2c" data-nsd-action-uris="uuid:e438a6d8-9c93-4063-9114-948dafd45a2c" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="index.html" title="Connection source with a name and documentation" data-nsd-label-uuid="d3b28ae6-c30d-4128-bcb4-6aeae11737fd">
-                        <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">DocumentedNamedConnectionSource</a>
+                      <a href="index.html" title="Graph element uniquely identified in the containing graph by a string identifier. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages." data-nsd-label-uuid="24aee7a6-31f6-4a5a-ba28-92e46999c948">
+                        <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"><i>GraphElement</i></a>
                     </li>
-                    <li class="breadcrumb-item"><span data-nsd-label-uuid="04f90041-526e-4e6e-ac38-a6f486e27e73"><img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon">Graphs</span>
-                    </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="5a31b832-7cd5-4779-a4e7-b61ab4d9a4bb">Force Graph</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="e438a6d8-9c93-4063-9114-948dafd45a2c"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon">References</span>
                     </li>
                   </ol>
                 </nav>
@@ -201,7 +189,7 @@ Drag to rearrange, nodes will not stay in place once released.
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="5a31b832-7cd5-4779-a4e7-b61ab4d9a4bb" class="nsd-app-content-panel-title">Force Graph<a data-toggle="modal" data-target="#nsd_1w3" href="#" title="A live force-layout graph of this classifier and related classifiers showing relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                <h1><span data-nsd-label-uuid="e438a6d8-9c93-4063-9114-948dafd45a2c" class="nsd-app-content-panel-title"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon">References</span>
                 </h1>
               </div>
             </div>
@@ -209,36 +197,13 @@ Drag to rearrange, nodes will not stay in place once released.
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div id="graph-container-24" class="row" style="height:80vh;width:100%">
-</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var dom = document.getElementById("graph-container-24");
-		var myChart = echarts.init(dom, null, {
-			render: "canvas",
-			useDirtyRect: false
-		});
-		var option = {"legend":{},"series":[{"type":"graph","emphasis":{"focus":"adjacency"},"data":[{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Connection@ecore://nasdanika.org/core/gaph/model","name":"Connection","value":{"description":"Connections are contained by their source and uniquiely identified in the source by a string id. This allows to implement connection inheritance behaviors such as overriding (replacing), adding, or removing.","externalLink":"../Connection/index.html"},"x":370.89145541117887,"y":438.82479342006684,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DocumentedNamedConnectionSource@ecore://nasdanika.org/core/gaph/model","name":"DocumentedNamedConnectionSource","value":{"description":"Connection source with a name and documentation","externalLink":""},"x":384.8600703349253,"y":238.35546187261275,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DocumentedNamedGraphElement@ecore://nasdanika.org/core/gaph/model","name":"DocumentedNamedGraphElement","value":{"description":"Graph element with a name and documentation","externalLink":"../DocumentedNamedGraphElement/index.html"},"x":240.05118773357182,"y":1.3984214930700454,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DocumentedNamedNode@ecore://nasdanika.org/core/gaph/model","name":"DocumentedNamedNode","value":{"description":"Node with a name and documentation","externalLink":"../DocumentedNamedNode/index.html"},"x":527.5367649438449,"y":471.88945835572787,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ConnectionSource@ecore://nasdanika.org/core/gaph/model","name":"ConnectionSource","value":{"description":"Source of connections uniquely identified by string ids. It provides support for graph inheritance - replacing (overriding), adding, or removing connections","externalLink":"../ConnectionSource/index.html"},"x":569.6157960764151,"y":317.4258383271016,"category":0}],"symbolSize":16,"roam":true,"layout":"force","links":[{"source":0,"target":4},{"source":1,"target":0},{"source":1,"target":2},{"source":1,"target":3},{"source":1,"target":4},{"source":2,"target":1},{"source":3,"target":0},{"source":3,"target":1},{"source":3,"target":4},{"source":4,"target":0},{"source":4,"target":1}],"categories":[{"name":"model"}],"draggable":true,"label":{"show":true,"position":"right"},"lineStyle":{"color":"source","curveness":0},"force":{"repulsion":200,"gravity":0.1,"edgeLength":200}}]};
-		option.tooltip = {};
-		option.series[0].tooltip = {
-			formatter: function(arg) {
-				return arg.value ? arg.value.description : null;
-			}
-		};
-		myChart.setOption(option);
-		myChart.on("dblclick", function(params) {
-			if (params.value) {
-				if (params.value.link) {
-					window.open(params.value.link, "_self");
-				} else if (params.value.externalLink) {
-					window.open(params.value.externalLink);
-				}
-			}
-		});
-		window.addEventListener("resize", myChart.resize);
-	});
-</script>
-</div>
+                    <div class="col">
+<div>
+  <div id="references-table">
+    <nsd-ecore-doc-table :columns="[{&quot;key&quot;:&quot;name&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Name&quot;},{&quot;key&quot;:&quot;description&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Description&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Type&quot;,&quot;key&quot;:&quot;type&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Multiplicity&quot;,&quot;key&quot;:&quot;multiplicity&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Declaring Class&quot;,&quot;key&quot;:&quot;declaring-class&quot;},{&quot;key&quot;:&quot;changeable&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Changeable&quot;},{&quot;key&quot;:&quot;derived&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Derived&quot;}]" :items="[{&quot;name&quot;:&quot;\r\n<a href=\&quot;index.html\&quot; title=\&quot;A list of semantic mappings\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>semanticMappings<\/a>&quot;,&quot;description&quot;:&quot;A list of semantic mappings&quot;,&quot;multiplicity&quot;:&quot;<B>0..*<\/B>&quot;,&quot;declaring-class&quot;:&quot;<!-- SemanticElement--> \r\n<a href=\&quot;index.html\&quot; title=\&quot;EClasses mapped/created from diagram elements may implement this interface to trace the elements they were mapped from\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/><i>SemanticElement<\/i><\/a>&quot;,&quot;changeable&quot;:&quot;<i class=\&quot;fas fa-check\&quot;><\/i>&quot;,&quot;type&quot;:&quot;<!-- SemanticMapping--> \r\n<a href=\&quot;index.html\&quot;>\r\n  <img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/>SemanticMapping<\/a>&quot;}]" config-key="eclass-references" transitive-label="Inherited" />
+  </div>
+  <script>new Vue({ el: '#references-table' });</script>
+</div></div>
                   </div>
                 </div>
               </div>
