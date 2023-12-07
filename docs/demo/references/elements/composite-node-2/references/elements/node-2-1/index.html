@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>Node 2.1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="../../../../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="82e19d14-06a8-43b0-90ef-aa73422bd7be" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="../../../../../../search.html" data-nsd-label-uuid="c08ea2da-7004-4975-9259-5366470f4dff" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../../../../../glossary.html" data-nsd-label-uuid="b95ebcc1-2e93-41eb-863c-34dc62792e43" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../../../../index.html" data-nsd-label-uuid="8203d64c-b0fc-458c-9271-64c69e4e1edd" class="navbar-brand">Test Graph</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_i" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_i" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <input type="text" id="e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
+          <div id="e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel"></div>
+          <script>$(document).ready( function() {
+$('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='../../../../composite-node-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='../../../../composite-node-1/references/elements/node-1-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='../../../../composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html';"},"data-nsd-label-uuid":"646b1c0c-c33c-4758-a795-5e927d8be525","id":"nsd-app-nav-item-efd4e43d-7b9b-419a-aef3-5b3db78a0a98","text":"Sub-Node 1.1.2","type":"leaf"}],"data-nsd-label-uuid":"8812da1c-deea-4b92-9fbb-2a12d6c322c3","id":"nsd-app-nav-item-42fca8f7-8023-4c18-a05b-5f997737dcb8","text":"Node 1.1"}],"data-nsd-label-uuid":"86919b06-81f2-4307-9287-2e870995b56c","id":"nsd-app-nav-item-ef5fb7ed-e07b-4d87-93de-d954f429dd2e","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='../../../index.html';"},"children":[{"data-nsd-label-uuid":"2373cd2f-5a10-47bb-a16c-4684c6a69dd1","state":{"selected":true},"id":"nsd_m","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"34398f48-54fa-4aab-9ba6-d65cd02477c6","id":"nsd-app-nav-item-a26ce9a6-d75d-424b-b70f-73dfb38bf94e","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_o']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_o']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_o'] = setTimeout(function () {
+      var v = $('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput').val();
+      $('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
+        </div>
+        <div data-nsd-label-uuid="2373cd2f-5a10-47bb-a16c-4684c6a69dd1" data-nsd-action-uris="uuid:2373cd2f-5a10-47bb-a16c-4684c6a69dd1" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="../../../index.html" data-nsd-label-uuid="34398f48-54fa-4aab-9ba6-d65cd02477c6">Composite Node 2</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="2373cd2f-5a10-47bb-a16c-4684c6a69dd1">Node 2.1</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <h1><span data-nsd-label-uuid="2373cd2f-5a10-47bb-a16c-4684c6a69dd1" class="nsd-app-content-panel-title">Node 2.1</span>
+                </h1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="ba2fce0f-a07b-4ff8-93f6-bd1db104f59c" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

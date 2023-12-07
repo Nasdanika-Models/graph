@@ -5,14 +5,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -66,26 +63,12 @@ public class TestGraph {
 		Resource diagramModel = resourceSet.getResource(diagramURI, true);
 		
 		GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> graphDrawioFactory = new GraphDrawioFactory<>() {
+			
 			@Override
-			protected Mapper<EObject, EObject> getMapper(int phase, int pass) {
+			protected Mapper<EObject, EObject> getMapper(int pass) {
 				GraphDrawioFactory<DocumentedNamedGraph<DocumentedNamedGraphElement>, DocumentedNamedGraphElement> self = this; 
 				
 				return new GraphPropertySetterFeatureMapper() {
-
-					@Override
-					protected Setter<EObject, EObject> getFeatureSetter(
-							EObject source, 
-							ConfigType configType,
-							ConfigSubType configSubType, 
-							EStructuralFeature feature,
-							BiConsumer<String, EObject> featureNameValidator) {
-						
-						if (feature instanceof EReference && ((EReference) feature).isContainment())  {							
-							return phase == 0 ? super.getFeatureSetter(source, configType, configSubType, feature, featureNameValidator) : null;					
-						}
-						
-						return phase == 0 ? null : super.getFeatureSetter(source, configType, configSubType, feature, featureNameValidator);					
-					}
 
 					@Override
 					protected boolean isTopLevelPage(Page page) {

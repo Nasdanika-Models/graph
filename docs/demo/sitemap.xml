@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/glossary.html</loc>
+    <lastmod>2023-12-07T12:47:34.819-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.783-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/references/elements/composite-node-1/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.790-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/references/elements/composite-node-1/references/elements/node-1-1/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.795-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.803-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/references/elements/composite-node-2/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.806-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/references/elements/composite-node-2/references/elements/node-2-1/index.html</loc>
+    <lastmod>2023-12-07T12:47:34.814-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/search.html</loc>
+    <lastmod>2023-12-07T12:47:34.816-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>
