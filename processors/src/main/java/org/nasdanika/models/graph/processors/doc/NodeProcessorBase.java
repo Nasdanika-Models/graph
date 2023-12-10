@@ -45,9 +45,9 @@ public class NodeProcessorBase<T extends EObject> extends EObjectNodeProcessor<T
 	}
 		
 	@OutgoingReferenceBuilder(
-			value=ModelPackage.GRAPH__ELEMENTS,
+			nsURI = ModelPackage.eNS_URI,
 			classID = ModelPackage.GRAPH,
-			nsURI = ModelPackage.eNS_URI)
+			referenceID = ModelPackage.GRAPH__ELEMENTS)
 	public void buildElementsOutgoingReference(
 			EReference eReference,
 			List<Entry<EReferenceConnection, WidgetFactory>> referenceOutgoingEndpoints, 
