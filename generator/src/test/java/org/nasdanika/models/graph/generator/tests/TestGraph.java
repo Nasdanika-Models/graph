@@ -130,8 +130,8 @@ public class TestGraph {
 		resourceSet.getPackageRegistry().put(ModelPackage.eNS_URI, ModelPackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(NcorePackage.eNS_URI, NcorePackage.eINSTANCE);
 		
-		URI flowURI = URI.createFileURI(new File("target/graph.xmi").getCanonicalPath());
-		Resource graphResource = resourceSet.getResource(flowURI, true);
+		URI graphURI = URI.createFileURI(new File("target/graph.xmi").getCanonicalPath());
+		Resource graphResource = resourceSet.getResource(graphURI, true);
 		
 		Transformer<EObject,Element> graphFactory = new Transformer<>(new EObjectGraphFactory());
 		Map<EObject, Element> graph = graphFactory.transform(graphResource.getContents(), false, progressMonitor);
@@ -157,7 +157,7 @@ public class TestGraph {
 		
 		WidgetFactory graphProcessor = null;
 		Collection<Throwable> resolveFailures = new ArrayList<>();		
-		URI baseActionURI = URI.createURI("local://flow.models.nasdanika.org/demo/");
+		URI baseActionURI = URI.createURI("local://graph.models.nasdanika.org/demo/");
 		
 		Map<EObject, URI> uriMap = Map.ofEntries(
 				Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
