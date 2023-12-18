@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="EN">
   <head>
-    <title>Test Graph</title>
+    <title>My Graph</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -75,51 +75,61 @@ window.nsdJsTreeSearchCallback = function(str, node) {
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="82e19d14-06a8-43b0-90ef-aa73422bd7be" class="nsd-app-header-title">
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="0156c40b-de41-479c-9a0e-f351a625abdb" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="c08ea2da-7004-4975-9259-5366470f4dff" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="374d8c27-6512-44ec-a6c3-bb784c2ee087" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="b95ebcc1-2e93-41eb-863c-34dc62792e43" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="ce0101f7-0bf8-4ca5-8ccc-7afc0b3ba5cd" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col nsd-app-navbar">
-          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="8203d64c-b0fc-458c-9271-64c69e4e1edd" class="navbar-brand">Test Graph</span>
-            <button type="button" data-toggle="collapse" data-target="#nsd_13" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="78529b1a-d92b-4b60-b8fe-ea41b0b53bf9" class="navbar-brand">My Graph</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_15" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_13" class="collapse navbar-collapse"></div>
+            <div id="nsd_15" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
-          <input type="text" id="e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
-          <div id="e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel"></div>
-          <script>$(document).ready( function() {
-$('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html';"},"data-nsd-label-uuid":"646b1c0c-c33c-4758-a795-5e927d8be525","id":"nsd-app-nav-item-efd4e43d-7b9b-419a-aef3-5b3db78a0a98","text":"Sub-Node 1.1.2","type":"leaf"}],"data-nsd-label-uuid":"8812da1c-deea-4b92-9fbb-2a12d6c322c3","id":"nsd-app-nav-item-42fca8f7-8023-4c18-a05b-5f997737dcb8","text":"Node 1.1"}],"data-nsd-label-uuid":"86919b06-81f2-4307-9287-2e870995b56c","id":"nsd-app-nav-item-ef5fb7ed-e07b-4d87-93de-d954f429dd2e","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/references/elements/node-2-1/index.html';"},"data-nsd-label-uuid":"2373cd2f-5a10-47bb-a16c-4684c6a69dd1","id":"nsd-app-nav-item-1f76a2a4-c850-4df9-8a57-fc8725ecd50c","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"34398f48-54fa-4aab-9ba6-d65cd02477c6","id":"nsd-app-nav-item-a26ce9a6-d75d-424b-b70f-73dfb38bf94e","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel"}}));
-// Tokens: searchInputSelector, timer, treeSelector
-$('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput').keyup(function () {
-    if (window['nsd_jstTreeSearchTimer_nsd_19']) { 
-		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_19']); 
-	}
-    window['nsd_jstTreeSearchTimer_nsd_19'] = setTimeout(function () {
-      var v = $('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput').val();
-      $('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel').jstree(true).search(v);
-    }, 250);
-  });
-
-});</script>
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/composite-node-1/index.html">Composite Node 1</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/composite-node-1/references/elements/node-1-1/index.html" data-nsd-label-uuid="e0ff3a8d-786c-4d12-b22c-595553dff4cd" class="list-group-item list-group-action">Node 1.1</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/composite-node-2/index.html">Composite Node 2</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/composite-node-2/references/elements/node-2-1/index.html" data-nsd-label-uuid="f3f7e6f5-4c69-4f41-a4ee-1e7a5d8fc488" class="list-group-item list-group-action">Node 2.1</a>
+            </div>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="references/elements/sub-node-1-1-2/index.html" data-nsd-label-uuid="2199a3ff-35c6-4423-8bd5-91ee9a14751a" class="list-group-item list-group-action">Sub-Node 1.1.2</a>
+          </div>
         </div>
-        <div data-nsd-label-uuid="8203d64c-b0fc-458c-9271-64c69e4e1edd" data-nsd-action-uris="uuid:8203d64c-b0fc-458c-9271-64c69e4e1edd" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="78529b1a-d92b-4b60-b8fe-ea41b0b53bf9" data-nsd-action-uris="uuid:78529b1a-d92b-4b60-b8fe-ea41b0b53bf9" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-content-row">
               <div class="col">
-                <div class="container-fluid"></div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;eb82dab7-2a6d-4deb-a3a7-62bd4f14b3c4\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s4FP41PKojJMD4MTe3D21223S206eOhA6GBJBXiNrZX7/CCAPBDs6tTWcyQ2bC4eh29H3nO5IdepZv3iu2Sj5JAZlDMFNKrkuHnjuEuObPmDiLbpZKVoVozIUsoPkSyaKASA+8xca+BjiwltvGEoZ+Y4hlJgZtliodG67S/8AasbVWqYDh3HKmk8ZgfVZsCQOP2vAB0mVipxn6Pc+riGVj92+paHt1XWzdy4QJuR6MpaXMdLrqz4heOPjcwSdO7TN86JmSUt/n0fpJfl1H1URORiiWyiyyGSJn6sZMorBxlVGVQ6GZTmXRODgBbh6h2DqVDjFbQE346KlDPGd2qmCloGzblA5ZtI4LkbKlYrkzO++3avsb9LTdQ2C6UoBytmqGNljQLC1AOfRk4F0vqoQs3trx6FPzQAb1Usp9jfvParvfdUd2v1rg2C3JGDcwbmKx209ke2/sWlUWviXkrNBphKqq7QY4iTw848gHEiDPjQgKaSRQRN0AeCxmoZjZzb9dWeSc230AcclyEFs6TWBhuN/55gwyQ77FMeAwbhYfD0HSHX7dCdODZ2rCqnYBbUL/gpN/GNakTuyHDlUH8bgXamjQtI8ylnz/ca03X9NvlSiLv/LCvf6MyCimZzJfyTLVBmf40iTWDq5ZWtw0PgpiMDGMoGZhN9oiatuiwrREpt0iLQRs3iU6zx6A6XbK4/4OQJ/4c8AxDdF8TiLk8RAjzsIQRUGMfc4AR3E0Af3duptFPxVY7Vz1bZuky3WaZ8zIDz1dJ2acqxWL6k9rVUPjdBsieu7ustRPUBo2x+Xn/dN6DzIHrW7NO7OJfrkz1UMkPW1x2zS07imIZ212GnRm3293Onksf3ossvF68XyxF/DjJNKC/N1TYH7ItXHYy4QR2jvfAyiPhY8J9zgKTT5H3pxSg3ICyKNzN46x50GIfy3K78spPehvCzCoV4FfKfqDPeBvCdHOYoh97zVC/3nVZlI96DHqQR5JK/LM6kEO84piHgqYIUI936gHRIhR3zW8mrGIEx4xf6pwelOPafUI6J+gHo+l0HNUY94hcSKPFicyJU7kAeJE7hEnTkIuzJYjjANz+giBoDnjMwQBYOKG1J/H8wkSvaAm0TdNejWEKmWl6jjXrWWllzItlmfNbUxzsN9RCeprm9pNM7UEPWTQ5+hS/Tj58n3x4Z+LT19P9Jc4yvaUd13Pxn5yEL4uDin45sjsYuKZ2irkyCAaEMM0JiHhnDN/UgO6kR4DYhCj65+xItjYTdW3PaDX3V7ZV6l0IpeyYNlFZz0dUqHz+SjlyhLgGrS+tbdarNJyHz3sJk2kt+fnjIKM6fQnPJaY3VB/Gyjq3jgyjksLu6M5NWDWbu6vmpBPKBIPXUYUhhC7S7N/q/ru0HwxVZRfJgZgaPud+FtT932S3uPrCtM8qxtz88+y6eXuEI2DiVXPpz7uvTu6Mi0rjtrT2f66NDPKkchMgBre8Y509G5XB9LRXERx4BGBWBiYo97MCxHjgUDCnTGTppjJV23Z2y122/LKDNAK6Ytr7TjbTAgpK1fNpXucbuqM85uq1VY314Pb8oG00vbG32ordf0/TVz3V557iTU+yb1p2OEM9Es07Pcibet2+EefVt+6n9/oxf8=<\/diagram><diagram id=\&quot;118210a2-f511-46dc-9656-3fc22b54da70\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s4FP41PKojJMD4MTe3D21223S206eOhA6GBJBXiNrZX7/CCAPBDs6tTWcyQ2bC4eh29H3nO5IdepZv3iu2Sj5JAZlDMFNKrkuHnjuEuObPmDiLbpZKVoVozIUsoPkSyaKASA+8xca+BjiwltvGEoZ+Y4hlJgZtliodG67S/8AasbVWqYDh3HKmk8ZgfVZsCQOP2vAB0mVipxn6Pc+riGVj92+paHt1XWzdy4QJuR6MpaXMdLrqz4heOPjcwSdO7TN86JmSUt/n0fpJfl1H1URORiiWyiyyGSJn6sZMorBxlVGVQ6GZTmXRODgBbh6h2DqVDjFbQE346KlDPGd2qmCloGzblA5ZtI4LkbKlYrkzO++3avsb9LTdQ2C6UoBytmqGNljQLC1AOfRk4F0vqoQs3trx6FPzQAb1Usp9jfvParvfdUd2v1rg2C3JGDcwbmKx209ke2/sWlUWviXkrNBphKqq7QY4iTw848gHEiDPjQgKaSRQRN0AeCxmoZjZzb9dWeSc230AcclyEFs6TWBhuN/55gwyQ77FMeAwbhYfD0HSHX7dCdODZ2rCqnYBbUL/gpN/GNakTuyHDlUH8bgXamjQtI8ylnz/ca03X9NvlSiLv/LCvf6MyCimZzJfyTLVBmf40iTWDq5ZWtw0PgpiMDGMoGZhN9oiatuiwrREpt0iLQRs3iU6zx6A6XbK4/4OQJ/4c8AxDdF8TiLk8RAjzsIQRUGMfc4AR3E0Af3duptFPxVY7Vz1bZuky3WaZ8zIDz1dJ2acqxWL6k9rVUPjdBsieu7ustRPUBo2x+Xn/dN6DzIHrW7NO7OJfrkz1UMkPW1x2zS07imIZ212GnRm3293Onksf3ossvF68XyxF/DjJNKC/N1TYH7ItXHYy4QR2jvfAyiPhY8J9zgKTT5H3pxSg3ICyKNzN46x50GIfy3K78spPehvCzCoV4FfKfqDPeBvCdHOYoh97zVC/3nVZlI96DHqQR5JK/LM6kEO84piHgqYIUI936gHRIhR3zW8mrGIEx4xf6pwelOPafUI6J+gHo+l0HNUY94hcSKPFicyJU7kAeJE7hEnTkIuzJYjjANz+giBoDnjMwQBYOKG1J/H8wkSvaAm0TdNejWEKmWl6jjXrWWllzItlmfNbUxzsN9RCeprm9pNM7UEPWTQ5+hS/Tj58n3x4Z+LT19P9Jc4yvaUd13Pxn5yEL4uDin45sjsYuKZ2irkyCAaEMM0JiHhnDN/UgO6kR4DYhCj65+xItjYTdW3PaDX3V7ZV6l0IpeyYNlFZz0dUqHz+SjlyhLgGrS+tbdarNJyHz3sJk2kt+fnjIKM6fQnPJaY3VB/Gyjq3jgyjksLu6M5NWDWbu6vmpBPKBIPXUYUhhC7S7N/q/ru0HwxVZRfJgZgaPud+FtT932S3uPrCtM8qxtz88+y6eXuEI2DiVXPpz7uvTu6Mi0rjtrT2f66NDPKkchMgBre8Y509G5XB9LRXERx4BGBWBiYo97MCxHjgUDCnTGTppjJV23Z2y122/LKDNAK6Ytr7TjbTAgpK1fNpXucbuqM85uq1VY314Pb8oG00vbG32ordf0/TVz3V557iTU+yb1p2OEM9Es07Pcibet2+EefVt+6n9/oxf8=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
+<p></p>
+</div></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -129,7 +139,7 @@ $('#e5c05c9e-0ff4-4235-9252-8f6bc4fe92d2-navigation-panel_searchInput').keyup(fu
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="ba2fce0f-a07b-4ff8-93f6-bd1db104f59c" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="c6d7f66f-fe83-4cae-be98-318ea2240a07" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
