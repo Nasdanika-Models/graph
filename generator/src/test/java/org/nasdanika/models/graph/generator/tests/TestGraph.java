@@ -21,7 +21,8 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.graph.model.util.GraphDrawioResourceFactory;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
-import org.nasdanika.models.graph.processors.doc.GraphUtil;
+import org.nasdanika.models.graph.processors.doc.GraphActionGenerator;
+import org.nasdanika.models.graph.processors.doc.GraphNodeProcessorFactory;
 
 public class TestGraph {
 	
@@ -44,10 +45,11 @@ public class TestGraph {
 								
 		File output = new File(actionModelsDir, "graph-actions.xmi");
 		
-		GraphUtil.generateActionModel(
-				graphResource.getContents().get(0), 
-				context, 
-				null,
+		GraphActionGenerator actionGenerator = new GraphActionGenerator(
+				graphResource.getContents().get(0),
+				new GraphNodeProcessorFactory(context, null));
+		
+		actionGenerator.generateActionModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
