@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-12-23T14:28:23.234Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="_Q0sUXfO4G1LoPE0_P3I" version="22.1.2" type="device">
+<mxfile host="Electron" modified="2023-12-23T14:46:17.639Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="oQV4boKYbwFbN8n3IPbF" version="22.1.2" type="device">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Living Beings">
     <mxGraphModel dx="3338" dy="1908" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
@@ -466,54 +466,76 @@
             <mxPoint x="76" y="196.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1457" value="Streptococcus" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1646" y="1087" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1458" value="Echericia Colli" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1631" y="1301.5" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1459" value="Lactobacyllus" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1801" y="1114" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1460" value="Helicobacter" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1901" y="1194" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1461" value="Bifidobacterium" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1821" y="1331.5" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1462" value="Staphyllococcus" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1551" y="1211.5" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="1463" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1460" edge="1">
-          <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
-            <mxPoint x="251" y="-3.5" as="sourcePoint" />
-            <mxPoint x="351" y="-103.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1464" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1461" edge="1">
-          <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
-            <mxPoint x="251" y="-3.5" as="sourcePoint" />
-            <mxPoint x="351" y="-103.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1465" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1458" edge="1">
-          <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
-            <mxPoint x="251" y="-3.5" as="sourcePoint" />
-            <mxPoint x="351" y="-103.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1466" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1462" edge="1">
-          <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
-            <mxPoint x="251" y="-3.5" as="sourcePoint" />
-            <mxPoint x="351" y="-103.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1467" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1457" edge="1">
-          <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
-            <mxPoint x="251" y="-3.5" as="sourcePoint" />
-            <mxPoint x="351" y="-103.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
+        <object label="Streptococcus" type="DocumentedNamedGraphElement" id="streptococcus">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;image=https://img.icons8.com/external-smashingstocks-detailed-outline-smashing-stocks/20/external-Streptococcus-bacteria-smashingstocks-detailed-outline-smashing-stocks-2.png;arcSize=15;align=right;" parent="1" vertex="1">
+            <mxGeometry x="1646" y="1087" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Echericia Colli" type="DocumentedNamedGraphElement" id="echericia-colli">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+            <mxGeometry x="1631" y="1301.5" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Lactobacyllus" type="DocumentedNamedGraphElement" id="lactobacyllus">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+            <mxGeometry x="1801" y="1114" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Helicobacter" type="DocumentedNamedGraphElement" id="helicobacter">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+            <mxGeometry x="1901" y="1194" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Bifidobacterium" type="DocumentedNamedGraphElement" id="bifidobacterium">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+            <mxGeometry x="1821" y="1331.5" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Staphyllococcus" type="DocumentedNamedGraphElement" id="staphyllococcus">
+          <mxCell style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+            <mxGeometry x="1551" y="1211.5" width="120" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" feature-map="source: elements" id="1463">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="helicobacter" edge="1">
+            <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
+              <mxPoint x="251" y="-3.5" as="sourcePoint" />
+              <mxPoint x="351" y="-103.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" feature-map="source: elements" id="1464">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="bifidobacterium" edge="1">
+            <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
+              <mxPoint x="251" y="-3.5" as="sourcePoint" />
+              <mxPoint x="351" y="-103.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" feature-map="source: elements" id="1465">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="echericia-colli" edge="1">
+            <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
+              <mxPoint x="251" y="-3.5" as="sourcePoint" />
+              <mxPoint x="351" y="-103.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" feature-map="source: elements" id="1466">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="staphyllococcus" edge="1">
+            <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
+              <mxPoint x="251" y="-3.5" as="sourcePoint" />
+              <mxPoint x="351" y="-103.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" feature-map="source: elements" id="1467">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="streptococcus" edge="1">
+            <mxGeometry x="251" y="-103.5" width="100" height="100" as="geometry">
+              <mxPoint x="251" y="-3.5" as="sourcePoint" />
+              <mxPoint x="351" y="-103.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
         <mxCell id="1468" value="Zygomycota" style="rounded=1;fillColor=#f5af58;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="1358.5" y="1274" width="120" height="40" as="geometry" />
         </mxCell>
@@ -840,12 +862,14 @@
             <mxPoint x="-1398" y="-303.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1541" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="1459" edge="1">
-          <mxGeometry x="-1174" y="-408.5" width="100" height="100" as="geometry">
-            <mxPoint x="-1174" y="-308.5" as="sourcePoint" />
-            <mxPoint x="-1074" y="-408.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
+        <object label="" feature-map="source: elements" id="1541">
+          <mxCell style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="bacteria" target="lactobacyllus" edge="1">
+            <mxGeometry x="-1174" y="-408.5" width="100" height="100" as="geometry">
+              <mxPoint x="-1174" y="-308.5" as="sourcePoint" />
+              <mxPoint x="-1074" y="-408.5" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
         <mxCell id="1542" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;endArrow=none;endFill=0;jettySize=auto;orthogonalLoop=1;strokeColor=#736CA8;strokeWidth=2;fillColor=#64bbe2;fontSize=20;fontColor=#23445D;" parent="1" source="1529" target="1529" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>

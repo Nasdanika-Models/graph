@@ -2,32 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/glossary.html</loc>
-    <lastmod>2023-12-23T09:30:31.415-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.413-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/index.html</loc>
-    <lastmod>2023-12-23T09:30:31.396-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.356-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/index.html</loc>
-    <lastmod>2023-12-23T09:30:31.403-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.363-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/bifidobacterium/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.369-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/echericia-colli/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.374-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/helicobacter/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.378-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/lactobacyllus/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.382-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/staphyllococcus/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.386-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/references/elements/streptococcus/index.html</loc>
+    <lastmod>2023-12-23T09:46:46.393-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bird/index.html</loc>
-    <lastmod>2023-12-23T09:30:31.405-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.396-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/fish/index.html</loc>
-    <lastmod>2023-12-23T09:30:31.409-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.404-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/living-beings/search.html</loc>
-    <lastmod>2023-12-23T09:30:31.412-05:00</lastmod>
+    <lastmod>2023-12-23T09:46:46.408-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
