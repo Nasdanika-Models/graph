@@ -1,10 +1,11 @@
 package org.nasdanika.models.graph.generator.tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -25,6 +26,9 @@ import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
+import org.nasdanika.graph.model.DocumentedNamedGraph;
+import org.nasdanika.graph.model.DocumentedNamedSubGraph;
+import org.nasdanika.graph.model.GraphElement;
 import org.nasdanika.graph.model.util.GraphDrawioResourceFactory;
 import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphActionGenerator;
@@ -124,6 +128,18 @@ public class TestGraph {
 		URI baseURI = URI.createURI("living-beings/").resolve(org.nasdanika.common.Util.createClassURI(getClass()));
 		URI resourceURI = URI.createURI("living-beings.drawio").resolve(baseURI);	
 		Resource livingBeingsResource = resourceSet.getResource(resourceURI, true);
+		
+		DocumentedNamedGraph<?> livingBeings = (DocumentedNamedGraph<?>) livingBeingsResource.getContents().get(0);
+		
+		// Asserting clockwise order
+		assertEquals("bird", ((GraphElement) livingBeings.getElements().get(0)).getId());
+		assertEquals("fish", ((GraphElement) livingBeings.getElements().get(1)).getId());
+		
+		DocumentedNamedSubGraph<?> bacteria = (DocumentedNamedSubGraph<?>) livingBeings.getElements().get(2);
+		assertEquals("bacteria", bacteria.getId());
+		
+		assertEquals("streptococcus", ( bacteria.getElements().get(0)).getId());
+		assertEquals("staphyllococcus", ((GraphElement) bacteria.getElements().get(5)).getId());
 		
 		// Generating an action model
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
