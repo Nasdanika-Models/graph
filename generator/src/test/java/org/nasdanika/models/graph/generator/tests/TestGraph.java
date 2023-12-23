@@ -1,6 +1,10 @@
 package org.nasdanika.models.graph.generator.tests;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -10,8 +14,10 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.impl.URIHandlerImpl;
 import org.junit.jupiter.api.Test;
 import org.nasdanika.common.Context;
+import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.Diagnostic;
 import org.nasdanika.common.DiagramGenerator;
 import org.nasdanika.common.ExecutionException;
@@ -61,7 +67,7 @@ public class TestGraph {
 		String pageTemplateResource = "page-template.yml";
 		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());
 		
-		String siteMapDomain = "https://graph.models.nasdanika.org/demo";		
+		String siteMapDomain = "https://graph.models.nasdanika.org/demo/graph";		
 		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
 			
 			protected boolean isDeleteOutputPath(String path) {
@@ -74,8 +80,97 @@ public class TestGraph {
 				rootActionURI, 
 				pageTemplateURI, 
 				siteMapDomain, 
-				new File("../docs/demo"),  
+				new File("../docs/demo/graph"),  
 				new File("target/graph-doc-site-work-dir"), 
+				true);
+				
+		int errorCount = 0;
+		for (Entry<String, Collection<String>> ee: errors.entrySet()) {
+			System.err.println(ee.getKey());
+			for (String error: ee.getValue()) {
+				System.err.println("\t" + error);
+				++errorCount;
+			}
+		}
+		
+		System.out.println("There are " + errorCount + " site errors");
+		
+		if (errors.size() != 9) {
+			throw new ExecutionException("There are problems with pages: " + errorCount);
+		}		
+		
+	}
+	
+	@Test
+	public void testGenerateLivingBeingsSite() throws Exception {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
+		
+		// To load resources from classpath
+		resourceSet.getURIConverter().getURIHandlers().add(0, new URIHandlerImpl() {
+
+			@Override
+			public boolean canHandle(URI uri) {
+				return uri != null && org.nasdanika.common.Util.CLASSPATH_SCHEME.equals(uri.scheme());
+			}
+
+			@Override
+			public InputStream createInputStream(URI uri, Map<?, ?> options) throws IOException {
+				return DefaultConverter.INSTANCE.toInputStream(uri);
+			}
+			
+		});
+		
+		URI baseURI = URI.createURI("living-beings/").resolve(org.nasdanika.common.Util.createClassURI(getClass()));
+		URI resourceURI = URI.createURI("living-beings.drawio").resolve(baseURI);	
+		Resource livingBeingsResource = resourceSet.getResource(resourceURI, true);
+		
+		// Generating an action model
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		MutableContext context = Context.EMPTY_CONTEXT.fork();
+		context.register(DiagramGenerator.class, new PlantUMLDiagramGenerator());
+		
+		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
+		
+		File actionModelsDir = new File("target\\action-models\\");
+		actionModelsDir.mkdirs();
+								
+		File output = new File(actionModelsDir, "living-beings-actions.xmi");
+		
+		GraphActionGenerator actionGenerator = new GraphActionGenerator(
+				livingBeingsResource.getContents().get(0),
+				new GraphNodeProcessorFactory(context, null));
+		
+		actionGenerator.generateActionModel(
+				diagnosticConsumer, 
+				output,
+				progressMonitor);
+				
+		// Generating a web site
+		
+		// Writing root action spec for relative resolution of the generated actions.
+		File rootActionFile = new File("target/action-models/living-beings-root-action.yml");
+		Files.write(
+				rootActionFile.toPath(), 
+				DefaultConverter.INSTANCE.toByteArray(getClass().getResource("living-beings/actions.yml")));
+		
+		URI rootActionURI = URI.createFileURI(rootActionFile.getCanonicalFile().getAbsolutePath());	
+		URI pageTemplateURI = URI.createURI("page-template.yml").resolve(baseURI);
+		String siteMapDomain = "https://graph.models.nasdanika.org/demo/living-beings";		
+		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
+			
+			protected boolean isDeleteOutputPath(String path) {
+				return !"CNAME".equals(path);				
+			};
+			
+		};		
+		
+		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
+				rootActionURI, 
+				pageTemplateURI, 
+				siteMapDomain, 
+				new File("../docs/demo/living-beings"),  
+				new File("target/living-beings-doc-site-work-dir"), 
 				true);
 				
 		int errorCount = 0;

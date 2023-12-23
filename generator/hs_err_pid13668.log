@@ -1,0 +1,217 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=13668, tid=11868
+#
+# JRE version:  (17.0+35) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17+35-LTS, mixed mode, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea --add-opens=org.nasdanika.models.graph.generator/org.nasdanika.models.graph.generator.tests=ALL-UNNAMED --add-modules=ALL-MODULE-PATH -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\Pavel\git-models\graph\generator\target\classes;C:\Users\Pavel\git-models\graph\processors\target\classes;C:\Users\Pavel\git\core\graph.model\target\classes;C:\Users\Pavel\git\core\drawio.model\target\classes;C:\Users\Pavel\git\core\exec\target\classes;C:\Users\Pavel\git-models\ecore\graph\target\classes;C:\Users\Pavel\git\html\model\app.gen\target\classes;C:\Users\Pavel\git\core\drawio\target\classes;C:\Users\Pavel\git\html\model\app\target\classes;C:\Users\Pavel\git\html\model\bootstrap\target\classes;C:\Users\Pavel\git\html\model\html\target\classes;C:\Users\Pavel\git\html\model\bootstrap.gen\target\classes;C:\Users\Pavel\git\html\bootstrap\target\classes;C:\Users\Pavel\git\html\model\html.gen\target\classes;C:\Users\Pavel\git\core\exec.gen\target\classes;C:\Users\Pavel\git\core\ncore.gen\target\classes;C:\Users\Pavel\git\html\jstree\target\classes;C:\Users\Pavel\git\html\html\target\classes;C:\Users\Pavel\git\html\emf\target\classes;C:\Users\Pavel\.m2\repository\com\github\dfabulich\sitemapgen4j\1.1.2\sitemapgen4j-1.1.2.jar;C:\Users\Pavel\git\html\model\app.graph\target\classes;C:\Users\Pavel\git\core\graph\target\classes;C:\Users\Pavel\.m2\repository\org\jgrapht\jgrapht-core\1.5.2\jgrapht-core-1.5.2.jar;C:\Users\Pavel\.m2\repository\org\jheaps\jheaps\0.14\jheaps-0.14.jar;C:\Users\Pavel\.m2\repository\org\apfloat\apfloat\1.10.1\apfloat-1.10.1.jar;C:\Users\Pavel\git\core\emf\target\classes;C:\Users\Pavel\.m2\repository\io\github\azagniotov\ant-style-path-matcher\1.0.0\ant-style-path-matcher-1.0.0.jar;C:\Users\Pavel\.m2\repository\org\eclipse\jgit\org.eclipse.jgit\6.7.0.202309050840-r\org.eclipse.jgit-6.7.0.202309050840-r.jar;C:\Users\Pavel\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Pavel\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Pavel\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Pavel\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.ja-XX:+ShowCodeDetailsInExceptionMessages --patch-module=org.nasdanika.models.graph.generator=C:\Users\Pavel\git-models\graph\generator\target\test-classes --add-reads=org.nasdanika.models.graph.generator=ALL-UNNAMED --add-reads=org.nasdanika.models.graph.processors=ALL-UNNAMED --add-reads=org.nasdanika.graph.model=ALL-UNNAMED --add-reads=org.nasdanika.drawio.model=ALL-UNNAMED --add-reads=org.nasdanika.exec=ALL-UNNAMED --add-reads=org.nasdanika.models.ecore.graph=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app.gen=ALL-UNNAMED --add-reads=org.nasdanika.drawio=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app=ALL-UNNAMED --add-reads=org.nasdanika.html.model.bootstrap=ALL-UNNAMED --add-reads=org.nasdanika.html.model.html=ALL-UNNAMED --add-reads=org.nasdanika.html.model.bootstrap.gen=ALL-UNNAMED --add-reads=org.nasdanika.html.bootstrap=ALL-UNNAMED --add-reads=org.nasdanika.html.model.html.gen=ALL-UNNAMED --add-reads=org.nasdanika.exec.gen=ALL-UNNAMED --add-reads=org.nasdanika.ncore.gen=ALL-UNNAMED --add-reads=org.nasdanika.html.jstree=ALL-UNNAMED --add-reads=org.nasdanika.html=ALL-UNNAMED --add-reads=org.nasdanika.html.emf=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app.graph=ALL-UNNAMED --add-reads=org.nasdanika.graph=ALL-UNNAMED --add-reads=org.nasdanika.emf=ALL-UNNAMED --add-reads=org.nasdanika.diagram=ALL-UNNAMED --add-reads=org.nasdanika.models.echarts.graph=ALL-UNNAMED --add-reads=org.nasdanika.models.ncore.processors=ALL-UNNAMED --add-reads=org.nasdanika.ncore=ALL-UNNAMED --add-reads=org.nasdanika.persistence=ALL-UNNAMED --add-reads=org.nasdanika.resources=ALL-UNNAMED --add-reads=org.nasdanika.diagramgenerator.plantuml=ALL-UNNAMED --add-reads=org.nasdanika.common=ALL-UNNAMED org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 61240 -testLoaderClass org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader -loaderpluginname org.eclipse.jdt.junit5.runtime -test org.nasdanika.models.graph.generator.tests.TestGraph:testGenerateLivingBeingsSite -testfailures C:\Users\Pavel\AppData\Local\Temp\testFailures7486142228964619712.txt
+
+Host: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Sat Dec 23 09:28:40 2023 Eastern Standard Time elapsed time: 0.015635 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002698172e730):  JavaThread "Unknown thread" [_thread_in_vm, id=11868, stack(0x000000fdbf200000,0x000000fdbf300000)]
+
+Stack: [0x000000fdbf200000,0x000000fdbf300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67534a]
+V  [jvm.dll+0x82f8f4]
+V  [jvm.dll+0x83109e]
+V  [jvm.dll+0x831703]
+V  [jvm.dll+0x245525]
+V  [jvm.dll+0x672369]
+V  [jvm.dll+0x666e32]
+V  [jvm.dll+0x303fbb]
+V  [jvm.dll+0x30b4b6]
+V  [jvm.dll+0x35b57e]
+V  [jvm.dll+0x35b7af]
+V  [jvm.dll+0x2daf68]
+V  [jvm.dll+0x2dbed4]
+V  [jvm.dll+0x801171]
+V  [jvm.dll+0x3692f1]
+V  [jvm.dll+0x7e057c]
+V  [jvm.dll+0x3ebdef]
+V  [jvm.dll+0x3edb21]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17344]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa716c7e98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000026983851f00 GCTaskThread "GC Thread#0" [stack: 0x000000fdbf300000,0x000000fdbf400000] [id=17504]
+  0x00000269838633c0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000fdbf400000,0x000000fdbf500000] [id=16580]
+  0x0000026983863ce0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000fdbf500000,0x000000fdbf600000] [id=21484]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa70e9b997]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002698172d910] Heap_lock - owner thread: 0x000002698172e730
+
+Heap address: 0x00000006c1200000, size: 4078 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) not mapped
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000006c1200000, 0x00000007c0000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa7127e8c9]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.010 Loaded shared library C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff740450000 - 0x00007ff74045e000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\javaw.exe
+0x00007ffaf62d0000 - 0x00007ffaf64c8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffaf5760000 - 0x00007ffaf581d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffaf33a0000 - 0x00007ffaf3696000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffaf36f0000 - 0x00007ffaf37f0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffaec360000 - 0x00007ffaec378000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\jli.dll
+0x00007ffaf4900000 - 0x00007ffaf4a9e000 	C:\Windows\System32\USER32.dll
+0x00007ffaf3110000 - 0x00007ffaf3132000 	C:\Windows\System32\win32u.dll
+0x00007ffaf52a0000 - 0x00007ffaf52cc000 	C:\Windows\System32\GDI32.dll
+0x00007ffaf2fc0000 - 0x00007ffaf30da000 	C:\Windows\System32\gdi32full.dll
+0x00007ffae5ff0000 - 0x00007ffae600a000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\VCRUNTIME140.dll
+0x00007ffaf38a0000 - 0x00007ffaf393d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffae6270000 - 0x00007ffae650a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ffaf4aa0000 - 0x00007ffaf4b3e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffaf4160000 - 0x00007ffaf4190000 	C:\Windows\System32\IMM32.DLL
+0x00007ffaec350000 - 0x00007ffaec35c000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\vcruntime140_1.dll
+0x00007ffac2380000 - 0x00007ffac240d000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\msvcp140.dll
+0x00007ffa70bb0000 - 0x00007ffa717f9000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\server\jvm.dll
+0x00007ffaf54c0000 - 0x00007ffaf556f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffaf3f60000 - 0x00007ffaf3ffc000 	C:\Windows\System32\sechost.dll
+0x00007ffaf3980000 - 0x00007ffaf3aa6000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffaf4840000 - 0x00007ffaf4848000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffad5090000 - 0x00007ffad5099000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffaea800000 - 0x00007ffaea827000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffaf1d60000 - 0x00007ffaf1d6a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffaf52d0000 - 0x00007ffaf533b000 	C:\Windows\System32\ws2_32.DLL
+0x00007ffaf1d20000 - 0x00007ffaf1d32000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffae78c0000 - 0x00007ffae78ca000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\jimage.dll
+0x00007ffae79b0000 - 0x00007ffae7b94000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffae4b30000 - 0x00007ffae4b64000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffaf3140000 - 0x00007ffaf31c2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffada320000 - 0x00007ffada345000 	C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;C:\Users\Pavel\Apps\zulu17.28.13-ca-jdk17.0.0-win_x64\bin\server
+
+VM Arguments:
+jvm_args: -ea --add-opens=org.nasdanika.models.graph.generator/org.nasdanika.models.graph.generator.tests=ALL-UNNAMED --add-modules=ALL-MODULE-PATH -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\Pavel\git-models\graph\generator\target\classes;C:\Users\Pavel\git-models\graph\processors\target\classes;C:\Users\Pavel\git\core\graph.model\target\classes;C:\Users\Pavel\git\core\drawio.model\target\classes;C:\Users\Pavel\git\core\exec\target\classes;C:\Users\Pavel\git-models\ecore\graph\target\classes;C:\Users\Pavel\git\html\model\app.gen\target\classes;C:\Users\Pavel\git\core\drawio\target\classes;C:\Users\Pavel\git\html\model\app\target\classes;C:\Users\Pavel\git\html\model\bootstrap\target\classes;C:\Users\Pavel\git\html\model\html\target\classes;C:\Users\Pavel\git\html\model\bootstrap.gen\target\classes;C:\Users\Pavel\git\html\bootstrap\target\classes;C:\Users\Pavel\git\html\model\html.gen\target\classes;C:\Users\Pavel\git\core\exec.gen\target\classes;C:\Users\Pavel\git\core\ncore.gen\target\classes;C:\Users\Pavel\git\html\jstree\target\classes;C:\Users\Pavel\git\html\html\target\classes;C:\Users\Pavel\git\html\emf\target\classes;C:\Users\Pavel\.m2\repository\com\github\dfabulich\sitemapgen4j\1.1.2\sitemapgen4j-1.1.2.jar;C:\Users\Pavel\git\html\model\app.graph\target\classes;C:\Users\Pavel\git\core\graph\target\classes;C:\Users\Pavel\.m2\repository\org\jgrapht\jgrapht-core\1.5.2\jgrapht-core-1.5.2.jar;C:\Users\Pavel\.m2\repository\org\jheaps\jheaps\0.14\jheaps-0.14.jar;C:\Users\Pavel\.m2\repository\org\apfloat\apfloat\1.10.1\apfloat-1.10.1.jar;C:\Users\Pavel\git\core\emf\target\classes;C:\Users\Pavel\.m2\repository\io\github\azagniotov\ant-style-path-matcher\1.0.0\ant-style-path-matcher-1.0.0.jar;C:\Users\Pavel\.m2\repository\org\eclipse\jgit\org.eclipse.jgit\6.7.0.202309050840-r\org.eclipse.jgit-6.7.0.202309050840-r.jar;C:\Users\Pavel\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Pavel\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Pavel\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Pavel\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.ja-XX:+ShowCodeDetailsInExceptionMessages --patch-module=org.nasdanika.models.graph.generator=C:\Users\Pavel\git-models\graph\generator\target\test-classes --add-reads=org.nasdanika.models.graph.generator=ALL-UNNAMED --add-reads=org.nasdanika.models.graph.processors=ALL-UNNAMED --add-reads=org.nasdanika.graph.model=ALL-UNNAMED --add-reads=org.nasdanika.drawio.model=ALL-UNNAMED --add-reads=org.nasdanika.exec=ALL-UNNAMED --add-reads=org.nasdanika.models.ecore.graph=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app.gen=ALL-UNNAMED --add-reads=org.nasdanika.drawio=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app=ALL-UNNAMED --add-reads=org.nasdanika.html.model.bootstrap=ALL-UNNAMED --add-reads=org.nasdanika.html.model.html=ALL-UNNAMED --add-reads=org.nasdanika.html.model.bootstrap.gen=ALL-UNNAMED --add-reads=org.nasdanika.html.bootstrap=ALL-UNNAMED --add-reads=org.nasdanika.html.model.html.gen=ALL-UNNAMED --add-reads=org.nasdanika.exec.gen=ALL-UNNAMED --add-reads=org.nasdanika.ncore.gen=ALL-UNNAMED --add-reads=org.nasdanika.html.jstree=ALL-UNNAMED --add-reads=org.nasdanika.html=ALL-UNNAMED --add-reads=org.nasdanika.html.emf=ALL-UNNAMED --add-reads=org.nasdanika.html.model.app.graph=ALL-UNNAMED --add-reads=org.nasdanika.graph=ALL-UNNAMED --add-reads=org.nasdanika.emf=ALL-UNNAMED --add-reads=org.nasdanika.diagram=ALL-UNNAMED --add-reads=org.nasdanika.models.echarts.graph=ALL-UNNAMED --add-reads=org.nasdanika.models.ncore.processors=ALL-UNNAMED --add-reads=org.nasdanika.ncore=ALL-UNNAMED --add-reads=org.nasdanika.persistence=ALL-UNNAMED --add-reads=org.nasdanika.resources=ALL-UNNAMED --add-reads=org.nasdanika.diagramgenerator.plantuml=ALL-UNNAMED --add-reads=org.nasdanika.common=ALL-UNNAMED 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 61240 -testLoaderClass org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader -loaderpluginname org.eclipse.jdt.junit5.runtime -test org.nasdanika.models.graph.generator.tests.TestGraph:testGenerateLivingBeingsSite -testfailures C:\Users\Pavel\AppData\Local\Temp\testFailures7486142228964619712.txt
+java_class_path (initial): C:\Users\Pavel\.m2\repository\com\googlecode\javaewah\JavaEWAH\1.2.3\JavaEWAH-1.2.3.jar;C:\Users\Pavel\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Pavel\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Pavel\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\Pavel\.m2\repository\com\github\jknack\handlebars\4.2.1\handlebars-4.2.1.jar;C:\Users\Pavel\.m2\repository\org\slf4j\slf4j-simple\1.7.25\slf4j-simple-1.7.25.jar;C:\Users\Pavel\.m2\repository\org\eclipse\emf\org.eclipse.emf.codegen\2.23.0\org.eclipse.emf.codegen-2.23.0.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.core.runtime\3.30.0\org.eclipse.core.runtime-3.30.0.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.osgi\3.18.600\org.eclipse.osgi-3.18.600.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.equinox.common\3.18.200\org.eclipse.equinox.common-3.18.200.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.core.jobs\3.15.100\org.eclipse.core.jobs-3.15.100.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.equinox.registry\3.11.400\org.eclipse.equinox.registry-3.11.400.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.equinox.preferences\3.10.400\org.eclipse.equinox.preferences-3.10.400.jar;C:\Users\Pavel\.m2\repository\org\osgi\org.osgi.service.prefs\1.1.2\org.osgi.service.prefs-1.1.2.jar;C:\Users\Pavel\.m2\repository\org\osgi\osgi.annotation\8.0.1\osgi.annotation-8.0.1.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.core.contenttype\3.9.200\org.eclipse.core.contenttype-3.9.200.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.equinox.app\1.6.400\org.eclipse.equinox.app-1.6.400.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.core.resources\3.20.0\org.eclipse.core.resources-3.20.0.jar;C:\Users\Pavel\.m2\repository\org\eclipse\platform\org.eclipse.co
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4276092928                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4276092928                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17.0.2
+PATH=C:/Users/Pavel/Apps/eclipse-jee-2023-09//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin/server;C:/Users/Pavel/Apps/eclipse-jee-2023-09//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Users\Pavel\Apps\apache-maven-3.9.4\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\Program Files (x86)\GitExtensions\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Pavel\AppData\Local\Microsoft\WindowsApps;C:\Users\Pavel\AppData\Roaming\npm;C:\Users\Pavel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Pavel\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\Pavel\Apps\eclipse-jee-2023-09;
+USERNAME=Pavel
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 8 days 17:52 hours
+Hyper-V role detected
+
+CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 94 stepping 3 microcode 0xcc, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, rtm, adx, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 16308M (5678M free)
+TotalPageFile size 17332M (AvailPageFile size 244M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 307M
+
+vm_info: OpenJDK 64-Bit Server VM (17+35-LTS) for windows-amd64 JRE (17+35-LTS) (Zulu17.28+13-CA), built on Sep  2 2021 18:23:23 by "zulu_re" with MS VC++ 16.8 (VS2019)
+
+END.

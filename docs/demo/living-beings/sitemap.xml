@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/glossary.html</loc>
+    <lastmod>2023-12-23T09:30:31.415-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/index.html</loc>
+    <lastmod>2023-12-23T09:30:31.396-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bacteria/index.html</loc>
+    <lastmod>2023-12-23T09:30:31.403-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/bird/index.html</loc>
+    <lastmod>2023-12-23T09:30:31.405-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/references/elements/fish/index.html</loc>
+    <lastmod>2023-12-23T09:30:31.409-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/living-beings/search.html</loc>
+    <lastmod>2023-12-23T09:30:31.412-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>
