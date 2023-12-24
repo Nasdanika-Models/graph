@@ -52,16 +52,12 @@ public class NodeProcessorBase<T extends EObject> extends EObjectNodeProcessor<T
 			Collection<Label> labels,
 			Map<EReferenceConnection, Collection<Label>> outgoingLabels, 
 			ProgressMonitor progressMonitor) {
-
-		List<Entry<EReferenceConnection, Collection<Label>>> sorted = outgoingLabels.entrySet().stream()
-				.sorted(this::compareElements)
-				.toList();		
-				
+		
 		for (Label tLabel: labels) {
-			for (Entry<EReferenceConnection, Collection<Label>> re: sorted) { 
-				tLabel.getChildren().addAll(re.getValue());
+			for (Collection<Label> re: outgoingLabels.values()) { 
+				tLabel.getChildren().addAll(re);
 			}
-		}
+		}		
 	}
 
 }
