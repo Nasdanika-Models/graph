@@ -1,0 +1,133 @@
+[
+    {
+        "identifiers": ["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"],
+        "name": "Nasdanika Graph Model",
+        "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
+        "location": "https://graph.models.nasdanika.org",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]
+        },
+        "identifiers": ["uuid:50222e83-c8ea-465f-8ca3-476771cc7741"],
+        "name": "Search",
+        "icon": "fas fa-search",
+        "location": "search.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "children",
+            "identifiers": ["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]
+        },
+        "identifiers": ["uuid:bbc70dcd-7f4c-467c-ad47-308a8f76d99a"],
+        "name": "Glossary",
+        "icon": "fas fa-book",
+        "location": "glossary.html",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "container": {
+            "reference": "navigation",
+            "identifiers": ["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]
+        },
+        "identifiers": ["uuid:1b7769c7-b78e-41db-9aa3-3d43cb1bb81d"],
+        "name": "Sources",
+        "icon": "fab fa-github",
+        "location": "https://github.com/Nasdanika-Models/graph",
+        "type": {
+            "name": "Action",
+            "ns-uri": "ecore://nasdanika.org/html/app"
+        }
+    },
+    {
+        "identifiers": ["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],
+        "name": "My Graph",
+        "location": "index.html",
+        "type": {
+            "name": "DocumentedNamedGraph",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],
+            "name": "My Graph"
+        },
+        "identifiers": ["uuid:536964c4-1067-49c7-85fa-d5aebd588f1f"],
+        "name": "Composite Node 1",
+        "location": "references/elements/composite-node-1/index.html",
+        "type": {
+            "name": "DocumentedNamedCompositeNode",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:536964c4-1067-49c7-85fa-d5aebd588f1f"],
+            "name": "Composite Node 1"
+        },
+        "identifiers": ["uuid:d03ad9d7-51a9-4115-9f36-a67701244636"],
+        "name": "Node 1.1",
+        "location": "references/elements/composite-node-1/references/elements/node-1-1/index.html",
+        "type": {
+            "name": "DocumentedNamedCompositeNode",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],
+            "name": "My Graph"
+        },
+        "identifiers": ["uuid:77a4206f-4790-43db-bbbf-a0d2cba1ca57"],
+        "name": "Composite Node 2",
+        "location": "references/elements/composite-node-2/index.html",
+        "type": {
+            "name": "DocumentedNamedCompositeNode",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:77a4206f-4790-43db-bbbf-a0d2cba1ca57"],
+            "name": "Composite Node 2"
+        },
+        "identifiers": ["uuid:aa65b361-786e-45d0-b08f-7a58664e31c6"],
+        "name": "Node 2.1",
+        "location": "references/elements/composite-node-2/references/elements/node-2-1/index.html",
+        "type": {
+            "name": "DocumentedNamedNode",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    },
+    {
+        "container": {
+            "reference": "elements",
+            "identifiers": ["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],
+            "name": "My Graph"
+        },
+        "identifiers": ["uuid:60af2287-faff-44fa-a187-3f148d760050"],
+        "name": "Sub-Node 1.1.2",
+        "location": "references/elements/sub-node-1-1-2/index.html",
+        "type": {
+            "name": "DocumentedNamedNode",
+            "ns-uri": "ecore://nasdanika.org/core/gaph/model"
+        }
+    }
+]

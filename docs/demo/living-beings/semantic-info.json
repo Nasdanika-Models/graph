@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:34ed84b5-17ec-4299-871a-efd7787a670f"],
+        "identifiers": ["uuid:04adc5c3-f871-48bb-bbbd-44d57cb7798e"],
         "name": "Nasdanika Graph Model",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://graph.models.nasdanika.org",
@@ -12,9 +12,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:34ed84b5-17ec-4299-871a-efd7787a670f"]
+            "identifiers": ["uuid:04adc5c3-f871-48bb-bbbd-44d57cb7798e"]
         },
-        "identifiers": ["uuid:54ce4a7c-fa77-4d57-8ce7-f0ef0e55e2bd"],
+        "identifiers": ["uuid:3f8c7e99-2b82-40b6-bf69-6775570ed5c0"],
         "name": "Search",
         "icon": "fas fa-search",
         "location": "search.html",
@@ -26,9 +26,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:34ed84b5-17ec-4299-871a-efd7787a670f"]
+            "identifiers": ["uuid:04adc5c3-f871-48bb-bbbd-44d57cb7798e"]
         },
-        "identifiers": ["uuid:b5405c90-1397-4965-826e-a47c66b73ba4"],
+        "identifiers": ["uuid:562103e2-c863-4998-ace3-38e1a86201a3"],
         "name": "Glossary",
         "icon": "fas fa-book",
         "location": "glossary.html",
@@ -40,9 +40,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:34ed84b5-17ec-4299-871a-efd7787a670f"]
+            "identifiers": ["uuid:04adc5c3-f871-48bb-bbbd-44d57cb7798e"]
         },
-        "identifiers": ["uuid:6dd91aad-d6ee-4149-a8ba-4358b645a86d"],
+        "identifiers": ["uuid:641076b2-848a-4455-831d-6e280f88c063"],
         "name": "Sources",
         "icon": "fab fa-github",
         "location": "https://github.com/Nasdanika-Models/graph",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "identifiers": ["uuid:7275cc52-59f4-4456-a4ba-835c8a7eb1d7"],
+        "identifiers": ["uuid:ea58fd98-78b9-467a-a3dd-8c6e4b8ba8f6"],
         "name": "LIVING BEINGS",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABQ0lEQVR4XuWUzy4EQRjEi5MbLkhcHNiwPICENyAhwXoHdyGcPQYRN4REhAfAAcFdFhd/Lp4ACapU7+q2ltm9biW/pGfq+2p6prsHaFhNknWyRIZS60/lySJZI7OxocBD8kTeyQ7pjAt+SN42XPtADkghqQhqJuPkltyTvtT+0iB5JDdkjDSl9rcmyFEYt5ITuDFXrvBYb3FM2sI99ai3QjPkI4znSC85J9fwA9rhWV3CM1eNpB71VigO3CIb8LfSLPfIPvwZOoKnGilzYKlhmLyQNzL6i19z4Ah5JfPhWqo7sAveFnplreYK6Y58KXOg9uUFKcIL0gIv0FXwag7UWLPrKRXAK/8cvMyBU/DKKmwgqbDy5A6umUaVQJ3DU9jUcdqEt0c1aTvtwvXiDD6+ZSlwlSyQ/tj4R/qRLMM/liSwgfQJ3old2gw9XZMAAAAASUVORK5CYII=",
         "location": "index.html",
@@ -64,10 +64,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7275cc52-59f4-4456-a4ba-835c8a7eb1d7"],
+            "identifiers": ["uuid:ea58fd98-78b9-467a-a3dd-8c6e4b8ba8f6"],
             "name": "LIVING BEINGS"
         },
-        "identifiers": ["uuid:b67fbeb4-9669-474f-8a2c-4f1544d91411"],
+        "identifiers": ["uuid:ead660cf-6773-421b-a256-9258820fe0a9"],
         "name": "Bird",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABpUlEQVR4XrWUSyiFURSFl0dRlBTyCFHKY6BMzBhQZGBoYKQ8ykCG5gxkwoQiopQpIwp5lZFIkQEjA0mJpOSR11r2if/+978Pxaqv/nP2ueucs8/eF/hn5ZJhskKmSVlo+HcqJBfkmIySLXJHaryL4lEi6SL7ZJekw8wTyAzM+FfKJI/kg3STZrLoYtXkmSS7cdySiUx7ffNVsI1WSZMvFlMT5IQUu7Fyd0POyBp5JZukxMVjKoMcwIyVvyMyS5JcvJKswzapdXMxNUYWSD7sqjLxSg84Tq5IgS8WqH6yB3uodwSXjE68TSZ984HSVV5g19+A5S4lZIWpgTzB1kWVcndO+kip+z4kLfjJpaQy0saNnrmI6iG3MMMcMgc7jbponnS4dadkyH1HlU65BGtBmUpZsFPLXFUgtcFKqd2No0q5WYb18iCpgF0zj3SSIrdOj6hOiuvqOukIrHy8aBOZ6JVlrDX3CK6IMKXCcqdr1sNaURu1wppAxlOwMrokaV+/iiD17gDZIdcIX+w1fiMPsPqNKJmp1YT+cLNDw9+ScR0p9wf+RJ8EvFW3ZAxeBAAAAABJRU5ErkJggg==",
         "location": "references/elements/bird/index.html",
@@ -79,10 +79,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7275cc52-59f4-4456-a4ba-835c8a7eb1d7"],
+            "identifiers": ["uuid:ea58fd98-78b9-467a-a3dd-8c6e4b8ba8f6"],
             "name": "LIVING BEINGS"
         },
-        "identifiers": ["uuid:edbf88e7-6a63-43fa-a6f6-8c523baceff7"],
+        "identifiers": ["uuid:f1ba8cbb-ee16-4d3e-bd0d-339c41c22360"],
         "name": "Fish",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABcElEQVR4Xu3TyytEYRjH8Se3clmIyF0SpSRhYyEUYoENuSzY20rJbWFhp5QtuWQnskBSkpBcIhZKWdko7KyUhe8zzzkzZ8acxh/gV5/mzDzPO533Pc8R+Y+TTIxjH9c4wCI6kejp+1N6cYl+5CIBjdjBN94wiWR3QawcYcC5zsc2djGEerRjHldO3TfZzmcWLlCLOzQHO8Kjdd1JSmRB04Z3CRX1jx5QEuyInhFMRf6oORXbxiwa8IrysI7fmcYzPlHqLWTgBHFYxRMqvA1R0oJNFGEQt6hxi7p4w7nWkdCmWNEnXoVCFKBM7EZytJgm9hBScS62ja7AMv+MYsLzXY/pWGyXgew5htGDL7S6xSjRndyL3Uyd2JbzvA2VYnMVjw4s40ZsoP0yhi2x0SmOqIVlHU1ic3mIGaR76vqG9Ikd05r4zKE3+qYsiA2uvtN6Jy94FDv4D6yg2l0QK3qw3VgS+/Mzsac6JzYuSaHW/5Af+jo/dw/wAc0AAAAASUVORK5CYII=",
         "location": "references/elements/fish/index.html",
@@ -94,10 +94,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:7275cc52-59f4-4456-a4ba-835c8a7eb1d7"],
+            "identifiers": ["uuid:ea58fd98-78b9-467a-a3dd-8c6e4b8ba8f6"],
             "name": "LIVING BEINGS"
         },
-        "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+        "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
         "name": "Bacteria",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB4UlEQVR4Xp2UuyuHYRTHjzu5bQa3AYWUS1IG5LIolwHJQBaDwcCEQREJiwEDoyiDkmsYWFwSuRsUBoPyX/h+nef59Xr8fr9+fOtT73vO8573POc55xH5u+LAJHgC7+ABTINE76JQFQWOwAooAZ2gDEyAa/lH0CGwDPIcexEYBVOOPajSwC1ocx1GzaL+kBQOdkVrleT4rCrAm2v0pwgwD1ZF6xVITeDCNbqqBqeideOWAok7GAZrroPiSXaAc7APBkG58bH4h2AORBobVQCWQKvH9r21PvAKFkEXqBXtO6sDUAoWQIvHzh++gFhrSAFnYN042RbR1ukRM2OwS9FsqUwwDsbsogTwKJpdlmg9AonbZGY2GNfyoD5Asl00Itrpheadxd8GW6InF0zMbgP0e41XoN08M9iOaBOni/ZeI8gXnV3vKXJNDzgWZ1csJotPMTMGssoQzdRmzdJQ8aASfIIcY/PpGdSZZ37sBtwEYaJBc429Ctwb2y/xdLvNM2vGbTIog+2BBuOzYhCu6XXsPg2AWVBs3hmUmRJvMM4wrytm/OMQXMWAG9GJYFZu29DPwefVxVmt/+n2r1TRmWVWNaKjxDqx52ZEL1UeSrb9IBRxMliXE3AnehWxpXjTcNxC0hfxz1IBP0UdRwAAAABJRU5ErkJggg==",
         "location": "references/elements/bacteria/index.html",
@@ -109,10 +109,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:ca329245-57ab-4f9b-8dff-b74130e11092"],
+        "identifiers": ["uuid:f74f2a61-430b-4391-bb0a-c9c3f10c9c4e"],
         "name": "Streptococcus",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB8UlEQVR4Xq3TS4iNcRzG8YeGGESibGYxRYhSknFJpHFbsKLYUC4rl5LMQhG5LwyJhVIKC0q55Jbc7xMhpawlWaAUVpLv4zlnvOdwxgx+9WnmnPf9//vdjvRv0R1D0av6wd/EADzFIzzDvMrHXY/NOI9NOII36FZ8obNRhyk4h8nYgnW4gx6F9zoVvuwunuMYnmABWrGn8N4vMQ5bsUhpfAMWYrVS3nXswgccUvpXs9yp+IxtSo/sC/bhBbZjApbgMMbmWGXUY42S9k2sxQVlgm72fuzAPSWrvTiAk6qR2Qm8xjR8wlyMxii8xwilV5OUcpswEX0xH9NVuNjZXcZx5WLv1jucxX0sx0OlVA9kdo6pP17iKk7hYOn7Hzf7gBd1pFLuitKBcjgTr8rgwneLldJv4KLSmt7lhzOVzJzRUXW8T564s3msDM6tcSseKGtVEcWLBmJQ4XM5nJGn7R5+wyUlEa9VzdioDMPb78mvUn6v/uw+e/e83LdKz9pLLUY/Zbou31m0YSm+Ks3fifV4i+FKz69gmA9XxxC80s/0/bOao1zijDxp/z2t7Kan6s2Y5cO/ixal0X7xGj4qpbrpt5V1Ga9M9kzpTIexEsvQjBnKBP2/d86DGoPd2KCs0B+jj1KCy3LvfOl/iUb0rP6yK/Ed7DZrmxg0HPUAAAAASUVORK5CYII=",
         "location": "references/elements/bacteria/references/elements/streptococcus/index.html",
@@ -124,10 +124,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:1154088b-95f0-45bc-8ecd-ce6b56d54586"],
+        "identifiers": ["uuid:29c4ae0f-d021-469b-91fb-01660553956b"],
         "name": "Lactobacyllus",
         "location": "references/elements/bacteria/references/elements/lactobacyllus/index.html",
         "type": {
@@ -138,10 +138,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:af325d35-0fad-43ab-b7ba-8a6b2ab7c3f1"],
+        "identifiers": ["uuid:dc11734f-b39d-46de-951e-fda771aeb85a"],
         "name": "Helicobacter",
         "location": "references/elements/bacteria/references/elements/helicobacter/index.html",
         "type": {
@@ -152,10 +152,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:845101a6-287a-4839-afb7-7f11dced7c93"],
+        "identifiers": ["uuid:69757663-12bc-42c8-bf54-cf310db63b05"],
         "name": "Bifidobacterium",
         "location": "references/elements/bacteria/references/elements/bifidobacterium/index.html",
         "type": {
@@ -166,10 +166,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:f9d667c8-9c0e-4ea9-a77c-214cc10ffb74"],
+        "identifiers": ["uuid:49f4b31d-faeb-43b1-ba13-644b555c571d"],
         "name": "Echericia Colli",
         "location": "references/elements/bacteria/references/elements/echericia-colli/index.html",
         "type": {
@@ -180,10 +180,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:ecea9a6f-a5c4-42ba-bda5-08c5490e2dda"],
+            "identifiers": ["uuid:f938f2bb-c962-4956-a4b9-9433609c28a0"],
             "name": "Bacteria"
         },
-        "identifiers": ["uuid:2b20fcc3-26ce-4fe9-a9b9-27f8bd19431a"],
+        "identifiers": ["uuid:965a6a92-c47a-4fb9-abe0-7b46b989b354"],
         "name": "Staphyllococcus",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACOklEQVR4Xp2U6YuNYRjGL0v2NCb7MkY+GIPISJYwCCNMZpSMpRSyNZTlgw8kSpbs5QuRIkaIZMm+Df4sv+vcz3vOe04njKt+9b7Pft/39TxSzzQG5kHfyo7/UTN8govwAnqX9f6D5sIRaFNMvgOrYSncgimloX/XAbgPa+E4PIWDcAYWwA9YAS/hM5yDgZ5YTf2hW3GaCanNC7XATrig2Mjhj0r92+Bm+i4qS/RYeAB9cn2esANqYQgcVSy6Kzfmg3LF2gM/4RcshC8wKfUNgNcwGabCROiETak/0zfo5Q+v6hBXwUh4Aw3wTpEjb7QBdhemxYbGmy9SRHQWTqb+wqqeNAtmw0PYoghtkKII4+GaIm97FVV32+U03ikpnC6Td3RYXTAHLsFjRSpGwCE4DHXwRBH6SkVE3qBZFXLYHlyjsMQSGA7H4AqcgK2KW3IV5kNjGuv2e9ChnLLQtiuskeXLcpjj4KPCczZ1q2LBG4qxLtjtNL4oJ34/bK5od5Gc32Uqt1Y/+KoI2cZfn/oKsuemKwZ+V8nQGxU3xqexXTzJ9vCpvcg0RQFdzDINVljAmgnPFOH5Vjg3M6AJXkF9GudF/F9VPoHN7CTvUyR6mOJOn1eY3GZ2WtrTHMuvztDcf1GPYLliosOxB08rXpvFio18Ulsnk73o9vwVLcpP0xqFWX1rfN28uzdxqM9hNLxXFMGb3FW8QFXlYtiwPt261OYCvIXrCp9Zfon8SJxSKec9kqvtm1N2rf6k37FuYXzdoKigAAAAAElFTkSuQmCC",
         "location": "references/elements/bacteria/references/elements/staphyllococcus/index.html",

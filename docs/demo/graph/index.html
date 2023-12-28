@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="EN">
+  <head>
+    <title>My Graph</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<script src="search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="d51afd55-a76c-4b31-8202-17f55ea200d0" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="search.html" data-nsd-label-uuid="50222e83-c8ea-465f-8ca3-476771cc7741" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="glossary.html" data-nsd-label-uuid="bbc70dcd-7f4c-467c-ad47-308a8f76d99a" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="768cfc92-5961-469c-b2a7-d0a80367d4aa" class="navbar-brand">My Graph</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_b" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_b" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/composite-node-1/index.html">Composite Node 1</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/composite-node-1/references/elements/node-1-1/index.html" data-nsd-label-uuid="b6adbc08-3aae-4707-a860-07bc80c7f9ec" class="list-group-item list-group-action">Node 1.1</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="references/elements/composite-node-2/index.html">Composite Node 2</a>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="references/elements/composite-node-2/references/elements/node-2-1/index.html" data-nsd-label-uuid="30d1914e-5afc-4590-9f7d-8a4b7022081c" class="list-group-item list-group-action">Node 2.1</a>
+            </div>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="references/elements/sub-node-1-1-2/index.html" data-nsd-label-uuid="027679a8-cc65-47da-81e4-4d0ac7b5c580" class="list-group-item list-group-action">Sub-Node 1.1.2</a>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="768cfc92-5961-469c-b2a7-d0a80367d4aa" data-nsd-action-uris="uuid:768cfc92-5961-469c-b2a7-d0a80367d4aa" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;a91ecb8e-cfcf-405b-a9be-f8e04f1ae6a1\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s6EP41PCojEAj8mJvbhzbntOm006fOgiRDAshHiNo+v77CCBuCHTu3Np3JDH5gtbqtvm+/RXbIebF8p2CefpSM546HQSm5qBxy4Xiea37GFENyO1OyLllrLmXJ25ZEliVP9MCbLe0rxdRaVq0lioLWIGTOBn1mKhsbrrP/uTVia60zxodrK0CnrcH6zGHGBx6N4T3PZqldZhT0PK8TyMfu3zLWjeq62LpXKTC5GMylpcx1Nu+viFw6+MLBp07jM3zIuZJS3+fR+cn4pomqiZxMkJDKbLKdogB1axZR2rjKpC54qUFnsmwdHIrbhylYZNLxzBEQEz5y5ni+E54pPle86vpUjjftHKcsg5mCwgkv+r268QYjrc+Qg64VRwXM26kNFjRkJVcOOR14N5uqeC7Wdjxqah+e82Yr1a7O/We+Pu9mIHteHXDskeQQGxi3sdicJ7Kjt3atagvfihdQ6ixBdd0NE4c+Zj6foEAEgHyCEwRhIFAcx8EkiihxRXf4q7lFzoU9B86uoOBsTacDWBied7E857kh3/QYcBg3i4+HIOkOv+6E6cErNWFVm4C2AXnBxT8Ma1KntmGLqr143Ak1NOjaRxmk33/c6OWX7FvNqvKfonRvPiFvFNNzWcxllWmDM3xlEusWrnlW3rY+igtuYpjwhoXb2aZJ1xeVpicy/aZZyfjyJNVF/gBMd0sej7cH+gGhE+onPnIxDZE/SUIUBQIQC4DHLIgi4YoD0N/su930U4HVrVWvuiRdLbIiByM/5GyRmnmu55A0TQvVQONsHSJy4W6y1E+uNF8el593L+sdlwXXamXewSb62cbUTJH2tMXt0tCipyC+tdllkNC+rzY6eSx/eiyy8XrxfLET8OMk0oH85Ckw3+faOuxkwgjtW989KGeYAJuwEAUuTJDvugGaCEIR0DDEruf7lNDfi/L7ckoP+usCjDe7wK8U/XQH+DtCdKsYYt9/jdB/XrU5qB7kGPXwHkkr75nVw9vLqzAE38NUID+cYFM4sbipmQQCzLwkBjeBIHxTjyerByV/g3o8lkLPUY35+8TJe7Q4eYfEyXuAOHn3iBMADWJCXRRGlCM/YBjFOBIohCCi1OfETQ6J0wtqEnnTpFdDqErWqolz01vWeiazcnbe3sa0H/YbKvHm2qZx06BmXA8Z9Cm5Uj9OP3+fvv96+fHLqf4sknxHebcd2dhP99dW3E88PDHwpThCPgaMomTiIZHwmGM3AhrHBzVgO9NjQMzZ6PpnrAg2dofq2x7Qm2Gv7atUOpUzWUJ+ubWeDamw9fkg5dwS4IZrvbK3WlBruYse9pAOpLfn54ziOejsJ38sMbdT/WugqHvzSCEqC7ujOTVg1mbtr5qQTygS911GlIYQm0uz/+rm7tC0mCoqqFIDMLRu94K1adt+kN7j6wrTPW86G3LSWTvK3SlaBxOrnk/zuXdydGVa1THqvs5216W5UY5U5oyr4R3vSEfvDrUnHVEMwvOiEAkQpi71BSBwzSsRrh8xk6NwdxXc2+y657WZoBPSF9facbY5IKRQzdtLd5Etm4zzh6rVTjcXg9vygbSS7sbfaitxg79NXHdXnjuJNf6Se9Ow/Rnot2jYn0Xa2m3/nz6dvm3/fiOXvwA=<\/diagram><diagram id=\&quot;dd5a8379-cc37-49df-9a0e-713fec7f7efd\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s6EP41PCojEAj8mJvbhzbntOm006fOgiRDAshHiNo+v77CCBuCHTu3Np3JDH5gtbqtvm+/RXbIebF8p2CefpSM546HQSm5qBxy4Xiea37GFENyO1OyLllrLmXJ25ZEliVP9MCbLe0rxdRaVq0lioLWIGTOBn1mKhsbrrP/uTVia60zxodrK0CnrcH6zGHGBx6N4T3PZqldZhT0PK8TyMfu3zLWjeq62LpXKTC5GMylpcx1Nu+viFw6+MLBp07jM3zIuZJS3+fR+cn4pomqiZxMkJDKbLKdogB1axZR2rjKpC54qUFnsmwdHIrbhylYZNLxzBEQEz5y5ni+E54pPle86vpUjjftHKcsg5mCwgkv+r268QYjrc+Qg64VRwXM26kNFjRkJVcOOR14N5uqeC7Wdjxqah+e82Yr1a7O/We+Pu9mIHteHXDskeQQGxi3sdicJ7Kjt3atagvfihdQ6ixBdd0NE4c+Zj6foEAEgHyCEwRhIFAcx8EkiihxRXf4q7lFzoU9B86uoOBsTacDWBied7E857kh3/QYcBg3i4+HIOkOv+6E6cErNWFVm4C2AXnBxT8Ma1KntmGLqr143Ak1NOjaRxmk33/c6OWX7FvNqvKfonRvPiFvFNNzWcxllWmDM3xlEusWrnlW3rY+igtuYpjwhoXb2aZJ1xeVpicy/aZZyfjyJNVF/gBMd0sej7cH+gGhE+onPnIxDZE/SUIUBQIQC4DHLIgi4YoD0N/su930U4HVrVWvuiRdLbIiByM/5GyRmnmu55A0TQvVQONsHSJy4W6y1E+uNF8el593L+sdlwXXamXewSb62cbUTJH2tMXt0tCipyC+tdllkNC+rzY6eSx/eiyy8XrxfLET8OMk0oH85Ckw3+faOuxkwgjtW989KGeYAJuwEAUuTJDvugGaCEIR0DDEruf7lNDfi/L7ckoP+usCjDe7wK8U/XQH+DtCdKsYYt9/jdB/XrU5qB7kGPXwHkkr75nVw9vLqzAE38NUID+cYFM4sbipmQQCzLwkBjeBIHxTjyerByV/g3o8lkLPUY35+8TJe7Q4eYfEyXuAOHn3iBMADWJCXRRGlCM/YBjFOBIohCCi1OfETQ6J0wtqEnnTpFdDqErWqolz01vWeiazcnbe3sa0H/YbKvHm2qZx06BmXA8Z9Cm5Uj9OP3+fvv96+fHLqf4sknxHebcd2dhP99dW3E88PDHwpThCPgaMomTiIZHwmGM3AhrHBzVgO9NjQMzZ6PpnrAg2dofq2x7Qm2Gv7atUOpUzWUJ+ubWeDamw9fkg5dwS4IZrvbK3WlBruYse9pAOpLfn54ziOejsJ38sMbdT/WugqHvzSCEqC7ujOTVg1mbtr5qQTygS911GlIYQm0uz/+rm7tC0mCoqqFIDMLRu94K1adt+kN7j6wrTPW86G3LSWTvK3SlaBxOrnk/zuXdydGVa1THqvs5216W5UY5U5oyr4R3vSEfvDrUnHVEMwvOiEAkQpi71BSBwzSsRrh8xk6NwdxXc2+y657WZoBPSF9facbY5IKRQzdtLd5Etm4zzh6rVTjcXg9vygbSS7sbfaitxg79NXHdXnjuJNf6Se9Ow/Rnot2jYn0Xa2m3/nz6dvm3/fiOXvwA=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
+<p></p>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="1b7769c7-b78e-41db-9aa3-3d43cb1bb81d" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
