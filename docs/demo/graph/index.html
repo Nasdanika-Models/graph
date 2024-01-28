@@ -75,56 +75,53 @@ window.nsdJsTreeSearchCallback = function(str, node) {
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="d51afd55-a76c-4b31-8202-17f55ea200d0" class="nsd-app-header-title">
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="98052af6-0d28-461a-a5ad-10aa2090fc81" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="50222e83-c8ea-465f-8ca3-476771cc7741" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="c278eef0-aeb0-4122-abd2-0c0f562125c6" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="bbc70dcd-7f4c-467c-ad47-308a8f76d99a" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="594a47a7-c436-4529-8be6-69d5f1ae949b" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col nsd-app-navbar">
-          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="768cfc92-5961-469c-b2a7-d0a80367d4aa" class="navbar-brand">My Graph</span>
-            <button type="button" data-toggle="collapse" data-target="#nsd_b" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+          <ul class="navbar navbar-light navbar-expand-lg"><span data-nsd-label-uuid="203fd1f2-3636-484c-85b2-65bdff739062" class="navbar-brand">My Graph</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_w" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_b" class="collapse navbar-collapse"></div>
+            <div id="nsd_w" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
-          <div class="card">
-            <div class="card-header">
-              <a href="references/elements/composite-node-1/index.html">Composite Node 1</a>
-            </div>
-            <div class="list-group list-group-flush">
-              <a href="references/elements/composite-node-1/references/elements/node-1-1/index.html" data-nsd-label-uuid="b6adbc08-3aae-4707-a860-07bc80c7f9ec" class="list-group-item list-group-action">Node 1.1</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <a href="references/elements/composite-node-2/index.html">Composite Node 2</a>
-            </div>
-            <div class="list-group list-group-flush">
-              <a href="references/elements/composite-node-2/references/elements/node-2-1/index.html" data-nsd-label-uuid="30d1914e-5afc-4590-9f7d-8a4b7022081c" class="list-group-item list-group-action">Node 2.1</a>
-            </div>
-          </div>
-          <div class="list-group list-group-flush">
-            <a href="references/elements/sub-node-1-1-2/index.html" data-nsd-label-uuid="027679a8-cc65-47da-81e4-4d0ac7b5c580" class="list-group-item list-group-action">Sub-Node 1.1.2</a>
-          </div>
+          <input type="text" id="36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
+          <div id="36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel"></div>
+          <script>$(document).ready( function() {
+$('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html';"},"data-nsd-label-uuid":"f93234ed-e043-4caf-80bf-5341cf3b2a61","id":"nsd-app-nav-item-b073f80a-9f11-4d66-a6c8-de72f1a4544c","text":"Sub-Node 1.1.2","type":"leaf"}],"data-nsd-label-uuid":"358a7daa-8ebe-486b-b8c7-4a0e71cc1dea","id":"nsd-app-nav-item-42f27a75-565e-4a0a-920e-cec47383fe6a","text":"Node 1.1"}],"data-nsd-label-uuid":"bfdfd9da-69b4-4527-a547-69bb65ea4131","id":"nsd-app-nav-item-4d72b9c0-844d-4e2b-b873-7874aaabdf8e","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/references/elements/node-2-1/index.html';"},"data-nsd-label-uuid":"b3924020-5b7e-4b1b-aa9d-a39eff8b9a03","id":"nsd-app-nav-item-ca91cbf2-c31a-4b65-b5e0-44abd143a967","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"26b87610-1ca6-460c-91fd-7af70e41d3c0","id":"nsd-app-nav-item-beb891f5-d707-4da7-a192-78abb12f86c9","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_12']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_12']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_12'] = setTimeout(function () {
+      var v = $('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput').val();
+      $('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
         </div>
-        <div data-nsd-label-uuid="768cfc92-5961-469c-b2a7-d0a80367d4aa" data-nsd-action-uris="uuid:768cfc92-5961-469c-b2a7-d0a80367d4aa" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="203fd1f2-3636-484c-85b2-65bdff739062" data-nsd-action-uris="uuid:203fd1f2-3636-484c-85b2-65bdff739062" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-content-row">
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;a91ecb8e-cfcf-405b-a9be-f8e04f1ae6a1\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s6EP41PCojEAj8mJvbhzbntOm006fOgiRDAshHiNo+v77CCBuCHTu3Np3JDH5gtbqtvm+/RXbIebF8p2CefpSM546HQSm5qBxy4Xiea37GFENyO1OyLllrLmXJ25ZEliVP9MCbLe0rxdRaVq0lioLWIGTOBn1mKhsbrrP/uTVia60zxodrK0CnrcH6zGHGBx6N4T3PZqldZhT0PK8TyMfu3zLWjeq62LpXKTC5GMylpcx1Nu+viFw6+MLBp07jM3zIuZJS3+fR+cn4pomqiZxMkJDKbLKdogB1axZR2rjKpC54qUFnsmwdHIrbhylYZNLxzBEQEz5y5ni+E54pPle86vpUjjftHKcsg5mCwgkv+r268QYjrc+Qg64VRwXM26kNFjRkJVcOOR14N5uqeC7Wdjxqah+e82Yr1a7O/We+Pu9mIHteHXDskeQQGxi3sdicJ7Kjt3atagvfihdQ6ixBdd0NE4c+Zj6foEAEgHyCEwRhIFAcx8EkiihxRXf4q7lFzoU9B86uoOBsTacDWBied7E857kh3/QYcBg3i4+HIOkOv+6E6cErNWFVm4C2AXnBxT8Ma1KntmGLqr143Ak1NOjaRxmk33/c6OWX7FvNqvKfonRvPiFvFNNzWcxllWmDM3xlEusWrnlW3rY+igtuYpjwhoXb2aZJ1xeVpicy/aZZyfjyJNVF/gBMd0sej7cH+gGhE+onPnIxDZE/SUIUBQIQC4DHLIgi4YoD0N/su930U4HVrVWvuiRdLbIiByM/5GyRmnmu55A0TQvVQONsHSJy4W6y1E+uNF8el593L+sdlwXXamXewSb62cbUTJH2tMXt0tCipyC+tdllkNC+rzY6eSx/eiyy8XrxfLET8OMk0oH85Ckw3+faOuxkwgjtW989KGeYAJuwEAUuTJDvugGaCEIR0DDEruf7lNDfi/L7ckoP+usCjDe7wK8U/XQH+DtCdKsYYt9/jdB/XrU5qB7kGPXwHkkr75nVw9vLqzAE38NUID+cYFM4sbipmQQCzLwkBjeBIHxTjyerByV/g3o8lkLPUY35+8TJe7Q4eYfEyXuAOHn3iBMADWJCXRRGlCM/YBjFOBIohCCi1OfETQ6J0wtqEnnTpFdDqErWqolz01vWeiazcnbe3sa0H/YbKvHm2qZx06BmXA8Z9Cm5Uj9OP3+fvv96+fHLqf4sknxHebcd2dhP99dW3E88PDHwpThCPgaMomTiIZHwmGM3AhrHBzVgO9NjQMzZ6PpnrAg2dofq2x7Qm2Gv7atUOpUzWUJ+ubWeDamw9fkg5dwS4IZrvbK3WlBruYse9pAOpLfn54ziOejsJ38sMbdT/WugqHvzSCEqC7ujOTVg1mbtr5qQTygS911GlIYQm0uz/+rm7tC0mCoqqFIDMLRu94K1adt+kN7j6wrTPW86G3LSWTvK3SlaBxOrnk/zuXdydGVa1THqvs5216W5UY5U5oyr4R3vSEfvDrUnHVEMwvOiEAkQpi71BSBwzSsRrh8xk6NwdxXc2+y657WZoBPSF9facbY5IKRQzdtLd5Etm4zzh6rVTjcXg9vygbSS7sbfaitxg79NXHdXnjuJNf6Se9Ow/Rnot2jYn0Xa2m3/nz6dvm3/fiOXvwA=<\/diagram><diagram id=\&quot;dd5a8379-cc37-49df-9a0e-713fec7f7efd\&quot; name=\&quot;My Graph\&quot;>7Vlbc5s6EP41PCojEAj8mJvbhzbntOm006fOgiRDAshHiNo+v77CCBuCHTu3Np3JDH5gtbqtvm+/RXbIebF8p2CefpSM546HQSm5qBxy4Xiea37GFENyO1OyLllrLmXJ25ZEliVP9MCbLe0rxdRaVq0lioLWIGTOBn1mKhsbrrP/uTVia60zxodrK0CnrcH6zGHGBx6N4T3PZqldZhT0PK8TyMfu3zLWjeq62LpXKTC5GMylpcx1Nu+viFw6+MLBp07jM3zIuZJS3+fR+cn4pomqiZxMkJDKbLKdogB1axZR2rjKpC54qUFnsmwdHIrbhylYZNLxzBEQEz5y5ni+E54pPle86vpUjjftHKcsg5mCwgkv+r268QYjrc+Qg64VRwXM26kNFjRkJVcOOR14N5uqeC7Wdjxqah+e82Yr1a7O/We+Pu9mIHteHXDskeQQGxi3sdicJ7Kjt3atagvfihdQ6ixBdd0NE4c+Zj6foEAEgHyCEwRhIFAcx8EkiihxRXf4q7lFzoU9B86uoOBsTacDWBied7E857kh3/QYcBg3i4+HIOkOv+6E6cErNWFVm4C2AXnBxT8Ma1KntmGLqr143Ak1NOjaRxmk33/c6OWX7FvNqvKfonRvPiFvFNNzWcxllWmDM3xlEusWrnlW3rY+igtuYpjwhoXb2aZJ1xeVpicy/aZZyfjyJNVF/gBMd0sej7cH+gGhE+onPnIxDZE/SUIUBQIQC4DHLIgi4YoD0N/su930U4HVrVWvuiRdLbIiByM/5GyRmnmu55A0TQvVQONsHSJy4W6y1E+uNF8el593L+sdlwXXamXewSb62cbUTJH2tMXt0tCipyC+tdllkNC+rzY6eSx/eiyy8XrxfLET8OMk0oH85Ckw3+faOuxkwgjtW989KGeYAJuwEAUuTJDvugGaCEIR0DDEruf7lNDfi/L7ckoP+usCjDe7wK8U/XQH+DtCdKsYYt9/jdB/XrU5qB7kGPXwHkkr75nVw9vLqzAE38NUID+cYFM4sbipmQQCzLwkBjeBIHxTjyerByV/g3o8lkLPUY35+8TJe7Q4eYfEyXuAOHn3iBMADWJCXRRGlCM/YBjFOBIohCCi1OfETQ6J0wtqEnnTpFdDqErWqolz01vWeiazcnbe3sa0H/YbKvHm2qZx06BmXA8Z9Cm5Uj9OP3+fvv96+fHLqf4sknxHebcd2dhP99dW3E88PDHwpThCPgaMomTiIZHwmGM3AhrHBzVgO9NjQMzZ6PpnrAg2dofq2x7Qm2Gv7atUOpUzWUJ+ubWeDamw9fkg5dwS4IZrvbK3WlBruYse9pAOpLfn54ziOejsJ38sMbdT/WugqHvzSCEqC7ujOTVg1mbtr5qQTygS911GlIYQm0uz/+rm7tC0mCoqqFIDMLRu94K1adt+kN7j6wrTPW86G3LSWTvK3SlaBxOrnk/zuXdydGVa1THqvs5216W5UY5U5oyr4R3vSEfvDrUnHVEMwvOiEAkQpi71BSBwzSsRrh8xk6NwdxXc2+y657WZoBPSF9facbY5IKRQzdtLd5Etm4zzh6rVTjcXg9vygbSS7sbfaitxg79NXHdXnjuJNf6Se9Ow/Rnot2jYn0Xa2m3/nz6dvm3/fiOXvwA=<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
+                    <div class="col"><div class="markdown-body"><p></p><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile pages=\&quot;2\&quot; type=\&quot;device\&quot;><diagram id=\&quot;d6fe7ab8-46ef-4bcf-83d1-92d0d8b57006\&quot; name=\&quot;My Graph\&quot;>7Vnbcpw4EP0aHpUSErd59G2Sh8S7iVObylNKIHGxAbFCZGb261eAGMCAZzy2E6fKVfhCq1sSrXP6CGHgi2z7XpAi/sQpSw0EiRB8Uxr40kDIVD/K5JPgLhK8ymlrznnO2paA5zkL5MibbvWtAx1t2bUWz7NbQ8hTOoqJRDI13CT/MW2E2lollI3nlhEZtwbtU5CIjTxqwweWRLGepmcPPG8Ckk7dvyW069U0oXYvY0L5ZjSW5DyVSTGcEb4y4KUBz4zaZ3zhC8G5fMij8+P+bZ1VlTkegJAL9ZDtEBkRd2oSuc4rD6qM5ZLIhOetg+HA9qKCbBJuILUEWKUPnxvIMtxzwQrByi6mNNC6c1zThESCZIZ7OYzq+hv11KwhI7ISDGSkaIdWWJAkyZkw8NnIu36okqVhY4eTpvZiKasfpZwLHl5Fs951R3q9OuDoJUmJr2Dc5mK/nkD33tqlqDR8S5aRXCYBqKquGwUPteSWDUyMTWCZaAU8B/vAsW31Z+V5LvL04u8KjZxLvQ6MXpOM0YZOB7AwXu9se8FSRb71MeBQbhofj0HSPX7dS9OjZ6rSKvYJbVP/gpN/HNa4jHVDj6pFPM5CDYxChygj8fcft3L7NflW0TL/K8vN288ATXJ6wbOCl4lUOIPXqrD2cE2T/K71ESxkKocBq1nYj7YOuliQq0ig4tZJTtn2XSyz9BGY7qY87W8B+gy6jhX6CvqubwFrBQkgGFrAQzZjVqgu2z4A/f1ztw/9VGB1c5W7rkiXmyRLiZIffL6J1Tg3BQnqpo2ooXHepAhfmvsq9ZMJybbH1ef5ab1nPGNS7NQ90YU+2pvqIeKBtphdGdoMFMTSNj0N7Or73V4nj+XPgEU6Xy9eL2YBPy0iHcjfPQXmS66twywTJmjvfRdQDjH1UYNy3/KAhUNPFXjXA+bKtUzHNDGh5Nei/KGaMoB+swFj9VPAV4p+Zwb8HSG6WYyxb71G6D+v2hxUD3yMeqATaYWeWT3QIq+oadvEIhZwIfKBZa8s4CPoAidAlIaO73or9KYeT1YPB/8J6nEqhZ5jN2YtiRM6WZzQIXFCjxAn9IA4UZ8Q00MeCFZMbcFcU4kTClcgcIltwlVok4MkekFNwm+a9GoIVfJK1Hmuo3klI57k0UV7GtO+2O+pxOpjm9pNEhExOWbQ5+Ba/Dj78n394Z+rT1/P5JcwSGe2d33Pyn62/AbBiOcQOwAWs6D65UPgBzYBIQxQAB1zRTx4UAP6kU4BMaOT45+pIujcHdrfDoBed3ujb7mQMY94TtKr3no+pkLv85HzQhPglkm506dapJJ8jh56kQ6Ut+fnjGApkclPdiox+6H+VlCUg3F4GJYadkdzasSs/dxfNSGfsElcOozIFSH2h2b/VvXZoWpxDWSXsQIYaNqR3Zj69oP0nh5XqPC0DvbVP1Hby/0hWgeVq4FP/br37tSd6ZEvfEsuZeWDzm1+l5sqHYp5SpkYnxhPVPl+V4sb3JWJQmQDbFIELLPe4DL1HukjHHiEhKHlUR3cp66JvFEDdLL84so9rV0HZJmURXuEHybbun79pr1vp8Kb0dn7SKhx9/1AKzU27T9Nquf3sbM0nb4Xvinicj37JYr4e5HWuC1/QurUsv+Yh6/+Bw==<\/diagram><diagram id=\&quot;a966b199-fb3d-4724-9d15-0c6203697d7a\&quot; name=\&quot;My Graph\&quot;>7Vnbcpw4EP0aHpUSErd59G2Sh8S7iVObylNKIHGxAbFCZGb261eAGMCAZzy2E6fKVfhCq1sSrXP6CGHgi2z7XpAi/sQpSw0EiRB8Uxr40kDIVD/K5JPgLhK8ymlrznnO2paA5zkL5MibbvWtAx1t2bUWz7NbQ8hTOoqJRDI13CT/MW2E2lollI3nlhEZtwbtU5CIjTxqwweWRLGepmcPPG8Ckk7dvyW069U0oXYvY0L5ZjSW5DyVSTGcEb4y4KUBz4zaZ3zhC8G5fMij8+P+bZ1VlTkegJAL9ZDtEBkRd2oSuc4rD6qM5ZLIhOetg+HA9qKCbBJuILUEWKUPnxvIMtxzwQrByi6mNNC6c1zThESCZIZ7OYzq+hv11KwhI7ISDGSkaIdWWJAkyZkw8NnIu36okqVhY4eTpvZiKasfpZwLHl5Fs951R3q9OuDoJUmJr2Dc5mK/nkD33tqlqDR8S5aRXCYBqKquGwUPteSWDUyMTWCZaAU8B/vAsW31Z+V5LvL04u8KjZxLvQ6MXpOM0YZOB7AwXu9se8FSRb71MeBQbhofj0HSPX7dS9OjZ6rSKvYJbVP/gpN/HNa4jHVDj6pFPM5CDYxChygj8fcft3L7NflW0TL/K8vN288ATXJ6wbOCl4lUOIPXqrD2cE2T/K71ESxkKocBq1nYj7YOuliQq0ig4tZJTtn2XSyz9BGY7qY87W8B+gy6jhX6CvqubwFrBQkgGFrAQzZjVqgu2z4A/f1ztw/9VGB1c5W7rkiXmyRLiZIffL6J1Tg3BQnqpo2ooXHepAhfmvsq9ZMJybbH1ef5ab1nPGNS7NQ90YU+2pvqIeKBtphdGdoMFMTSNj0N7Or73V4nj+XPgEU6Xy9eL2YBPy0iHcjfPQXmS66twywTJmjvfRdQDjH1UYNy3/KAhUNPFXjXA+bKtUzHNDGh5Nei/KGaMoB+swFj9VPAV4p+Zwb8HSG6WYyxb71G6D+v2hxUD3yMeqATaYWeWT3QIq+oadvEIhZwIfKBZa8s4CPoAidAlIaO73or9KYeT1YPB/8J6nEqhZ5jN2YtiRM6WZzQIXFCjxAn9IA4UZ8Q00MeCFZMbcFcU4kTClcgcIltwlVok4MkekFNwm+a9GoIVfJK1Hmuo3klI57k0UV7GtO+2O+pxOpjm9pNEhExOWbQ5+Ba/Dj78n394Z+rT1/P5JcwSGe2d33Pyn62/AbBiOcQOwAWs6D65UPgBzYBIQxQAB1zRTx4UAP6kU4BMaOT45+pIujcHdrfDoBed3ujb7mQMY94TtKr3no+pkLv85HzQhPglkm506dapJJ8jh56kQ6Ut+fnjGApkclPdiox+6H+VlCUg3F4GJYadkdzasSs/dxfNSGfsElcOozIFSH2h2b/VvXZoWpxDWSXsQIYaNqR3Zj69oP0nh5XqPC0DvbVP1Hby/0hWgeVq4FP/br37tSd6ZEvfEsuZeWDzm1+l5sqHYp5SpkYnxhPVPl+V4sb3JWJQmQDbFIELLPe4DL1HukjHHiEhKHlUR3cp66JvFEDdLL84so9rV0HZJmURXuEHybbun79pr1vp8Kb0dn7SKhx9/1AKzU27T9Nquf3sbM0nb4Xvinicj37JYr4e5HWuC1/QurUsv+Yh6/+Bw==<\/diagram><\/mxfile>&quot;,&quot;resize&quot;:true}"></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jgraph/drawio@v22.1.11/src/main/webapp/js/viewer.min.js"></script>
 <p></p>
 </div></div>
@@ -139,7 +136,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="1b7769c7-b78e-41db-9aa3-3d43cb1bb81d" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="f536df68-2d92-4445-ad1d-d73a01421302" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>

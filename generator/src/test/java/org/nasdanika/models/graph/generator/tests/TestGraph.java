@@ -25,7 +25,6 @@ import org.nasdanika.common.ExecutionException;
 import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
-import org.nasdanika.diagramgenerator.plantuml.PlantUMLDiagramGenerator;
 import org.nasdanika.graph.model.DocumentedNamedGraph;
 import org.nasdanika.graph.model.DocumentedNamedSubGraph;
 import org.nasdanika.graph.model.GraphElement;
@@ -46,7 +45,6 @@ public class TestGraph {
 		// Generating an action model
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
-		context.register(DiagramGenerator.class, new PlantUMLDiagramGenerator());
 		
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
 		
@@ -99,7 +97,7 @@ public class TestGraph {
 		
 		System.out.println("There are " + errorCount + " site errors");
 		
-		if (errors.size() != 9) {
+		if (errorCount != 9) {
 			throw new ExecutionException("There are problems with pages: " + errorCount);
 		}		
 		
@@ -144,7 +142,6 @@ public class TestGraph {
 		// Generating an action model
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
-		context.register(DiagramGenerator.class, new PlantUMLDiagramGenerator());
 		
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
 		
@@ -200,7 +197,7 @@ public class TestGraph {
 		
 		System.out.println("There are " + errorCount + " site errors");
 		
-		if (errors.size() != 9) {
+		if (errorCount != 9) {
 			throw new ExecutionException("There are problems with pages: " + errorCount);
 		}		
 		

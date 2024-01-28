@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/glossary.html</loc>
-    <lastmod>2023-12-28T07:32:08.884-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.369-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.849-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.342-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/composite-node-1/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.857-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.348-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/composite-node-1/references/elements/node-1-1/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.866-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.353-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html</loc>
+    <lastmod>2024-01-28T10:46:10.357-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/composite-node-2/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.868-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.359-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/composite-node-2/references/elements/node-2-1/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.875-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://graph.models.nasdanika.org/demo/graph/references/elements/sub-node-1-1-2/index.html</loc>
-    <lastmod>2023-12-28T07:32:08.877-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.364-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://graph.models.nasdanika.org/demo/graph/search.html</loc>
-    <lastmod>2023-12-28T07:32:08.880-05:00</lastmod>
+    <lastmod>2024-01-28T10:46:10.367-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

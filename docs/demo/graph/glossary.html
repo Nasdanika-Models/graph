@@ -75,13 +75,13 @@ window.nsdJsTreeSearchCallback = function(str, node) {
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="d51afd55-a76c-4b31-8202-17f55ea200d0" class="nsd-app-header-title">
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="98052af6-0d28-461a-a5ad-10aa2090fc81" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="50222e83-c8ea-465f-8ca3-476771cc7741" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="c278eef0-aeb0-4122-abd2-0c0f562125c6" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
-            <li class="nav-item"><span data-nsd-label-uuid="bbc70dcd-7f4c-467c-ad47-308a8f76d99a" class="navbar-text"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
+            <li class="nav-item"><span data-nsd-label-uuid="594a47a7-c436-4529-8be6-69d5f1ae949b" class="navbar-text"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
             </li>
           </ul>
         </div>
@@ -89,40 +89,37 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" data-nsd-label-uuid="768cfc92-5961-469c-b2a7-d0a80367d4aa" class="navbar-brand">My Graph</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_z" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="index.html" data-nsd-label-uuid="203fd1f2-3636-484c-85b2-65bdff739062" class="navbar-brand">My Graph</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_13" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_z" class="collapse navbar-collapse"></div>
+            <div id="nsd_13" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
-          <div class="card">
-            <div class="card-header">
-              <a href="references/elements/composite-node-1/index.html">Composite Node 1</a>
-            </div>
-            <div class="list-group list-group-flush">
-              <a href="references/elements/composite-node-1/references/elements/node-1-1/index.html" data-nsd-label-uuid="b6adbc08-3aae-4707-a860-07bc80c7f9ec" class="list-group-item list-group-action">Node 1.1</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <a href="references/elements/composite-node-2/index.html">Composite Node 2</a>
-            </div>
-            <div class="list-group list-group-flush">
-              <a href="references/elements/composite-node-2/references/elements/node-2-1/index.html" data-nsd-label-uuid="30d1914e-5afc-4590-9f7d-8a4b7022081c" class="list-group-item list-group-action">Node 2.1</a>
-            </div>
-          </div>
-          <div class="list-group list-group-flush">
-            <a href="references/elements/sub-node-1-1-2/index.html" data-nsd-label-uuid="027679a8-cc65-47da-81e4-4d0ac7b5c580" class="list-group-item list-group-action">Sub-Node 1.1.2</a>
-          </div>
+          <input type="text" id="36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1">
+          <div id="36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel"></div>
+          <script>$(document).ready( function() {
+$('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html';"},"data-nsd-label-uuid":"f93234ed-e043-4caf-80bf-5341cf3b2a61","id":"nsd-app-nav-item-b073f80a-9f11-4d66-a6c8-de72f1a4544c","text":"Sub-Node 1.1.2","type":"leaf"}],"data-nsd-label-uuid":"358a7daa-8ebe-486b-b8c7-4a0e71cc1dea","id":"nsd-app-nav-item-42f27a75-565e-4a0a-920e-cec47383fe6a","text":"Node 1.1"}],"data-nsd-label-uuid":"bfdfd9da-69b4-4527-a547-69bb65ea4131","id":"nsd-app-nav-item-4d72b9c0-844d-4e2b-b873-7874aaabdf8e","text":"Composite Node 1"},{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/elements/composite-node-2/references/elements/node-2-1/index.html';"},"data-nsd-label-uuid":"b3924020-5b7e-4b1b-aa9d-a39eff8b9a03","id":"nsd-app-nav-item-ca91cbf2-c31a-4b65-b5e0-44abd143a967","text":"Node 2.1","type":"leaf"}],"data-nsd-label-uuid":"26b87610-1ca6-460c-91fd-7af70e41d3c0","id":"nsd-app-nav-item-beb891f5-d707-4da7-a192-78abb12f86c9","text":"Composite Node 2"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_19']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_19']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_19'] = setTimeout(function () {
+      var v = $('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel_searchInput').val();
+      $('#36241e58-911d-4bba-87d4-b34ad32331bb-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
         </div>
-        <div data-nsd-label-uuid="bbc70dcd-7f4c-467c-ad47-308a8f76d99a" data-nsd-action-uris="uuid:bbc70dcd-7f4c-467c-ad47-308a8f76d99a" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="594a47a7-c436-4529-8be6-69d5f1ae949b" data-nsd-action-uris="uuid:594a47a7-c436-4529-8be6-69d5f1ae949b" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span data-nsd-label-uuid="bbc70dcd-7f4c-467c-ad47-308a8f76d99a" class="nsd-app-content-panel-title"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
+                <h1><span data-nsd-label-uuid="594a47a7-c436-4529-8be6-69d5f1ae949b" class="nsd-app-content-panel-title"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</span>
                 </h1>
               </div>
             </div>
@@ -182,7 +179,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
 				  el: '#semantic-info-app',
 				  data: {
 			        	filter: null,
-			        	semanticInfo: [{"identifiers":["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"],"name":"Nasdanika Graph Model","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","location":"https://graph.models.nasdanika.org","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]},"identifiers":["uuid:50222e83-c8ea-465f-8ca3-476771cc7741"],"name":"Search","icon":"fas fa-search","location":"search.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]},"identifiers":["uuid:bbc70dcd-7f4c-467c-ad47-308a8f76d99a"],"name":"Glossary","icon":"fas fa-book","location":"glossary.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:d51afd55-a76c-4b31-8202-17f55ea200d0"]},"identifiers":["uuid:1b7769c7-b78e-41db-9aa3-3d43cb1bb81d"],"name":"Sources","icon":"fab fa-github","location":"https://github.com/Nasdanika-Models/graph","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"identifiers":["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],"name":"My Graph","location":"index.html","type":{"name":"DocumentedNamedGraph","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],"name":"My Graph"},"identifiers":["uuid:536964c4-1067-49c7-85fa-d5aebd588f1f"],"name":"Composite Node 1","location":"references/elements/composite-node-1/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:536964c4-1067-49c7-85fa-d5aebd588f1f"],"name":"Composite Node 1"},"identifiers":["uuid:d03ad9d7-51a9-4115-9f36-a67701244636"],"name":"Node 1.1","location":"references/elements/composite-node-1/references/elements/node-1-1/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],"name":"My Graph"},"identifiers":["uuid:77a4206f-4790-43db-bbbf-a0d2cba1ca57"],"name":"Composite Node 2","location":"references/elements/composite-node-2/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:77a4206f-4790-43db-bbbf-a0d2cba1ca57"],"name":"Composite Node 2"},"identifiers":["uuid:aa65b361-786e-45d0-b08f-7a58664e31c6"],"name":"Node 2.1","location":"references/elements/composite-node-2/references/elements/node-2-1/index.html","type":{"name":"DocumentedNamedNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:b740d4e9-5f5a-430c-a75f-bbb5988631f0"],"name":"My Graph"},"identifiers":["uuid:60af2287-faff-44fa-a187-3f148d760050"],"name":"Sub-Node 1.1.2","location":"references/elements/sub-node-1-1-2/index.html","type":{"name":"DocumentedNamedNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}}],
+			        	semanticInfo: [{"identifiers":["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"],"name":"Nasdanika Graph Model","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","location":"https://graph.models.nasdanika.org","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]},"identifiers":["uuid:c278eef0-aeb0-4122-abd2-0c0f562125c6"],"name":"Search","icon":"fas fa-search","location":"search.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"children","identifiers":["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]},"identifiers":["uuid:594a47a7-c436-4529-8be6-69d5f1ae949b"],"name":"Glossary","icon":"fas fa-book","location":"glossary.html","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"container":{"reference":"navigation","identifiers":["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]},"identifiers":["uuid:f536df68-2d92-4445-ad1d-d73a01421302"],"name":"Sources","icon":"fab fa-github","location":"https://github.com/Nasdanika-Models/graph","type":{"name":"Action","ns-uri":"ecore://nasdanika.org/html/app"}},{"identifiers":["uuid:28511045-1331-4129-863b-65563b988728"],"name":"My Graph","location":"index.html","type":{"name":"DocumentedNamedGraph","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:28511045-1331-4129-863b-65563b988728"],"name":"My Graph"},"identifiers":["uuid:e0764fb5-17b4-490a-a304-825ee4fe4f55"],"name":"Composite Node 1","location":"references/elements/composite-node-1/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:e0764fb5-17b4-490a-a304-825ee4fe4f55"],"name":"Composite Node 1"},"identifiers":["uuid:03db2fb5-1b48-43f8-8678-197416113ada"],"name":"Node 1.1","location":"references/elements/composite-node-1/references/elements/node-1-1/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:03db2fb5-1b48-43f8-8678-197416113ada"],"name":"Node 1.1"},"identifiers":["uuid:d1912f25-31d2-4194-beb5-b23c8aaff48d"],"name":"Sub-Node 1.1.2","location":"references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html","type":{"name":"DocumentedNamedNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:28511045-1331-4129-863b-65563b988728"],"name":"My Graph"},"identifiers":["uuid:d155a4a4-702b-4594-b207-6c2ddf6b7892"],"name":"Composite Node 2","location":"references/elements/composite-node-2/index.html","type":{"name":"DocumentedNamedCompositeNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}},{"container":{"reference":"elements","identifiers":["uuid:d155a4a4-702b-4594-b207-6c2ddf6b7892"],"name":"Composite Node 2"},"identifiers":["uuid:dbaa1828-c9e4-4718-82f9-c7a5109f5a92"],"name":"Node 2.1","location":"references/elements/composite-node-2/references/elements/node-2-1/index.html","type":{"name":"DocumentedNamedNode","ns-uri":"ecore://nasdanika.org/core/gaph/model"}}],
 			        	identifierField: false,
 			        	hideUUID: true
 				  },				  
@@ -294,7 +291,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="1b7769c7-b78e-41db-9aa3-3d43cb1bb81d" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="f536df68-2d92-4445-ad1d-d73a01421302" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
