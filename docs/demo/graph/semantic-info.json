@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"],
+        "identifiers": ["uuid:66e3f547-c800-4459-b558-bf6fd61d6e14"],
         "name": "Nasdanika Graph Model",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://graph.models.nasdanika.org",
@@ -12,9 +12,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]
+            "identifiers": ["uuid:66e3f547-c800-4459-b558-bf6fd61d6e14"]
         },
-        "identifiers": ["uuid:c278eef0-aeb0-4122-abd2-0c0f562125c6"],
+        "identifiers": ["uuid:8270a91a-8f1b-43fc-a145-9134ad00bb1d"],
         "name": "Search",
         "icon": "fas fa-search",
         "location": "search.html",
@@ -26,9 +26,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]
+            "identifiers": ["uuid:66e3f547-c800-4459-b558-bf6fd61d6e14"]
         },
-        "identifiers": ["uuid:594a47a7-c436-4529-8be6-69d5f1ae949b"],
+        "identifiers": ["uuid:5e03b1d1-d5c3-482f-b5a7-71dae9c3c562"],
         "name": "Glossary",
         "icon": "fas fa-book",
         "location": "glossary.html",
@@ -40,9 +40,9 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:98052af6-0d28-461a-a5ad-10aa2090fc81"]
+            "identifiers": ["uuid:66e3f547-c800-4459-b558-bf6fd61d6e14"]
         },
-        "identifiers": ["uuid:f536df68-2d92-4445-ad1d-d73a01421302"],
+        "identifiers": ["uuid:43f82dcf-bf2d-4dc0-8def-51cda4d19e48"],
         "name": "Sources",
         "icon": "fab fa-github",
         "location": "https://github.com/Nasdanika-Models/graph",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "identifiers": ["uuid:28511045-1331-4129-863b-65563b988728"],
+        "identifiers": ["uuid:dbed2d3e-b434-4eff-8d24-88c86f90f6e8"],
         "name": "My Graph",
         "location": "index.html",
         "type": {
@@ -63,10 +63,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:28511045-1331-4129-863b-65563b988728"],
+            "identifiers": ["uuid:dbed2d3e-b434-4eff-8d24-88c86f90f6e8"],
             "name": "My Graph"
         },
-        "identifiers": ["uuid:e0764fb5-17b4-490a-a304-825ee4fe4f55"],
+        "identifiers": ["uuid:b43ea4fa-acdc-427b-b4ba-957c6cadc1c4"],
         "name": "Composite Node 1",
         "location": "references/elements/composite-node-1/index.html",
         "type": {
@@ -77,10 +77,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:e0764fb5-17b4-490a-a304-825ee4fe4f55"],
+            "identifiers": ["uuid:b43ea4fa-acdc-427b-b4ba-957c6cadc1c4"],
             "name": "Composite Node 1"
         },
-        "identifiers": ["uuid:03db2fb5-1b48-43f8-8678-197416113ada"],
+        "identifiers": ["uuid:b9f8c0c3-3854-4b24-b609-eaa03b77ed91"],
         "name": "Node 1.1",
         "location": "references/elements/composite-node-1/references/elements/node-1-1/index.html",
         "type": {
@@ -91,10 +91,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:03db2fb5-1b48-43f8-8678-197416113ada"],
+            "identifiers": ["uuid:b9f8c0c3-3854-4b24-b609-eaa03b77ed91"],
             "name": "Node 1.1"
         },
-        "identifiers": ["uuid:d1912f25-31d2-4194-beb5-b23c8aaff48d"],
+        "identifiers": ["uuid:3aa4fca1-b7c6-4e80-97b1-2c118bf7cb01"],
         "name": "Sub-Node 1.1.2",
         "location": "references/elements/composite-node-1/references/elements/node-1-1/references/elements/sub-node-1-1-2/index.html",
         "type": {
@@ -105,10 +105,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:28511045-1331-4129-863b-65563b988728"],
+            "identifiers": ["uuid:dbed2d3e-b434-4eff-8d24-88c86f90f6e8"],
             "name": "My Graph"
         },
-        "identifiers": ["uuid:d155a4a4-702b-4594-b207-6c2ddf6b7892"],
+        "identifiers": ["uuid:312d9600-40e0-40fc-a3da-e5f3e84f0788"],
         "name": "Composite Node 2",
         "location": "references/elements/composite-node-2/index.html",
         "type": {
@@ -119,10 +119,10 @@
     {
         "container": {
             "reference": "elements",
-            "identifiers": ["uuid:d155a4a4-702b-4594-b207-6c2ddf6b7892"],
+            "identifiers": ["uuid:312d9600-40e0-40fc-a3da-e5f3e84f0788"],
             "name": "Composite Node 2"
         },
-        "identifiers": ["uuid:dbaa1828-c9e4-4718-82f9-c7a5109f5a92"],
+        "identifiers": ["uuid:190d534d-05a8-4af6-a9f3-760cdc5e2bbc"],
         "name": "Node 2.1",
         "location": "references/elements/composite-node-2/references/elements/node-2-1/index.html",
         "type": {

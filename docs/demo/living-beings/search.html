@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="EN">
   <head>
     <title>Search</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika/html@master/model/app.gen/web-resources/js/dark-head.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
@@ -34,18 +34,54 @@
 
   gtag('config', 'G-9BRJVLK8CC');
 </script>    
+
+<script src="../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['action-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="f52b2c91-c8d4-49ad-b6b3-4e935e627b21" class="nsd-app-header-title">
-            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Graph Model</a>
+          <a href="https://graph.models.nasdanika.org" data-nsd-label-uuid="8d453422-711f-4ab4-9ae0-ab9e33edcd00" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Graph Model</a>
           <ul class="nav nsd-app-header-navs">
-            <li class="nav-item"><span data-nsd-label-uuid="a7733e11-a303-4167-8c13-c21a508dc0a8" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+            <li class="nav-item"><span data-nsd-label-uuid="b5c3dd1f-1aa9-4c80-a085-9c50fa3d493c" class="navbar-text"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="59a7575b-eb14-46e0-a12a-e33edf6fb473" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="3e361f8d-ff5d-4841-949a-1a757b51af13" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -53,45 +89,45 @@
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" data-nsd-label-uuid="73dea278-4c6b-4989-a64b-d922a0d411af" class="navbar-brand">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABQ0lEQVR4XuWUzy4EQRjEi5MbLkhcHNiwPICENyAhwXoHdyGcPQYRN4REhAfAAcFdFhd/Lp4ACapU7+q2ltm9biW/pGfq+2p6prsHaFhNknWyRIZS60/lySJZI7OxocBD8kTeyQ7pjAt+SN42XPtADkghqQhqJuPkltyTvtT+0iB5JDdkjDSl9rcmyFEYt5ITuDFXrvBYb3FM2sI99ai3QjPkI4znSC85J9fwA9rhWV3CM1eNpB71VigO3CIb8LfSLPfIPvwZOoKnGilzYKlhmLyQNzL6i19z4Ah5JfPhWqo7sAveFnplreYK6Y58KXOg9uUFKcIL0gIv0FXwag7UWLPrKRXAK/8cvMyBU/DKKmwgqbDy5A6umUaVQJ3DU9jUcdqEt0c1aTvtwvXiDD6+ZSlwlSyQ/tj4R/qRLMM/liSwgfQJ3old2gw9XZMAAAAASUVORK5CYII=" class="nsd-app-label-icon"/>LIVING BEINGS</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_2n" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="index.html" data-nsd-label-uuid="de4be59d-57a9-4b4a-9946-99275c72c7c2" class="navbar-brand">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABQ0lEQVR4XuWUzy4EQRjEi5MbLkhcHNiwPICENyAhwXoHdyGcPQYRN4REhAfAAcFdFhd/Lp4ACapU7+q2ltm9biW/pGfq+2p6prsHaFhNknWyRIZS60/lySJZI7OxocBD8kTeyQ7pjAt+SN42XPtADkghqQhqJuPkltyTvtT+0iB5JDdkjDSl9rcmyFEYt5ITuDFXrvBYb3FM2sI99ai3QjPkI4znSC85J9fwA9rhWV3CM1eNpB71VigO3CIb8LfSLPfIPvwZOoKnGilzYKlhmLyQNzL6i19z4Ah5JfPhWqo7sAveFnplreYK6Y58KXOg9uUFKcIL0gIv0FXwag7UWLPrKRXAK/8cvMyBU/DKKmwgqbDy5A6umUaVQJ3DU9jUcdqEt0c1aTvtwvXiDD6+ZSlwlSyQ/tj4R/qRLMM/liSwgfQJ3old2gw9XZMAAAAASUVORK5CYII=" class="nsd-app-label-icon">LIVING BEINGS</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_5b" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_2n" class="collapse navbar-collapse"></div>
+            <div id="nsd_5b" class="collapse navbar-collapse"></div>
           </ul>
         </div>
       </div>
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="references/elements/bird/index.html" data-nsd-label-uuid="5e608084-cabf-4618-835a-bb457f97862a" class="list-group-item list-group-action">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABpUlEQVR4XrWUSyiFURSFl0dRlBTyCFHKY6BMzBhQZGBoYKQ8ykCG5gxkwoQiopQpIwp5lZFIkQEjA0mJpOSR11r2if/+978Pxaqv/nP2ueucs8/eF/hn5ZJhskKmSVlo+HcqJBfkmIySLXJHaryL4lEi6SL7ZJekw8wTyAzM+FfKJI/kg3STZrLoYtXkmSS7cdySiUx7ffNVsI1WSZMvFlMT5IQUu7Fyd0POyBp5JZukxMVjKoMcwIyVvyMyS5JcvJKswzapdXMxNUYWSD7sqjLxSg84Tq5IgS8WqH6yB3uodwSXjE68TSZ984HSVV5g19+A5S4lZIWpgTzB1kWVcndO+kip+z4kLfjJpaQy0saNnrmI6iG3MMMcMgc7jbponnS4dadkyH1HlU65BGtBmUpZsFPLXFUgtcFKqd2No0q5WYb18iCpgF0zj3SSIrdOj6hOiuvqOukIrHy8aBOZ6JVlrDX3CK6IMKXCcqdr1sNaURu1wppAxlOwMrokaV+/iiD17gDZIdcIX+w1fiMPsPqNKJmp1YT+cLNDw9+ScR0p9wf+RJ8EvFW3ZAxeBAAAAABJRU5ErkJggg==" class="nsd-app-label-icon"/>Bird</a>
-            <a href="references/elements/fish/index.html" data-nsd-label-uuid="107f6eae-482c-45c3-ada9-c8985ac33d60" class="list-group-item list-group-action">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABcElEQVR4Xu3TyytEYRjH8Se3clmIyF0SpSRhYyEUYoENuSzY20rJbWFhp5QtuWQnskBSkpBcIhZKWdko7KyUhe8zzzkzZ8acxh/gV5/mzDzPO533Pc8R+Y+TTIxjH9c4wCI6kejp+1N6cYl+5CIBjdjBN94wiWR3QawcYcC5zsc2djGEerRjHldO3TfZzmcWLlCLOzQHO8Kjdd1JSmRB04Z3CRX1jx5QEuyInhFMRf6oORXbxiwa8IrysI7fmcYzPlHqLWTgBHFYxRMqvA1R0oJNFGEQt6hxi7p4w7nWkdCmWNEnXoVCFKBM7EZytJgm9hBScS62ja7AMv+MYsLzXY/pWGyXgew5htGDL7S6xSjRndyL3Uyd2JbzvA2VYnMVjw4s40ZsoP0yhi2x0SmOqIVlHU1ic3mIGaR76vqG9Ikd05r4zKE3+qYsiA2uvtN6Jy94FDv4D6yg2l0QK3qw3VgS+/Mzsac6JzYuSaHW/5Af+jo/dw/wAc0AAAAASUVORK5CYII=" class="nsd-app-label-icon"/>Fish</a>
+            <a href="references/elements/bird/index.html" data-nsd-label-uuid="c6f2a46f-8dd7-46a4-88f5-13a3f384124f" class="list-group-item list-group-action">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABpUlEQVR4XrWUSyiFURSFl0dRlBTyCFHKY6BMzBhQZGBoYKQ8ykCG5gxkwoQiopQpIwp5lZFIkQEjA0mJpOSR11r2if/+978Pxaqv/nP2ueucs8/eF/hn5ZJhskKmSVlo+HcqJBfkmIySLXJHaryL4lEi6SL7ZJekw8wTyAzM+FfKJI/kg3STZrLoYtXkmSS7cdySiUx7ffNVsI1WSZMvFlMT5IQUu7Fyd0POyBp5JZukxMVjKoMcwIyVvyMyS5JcvJKswzapdXMxNUYWSD7sqjLxSg84Tq5IgS8WqH6yB3uodwSXjE68TSZ984HSVV5g19+A5S4lZIWpgTzB1kWVcndO+kip+z4kLfjJpaQy0saNnrmI6iG3MMMcMgc7jbponnS4dadkyH1HlU65BGtBmUpZsFPLXFUgtcFKqd2No0q5WYb18iCpgF0zj3SSIrdOj6hOiuvqOukIrHy8aBOZ6JVlrDX3CK6IMKXCcqdr1sNaURu1wppAxlOwMrokaV+/iiD17gDZIdcIX+w1fiMPsPqNKJmp1YT+cLNDw9+ScR0p9wf+RJ8EvFW3ZAxeBAAAAABJRU5ErkJggg==" class="nsd-app-label-icon">Bird</a>
+            <a href="references/elements/fish/index.html" data-nsd-label-uuid="3551e2b6-b21d-4b70-880c-6f60684de61e" class="list-group-item list-group-action">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABcElEQVR4Xu3TyytEYRjH8Se3clmIyF0SpSRhYyEUYoENuSzY20rJbWFhp5QtuWQnskBSkpBcIhZKWdko7KyUhe8zzzkzZ8acxh/gV5/mzDzPO533Pc8R+Y+TTIxjH9c4wCI6kejp+1N6cYl+5CIBjdjBN94wiWR3QawcYcC5zsc2djGEerRjHldO3TfZzmcWLlCLOzQHO8Kjdd1JSmRB04Z3CRX1jx5QEuyInhFMRf6oORXbxiwa8IrysI7fmcYzPlHqLWTgBHFYxRMqvA1R0oJNFGEQt6hxi7p4w7nWkdCmWNEnXoVCFKBM7EZytJgm9hBScS62ja7AMv+MYsLzXY/pWGyXgew5htGDL7S6xSjRndyL3Uyd2JbzvA2VYnMVjw4s40ZsoP0yhi2x0SmOqIVlHU1ic3mIGaR76vqG9Ikd05r4zKE3+qYsiA2uvtN6Jy94FDv4D6yg2l0QK3qw3VgS+/Mzsac6JzYuSaHW/5Af+jo/dw/wAc0AAAAASUVORK5CYII=" class="nsd-app-label-icon">Fish</a>
           </div>
           <div class="card">
             <div class="card-header">
               <a href="references/elements/bacteria/index.html">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB4UlEQVR4Xp2UuyuHYRTHjzu5bQa3AYWUS1IG5LIolwHJQBaDwcCEQREJiwEDoyiDkmsYWFwSuRsUBoPyX/h+nef59Xr8fr9+fOtT73vO8573POc55xH5u+LAJHgC7+ABTINE76JQFQWOwAooAZ2gDEyAa/lH0CGwDPIcexEYBVOOPajSwC1ocx1GzaL+kBQOdkVrleT4rCrAm2v0pwgwD1ZF6xVITeDCNbqqBqeideOWAok7GAZrroPiSXaAc7APBkG58bH4h2AORBobVQCWQKvH9r21PvAKFkEXqBXtO6sDUAoWQIvHzh++gFhrSAFnYN042RbR1ukRM2OwS9FsqUwwDsbsogTwKJpdlmg9AonbZGY2GNfyoD5Asl00Itrpheadxd8GW6InF0zMbgP0e41XoN08M9iOaBOni/ZeI8gXnV3vKXJNDzgWZ1csJotPMTMGssoQzdRmzdJQ8aASfIIcY/PpGdSZZ37sBtwEYaJBc429Ctwb2y/xdLvNM2vGbTIog+2BBuOzYhCu6XXsPg2AWVBs3hmUmRJvMM4wrytm/OMQXMWAG9GJYFZu29DPwefVxVmt/+n2r1TRmWVWNaKjxDqx52ZEL1UeSrb9IBRxMliXE3AnehWxpXjTcNxC0hfxz1IBP0UdRwAAAABJRU5ErkJggg==" class="nsd-app-label-icon"/>Bacteria</a>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB4UlEQVR4Xp2UuyuHYRTHjzu5bQa3AYWUS1IG5LIolwHJQBaDwcCEQREJiwEDoyiDkmsYWFwSuRsUBoPyX/h+nef59Xr8fr9+fOtT73vO8573POc55xH5u+LAJHgC7+ABTINE76JQFQWOwAooAZ2gDEyAa/lH0CGwDPIcexEYBVOOPajSwC1ocx1GzaL+kBQOdkVrleT4rCrAm2v0pwgwD1ZF6xVITeDCNbqqBqeideOWAok7GAZrroPiSXaAc7APBkG58bH4h2AORBobVQCWQKvH9r21PvAKFkEXqBXtO6sDUAoWQIvHzh++gFhrSAFnYN042RbR1ukRM2OwS9FsqUwwDsbsogTwKJpdlmg9AonbZGY2GNfyoD5Asl00Itrpheadxd8GW6InF0zMbgP0e41XoN08M9iOaBOni/ZeI8gXnV3vKXJNDzgWZ1csJotPMTMGssoQzdRmzdJQ8aASfIIcY/PpGdSZZ37sBtwEYaJBc429Ctwb2y/xdLvNM2vGbTIog+2BBuOzYhCu6XXsPg2AWVBs3hmUmRJvMM4wrytm/OMQXMWAG9GJYFZu29DPwefVxVmt/+n2r1TRmWVWNaKjxDqx52ZEL1UeSrb9IBRxMliXE3AnehWxpXjTcNxC0hfxz1IBP0UdRwAAAABJRU5ErkJggg==" class="nsd-app-label-icon">Bacteria</a>
             </div>
             <div class="list-group list-group-flush">
-              <a href="references/elements/bacteria/references/elements/streptococcus/index.html" data-nsd-label-uuid="981dc41c-6cc8-43d5-855e-39824725dcfc" class="list-group-item list-group-action">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB8UlEQVR4Xq3TS4iNcRzG8YeGGESibGYxRYhSknFJpHFbsKLYUC4rl5LMQhG5LwyJhVIKC0q55Jbc7xMhpawlWaAUVpLv4zlnvOdwxgx+9WnmnPf9//vdjvRv0R1D0av6wd/EADzFIzzDvMrHXY/NOI9NOII36FZ8obNRhyk4h8nYgnW4gx6F9zoVvuwunuMYnmABWrGn8N4vMQ5bsUhpfAMWYrVS3nXswgccUvpXs9yp+IxtSo/sC/bhBbZjApbgMMbmWGXUY42S9k2sxQVlgm72fuzAPSWrvTiAk6qR2Qm8xjR8wlyMxii8xwilV5OUcpswEX0xH9NVuNjZXcZx5WLv1jucxX0sx0OlVA9kdo6pP17iKk7hYOn7Hzf7gBd1pFLuitKBcjgTr8rgwneLldJv4KLSmt7lhzOVzJzRUXW8T564s3msDM6tcSseKGtVEcWLBmJQ4XM5nJGn7R5+wyUlEa9VzdioDMPb78mvUn6v/uw+e/e83LdKz9pLLUY/Zbou31m0YSm+Ks3fifV4i+FKz69gmA9XxxC80s/0/bOao1zijDxp/z2t7Kan6s2Y5cO/ixal0X7xGj4qpbrpt5V1Ga9M9kzpTIexEsvQjBnKBP2/d86DGoPd2KCs0B+jj1KCy3LvfOl/iUb0rP6yK/Ed7DZrmxg0HPUAAAAASUVORK5CYII=" class="nsd-app-label-icon"/>Streptococcus</a>
-              <a href="references/elements/bacteria/references/elements/lactobacyllus/index.html" data-nsd-label-uuid="c91c4320-4902-4ec0-898f-085468079116" class="list-group-item list-group-action">Lactobacyllus</a>
-              <a href="references/elements/bacteria/references/elements/helicobacter/index.html" data-nsd-label-uuid="7ea38442-4c15-48b9-bc9c-586ea331587f" class="list-group-item list-group-action">Helicobacter</a>
-              <a href="references/elements/bacteria/references/elements/bifidobacterium/index.html" data-nsd-label-uuid="88c32041-e4f5-4d87-b056-29b40c20568e" class="list-group-item list-group-action">Bifidobacterium</a>
-              <a href="references/elements/bacteria/references/elements/echericia-colli/index.html" data-nsd-label-uuid="62dbf421-1bbc-48d1-a122-00c370a79be9" class="list-group-item list-group-action">Echericia Colli</a>
-              <a href="references/elements/bacteria/references/elements/staphyllococcus/index.html" data-nsd-label-uuid="f6971f51-1cb1-4494-b423-3469444228a0" class="list-group-item list-group-action">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACOklEQVR4Xp2U6YuNYRjGL0v2NCb7MkY+GIPISJYwCCNMZpSMpRSyNZTlgw8kSpbs5QuRIkaIZMm+Df4sv+vcz3vOe04njKt+9b7Pft/39TxSzzQG5kHfyo7/UTN8govwAnqX9f6D5sIRaFNMvgOrYSncgimloX/XAbgPa+E4PIWDcAYWwA9YAS/hM5yDgZ5YTf2hW3GaCanNC7XATrig2Mjhj0r92+Bm+i4qS/RYeAB9cn2esANqYQgcVSy6Kzfmg3LF2gM/4RcshC8wKfUNgNcwGabCROiETak/0zfo5Q+v6hBXwUh4Aw3wTpEjb7QBdhemxYbGmy9SRHQWTqb+wqqeNAtmw0PYoghtkKII4+GaIm97FVV32+U03ikpnC6Td3RYXTAHLsFjRSpGwCE4DHXwRBH6SkVE3qBZFXLYHlyjsMQSGA7H4AqcgK2KW3IV5kNjGuv2e9ChnLLQtiuskeXLcpjj4KPCczZ1q2LBG4qxLtjtNL4oJ34/bK5od5Gc32Uqt1Y/+KoI2cZfn/oKsuemKwZ+V8nQGxU3xqexXTzJ9vCpvcg0RQFdzDINVljAmgnPFOH5Vjg3M6AJXkF9GudF/F9VPoHN7CTvUyR6mOJOn1eY3GZ2WtrTHMuvztDcf1GPYLliosOxB08rXpvFio18Ulsnk73o9vwVLcpP0xqFWX1rfN28uzdxqM9hNLxXFMGb3FW8QFXlYtiwPt261OYCvIXrCp9Zfon8SJxSKec9kqvtm1N2rf6k37FuYXzdoKigAAAAAElFTkSuQmCC" class="nsd-app-label-icon"/>Staphyllococcus</a>
+              <a href="references/elements/bacteria/references/elements/streptococcus/index.html" data-nsd-label-uuid="b1b896ae-2c8d-4a88-9001-7332ba806b24" class="list-group-item list-group-action">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB8UlEQVR4Xq3TS4iNcRzG8YeGGESibGYxRYhSknFJpHFbsKLYUC4rl5LMQhG5LwyJhVIKC0q55Jbc7xMhpawlWaAUVpLv4zlnvOdwxgx+9WnmnPf9//vdjvRv0R1D0av6wd/EADzFIzzDvMrHXY/NOI9NOII36FZ8obNRhyk4h8nYgnW4gx6F9zoVvuwunuMYnmABWrGn8N4vMQ5bsUhpfAMWYrVS3nXswgccUvpXs9yp+IxtSo/sC/bhBbZjApbgMMbmWGXUY42S9k2sxQVlgm72fuzAPSWrvTiAk6qR2Qm8xjR8wlyMxii8xwilV5OUcpswEX0xH9NVuNjZXcZx5WLv1jucxX0sx0OlVA9kdo6pP17iKk7hYOn7Hzf7gBd1pFLuitKBcjgTr8rgwneLldJv4KLSmt7lhzOVzJzRUXW8T564s3msDM6tcSseKGtVEcWLBmJQ4XM5nJGn7R5+wyUlEa9VzdioDMPb78mvUn6v/uw+e/e83LdKz9pLLUY/Zbou31m0YSm+Ks3fifV4i+FKz69gmA9XxxC80s/0/bOao1zijDxp/z2t7Kan6s2Y5cO/ixal0X7xGj4qpbrpt5V1Ga9M9kzpTIexEsvQjBnKBP2/d86DGoPd2KCs0B+jj1KCy3LvfOl/iUb0rP6yK/Ed7DZrmxg0HPUAAAAASUVORK5CYII=" class="nsd-app-label-icon">Streptococcus</a>
+              <a href="references/elements/bacteria/references/elements/lactobacyllus/index.html" data-nsd-label-uuid="4d192ec4-12bc-4c22-b9a2-fdf1f67109db" class="list-group-item list-group-action">Lactobacyllus</a>
+              <a href="references/elements/bacteria/references/elements/helicobacter/index.html" data-nsd-label-uuid="2a5e6972-6740-4294-a58e-6412b9dcf1a4" class="list-group-item list-group-action">Helicobacter</a>
+              <a href="references/elements/bacteria/references/elements/bifidobacterium/index.html" data-nsd-label-uuid="df35be5b-429a-4f9d-973d-971e420154ef" class="list-group-item list-group-action">Bifidobacterium</a>
+              <a href="references/elements/bacteria/references/elements/echericia-colli/index.html" data-nsd-label-uuid="3e484493-a69f-447a-b2cd-c5686c744408" class="list-group-item list-group-action">Echericia Colli</a>
+              <a href="references/elements/bacteria/references/elements/staphyllococcus/index.html" data-nsd-label-uuid="6a529dfb-7cfa-468e-a48f-5da240a49f80" class="list-group-item list-group-action">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACOklEQVR4Xp2U6YuNYRjGL0v2NCb7MkY+GIPISJYwCCNMZpSMpRSyNZTlgw8kSpbs5QuRIkaIZMm+Df4sv+vcz3vOe04njKt+9b7Pft/39TxSzzQG5kHfyo7/UTN8govwAnqX9f6D5sIRaFNMvgOrYSncgimloX/XAbgPa+E4PIWDcAYWwA9YAS/hM5yDgZ5YTf2hW3GaCanNC7XATrig2Mjhj0r92+Bm+i4qS/RYeAB9cn2esANqYQgcVSy6Kzfmg3LF2gM/4RcshC8wKfUNgNcwGabCROiETak/0zfo5Q+v6hBXwUh4Aw3wTpEjb7QBdhemxYbGmy9SRHQWTqb+wqqeNAtmw0PYoghtkKII4+GaIm97FVV32+U03ikpnC6Td3RYXTAHLsFjRSpGwCE4DHXwRBH6SkVE3qBZFXLYHlyjsMQSGA7H4AqcgK2KW3IV5kNjGuv2e9ChnLLQtiuskeXLcpjj4KPCczZ1q2LBG4qxLtjtNL4oJ34/bK5od5Gc32Uqt1Y/+KoI2cZfn/oKsuemKwZ+V8nQGxU3xqexXTzJ9vCpvcg0RQFdzDINVljAmgnPFOH5Vjg3M6AJXkF9GudF/F9VPoHN7CTvUyR6mOJOn1eY3GZ2WtrTHMuvztDcf1GPYLliosOxB08rXpvFio18Ulsnk73o9vwVLcpP0xqFWX1rfN28uzdxqM9hNLxXFMGb3FW8QFXlYtiwPt261OYCvIXrCp9Zfon8SJxSKec9kqvtm1N2rf6k37FuYXzdoKigAAAAAElFTkSuQmCC" class="nsd-app-label-icon">Staphyllococcus</a>
             </div>
           </div>
         </div>
-        <div data-nsd-label-uuid="a7733e11-a303-4167-8c13-c21a508dc0a8" data-nsd-action-uris="uuid:a7733e11-a303-4167-8c13-c21a508dc0a8" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="b5c3dd1f-1aa9-4c80-a085-9c50fa3d493c" data-nsd-action-uris="uuid:b5c3dd1f-1aa9-4c80-a085-9c50fa3d493c" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <H1><span data-nsd-label-uuid="a7733e11-a303-4167-8c13-c21a508dc0a8" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
-                </H1>
+                <h1><span data-nsd-label-uuid="b5c3dd1f-1aa9-4c80-a085-9c50fa3d493c" class="nsd-app-content-panel-title"><span class="fas fa-search nsd-app-label-icon"></span>Search</span>
+                </h1>
               </div>
             </div>
             <div class="row nsd-app-content-panel-content-row">
@@ -103,23 +139,9 @@
      	<div id="search-app" class="container-fluid">
      		<div class="row">
      			<div class="col">
-					<b-form-group
-			          label="Filter"
-			          label-for="filter-input"
-			          label-cols-sm="3"
-			          label-align-sm="right"
-			          label-size="sm"
-			          class="mb-0"
-					  description="You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'"	          
-			        >
+					<b-form-group label="Filter" label-for="filter-input" label-cols-sm="3" label-align-sm="right" label-size="sm" class="mb-0" description="You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'">
 			          <b-input-group size="sm">
-			            <b-form-input
-			              id="filter-input"
-			              v-model="filter"
-			              type="search"
-			              placeholder="Type to Search"
-			              debounce="700"
-			            ></b-form-input>
+			            <b-form-input id="filter-input" v-model="filter" type="search" placeholder="Type to Search" debounce="700"></b-form-input>
 			
 			            <b-input-group-append>
 			              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
@@ -135,12 +157,7 @@
 	        		</div>
 	        	</div>
 	        	<div class="col">
-			        <b-card 
-			        	v-for="searchResult in searchResults" 
-			        	:header-html="searchResult.title" 
-			        	:footer="searchResult.path"
-			        	class="my-1"
-			        	>
+			        <b-card v-for="searchResult in searchResults" :header-html="searchResult.title" :footer="searchResult.path" class="my-1">
 			        	
 			        	<b-card-text><span v-html="searchResult.content"></span></b-card-text>
 			        </b-card>
@@ -293,7 +310,7 @@
 		
 
 <script>$(document).ready( function() {
-$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://graph.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"a7733e11-a303-4167-8c13-c21a508dc0a8","icon":"fas fa-search","id":"dd4fb22c-11fb-4d05-9519-9cff4ebdaa9e","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"59a7575b-eb14-46e0-a12a-e33edf6fb473","icon":"fas fa-book","id":"6fb0df76-f5d2-4080-a068-d08ff9223d96","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/graph';"},"data-nsd-label-uuid":"4e086cef-aafe-4e72-aa90-676398af106c","icon":"fab fa-github","id":"0f975311-3a8d-4482-983f-fbbe6a06efa9","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"f52b2c91-c8d4-49ad-b6b3-4e935e627b21","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"6e846fb1-e998-4bb9-a3f0-1b7dec48786d","text":"Nasdanika Graph Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/bird/index.html';"},"data-nsd-label-uuid":"5e608084-cabf-4618-835a-bb457f97862a","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABpUlEQVR4XrWUSyiFURSFl0dRlBTyCFHKY6BMzBhQZGBoYKQ8ykCG5gxkwoQiopQpIwp5lZFIkQEjA0mJpOSR11r2if/+978Pxaqv/nP2ueucs8/eF/hn5ZJhskKmSVlo+HcqJBfkmIySLXJHaryL4lEi6SL7ZJekw8wTyAzM+FfKJI/kg3STZrLoYtXkmSS7cdySiUx7ffNVsI1WSZMvFlMT5IQUu7Fyd0POyBp5JZukxMVjKoMcwIyVvyMyS5JcvJKswzapdXMxNUYWSD7sqjLxSg84Tq5IgS8WqH6yB3uodwSXjE68TSZ984HSVV5g19+A5S4lZIWpgTzB1kWVcndO+kip+z4kLfjJpaQy0saNnrmI6iG3MMMcMgc7jbponnS4dadkyH1HlU65BGtBmUpZsFPLXFUgtcFKqd2No0q5WYb18iCpgF0zj3SSIrdOj6hOiuvqOukIrHy8aBOZ6JVlrDX3CK6IMKXCcqdr1sNaURu1wppAxlOwMrokaV+/iiD17gDZIdcIX+w1fiMPsPqNKJmp1YT+cLNDw9+ScR0p9wf+RJ8EvFW3ZAxeBAAAAABJRU5ErkJggg==","id":"96fbc59c-be62-460e-ac27-98029af6e874","text":"Bird","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/fish/index.html';"},"data-nsd-label-uuid":"107f6eae-482c-45c3-ada9-c8985ac33d60","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABcElEQVR4Xu3TyytEYRjH8Se3clmIyF0SpSRhYyEUYoENuSzY20rJbWFhp5QtuWQnskBSkpBcIhZKWdko7KyUhe8zzzkzZ8acxh/gV5/mzDzPO533Pc8R+Y+TTIxjH9c4wCI6kejp+1N6cYl+5CIBjdjBN94wiWR3QawcYcC5zsc2djGEerRjHldO3TfZzmcWLlCLOzQHO8Kjdd1JSmRB04Z3CRX1jx5QEuyInhFMRf6oORXbxiwa8IrysI7fmcYzPlHqLWTgBHFYxRMqvA1R0oJNFGEQt6hxi7p4w7nWkdCmWNEnXoVCFKBM7EZytJgm9hBScS62ja7AMv+MYsLzXY/pWGyXgew5htGDL7S6xSjRndyL3Uyd2JbzvA2VYnMVjw4s40ZsoP0yhi2x0SmOqIVlHU1ic3mIGaR76vqG9Ikd05r4zKE3+qYsiA2uvtN6Jy94FDv4D6yg2l0QK3qw3VgS+/Mzsac6JzYuSaHW/5Af+jo/dw/wAc0AAAAASUVORK5CYII=","id":"d5ba0b02-0e7a-422c-addd-d1597bfed4de","text":"Fish","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/streptococcus/index.html';"},"data-nsd-label-uuid":"981dc41c-6cc8-43d5-855e-39824725dcfc","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB8UlEQVR4Xq3TS4iNcRzG8YeGGESibGYxRYhSknFJpHFbsKLYUC4rl5LMQhG5LwyJhVIKC0q55Jbc7xMhpawlWaAUVpLv4zlnvOdwxgx+9WnmnPf9//vdjvRv0R1D0av6wd/EADzFIzzDvMrHXY/NOI9NOII36FZ8obNRhyk4h8nYgnW4gx6F9zoVvuwunuMYnmABWrGn8N4vMQ5bsUhpfAMWYrVS3nXswgccUvpXs9yp+IxtSo/sC/bhBbZjApbgMMbmWGXUY42S9k2sxQVlgm72fuzAPSWrvTiAk6qR2Qm8xjR8wlyMxii8xwilV5OUcpswEX0xH9NVuNjZXcZx5WLv1jucxX0sx0OlVA9kdo6pP17iKk7hYOn7Hzf7gBd1pFLuitKBcjgTr8rgwneLldJv4KLSmt7lhzOVzJzRUXW8T564s3msDM6tcSseKGtVEcWLBmJQ4XM5nJGn7R5+wyUlEa9VzdioDMPb78mvUn6v/uw+e/e83LdKz9pLLUY/Zbou31m0YSm+Ks3fifV4i+FKz69gmA9XxxC80s/0/bOao1zijDxp/z2t7Kan6s2Y5cO/ixal0X7xGj4qpbrpt5V1Ga9M9kzpTIexEsvQjBnKBP2/d86DGoPd2KCs0B+jj1KCy3LvfOl/iUb0rP6yK/Ed7DZrmxg0HPUAAAAASUVORK5CYII=","id":"7d975efa-c8b8-48e7-980f-9b185e1ab529","text":"Streptococcus","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/lactobacyllus/index.html';"},"data-nsd-label-uuid":"c91c4320-4902-4ec0-898f-085468079116","id":"def3cc99-c838-457b-9a68-fe67781cb799","text":"Lactobacyllus","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/helicobacter/index.html';"},"data-nsd-label-uuid":"7ea38442-4c15-48b9-bc9c-586ea331587f","id":"723eb128-aab4-4a49-b914-08dfc471caf9","text":"Helicobacter","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/bifidobacterium/index.html';"},"data-nsd-label-uuid":"88c32041-e4f5-4d87-b056-29b40c20568e","id":"0fd50a68-336a-452e-9eee-c17319e289ab","text":"Bifidobacterium","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/echericia-colli/index.html';"},"data-nsd-label-uuid":"62dbf421-1bbc-48d1-a122-00c370a79be9","id":"dc0efe8b-c11d-46b9-9c00-64cb66ffca05","text":"Echericia Colli","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/staphyllococcus/index.html';"},"data-nsd-label-uuid":"f6971f51-1cb1-4494-b423-3469444228a0","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACOklEQVR4Xp2U6YuNYRjGL0v2NCb7MkY+GIPISJYwCCNMZpSMpRSyNZTlgw8kSpbs5QuRIkaIZMm+Df4sv+vcz3vOe04njKt+9b7Pft/39TxSzzQG5kHfyo7/UTN8govwAnqX9f6D5sIRaFNMvgOrYSncgimloX/XAbgPa+E4PIWDcAYWwA9YAS/hM5yDgZ5YTf2hW3GaCanNC7XATrig2Mjhj0r92+Bm+i4qS/RYeAB9cn2esANqYQgcVSy6Kzfmg3LF2gM/4RcshC8wKfUNgNcwGabCROiETak/0zfo5Q+v6hBXwUh4Aw3wTpEjb7QBdhemxYbGmy9SRHQWTqb+wqqeNAtmw0PYoghtkKII4+GaIm97FVV32+U03ikpnC6Td3RYXTAHLsFjRSpGwCE4DHXwRBH6SkVE3qBZFXLYHlyjsMQSGA7H4AqcgK2KW3IV5kNjGuv2e9ChnLLQtiuskeXLcpjj4KPCczZ1q2LBG4qxLtjtNL4oJ34/bK5od5Gc32Uqt1Y/+KoI2cZfn/oKsuemKwZ+V8nQGxU3xqexXTzJ9vCpvcg0RQFdzDINVljAmgnPFOH5Vjg3M6AJXkF9GudF/F9VPoHN7CTvUyR6mOJOn1eY3GZ2WtrTHMuvztDcf1GPYLliosOxB08rXpvFio18Ulsnk73o9vwVLcpP0xqFWX1rfN28uzdxqM9hNLxXFMGb3FW8QFXlYtiwPt261OYCvIXrCp9Zfon8SJxSKec9kqvtm1N2rf6k37FuYXzdoKigAAAAAElFTkSuQmCC","id":"9bdd1b57-42b7-42f0-8cdb-def14c60f218","text":"Staphyllococcus","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"4935a47d-0e4c-48a9-b08c-cd1da1572485","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB4UlEQVR4Xp2UuyuHYRTHjzu5bQa3AYWUS1IG5LIolwHJQBaDwcCEQREJiwEDoyiDkmsYWFwSuRsUBoPyX/h+nef59Xr8fr9+fOtT73vO8573POc55xH5u+LAJHgC7+ABTINE76JQFQWOwAooAZ2gDEyAa/lH0CGwDPIcexEYBVOOPajSwC1ocx1GzaL+kBQOdkVrleT4rCrAm2v0pwgwD1ZF6xVITeDCNbqqBqeideOWAok7GAZrroPiSXaAc7APBkG58bH4h2AORBobVQCWQKvH9r21PvAKFkEXqBXtO6sDUAoWQIvHzh++gFhrSAFnYN042RbR1ukRM2OwS9FsqUwwDsbsogTwKJpdlmg9AonbZGY2GNfyoD5Asl00Itrpheadxd8GW6InF0zMbgP0e41XoN08M9iOaBOni/ZeI8gXnV3vKXJNDzgWZ1csJotPMTMGssoQzdRmzdJQ8aASfIIcY/PpGdSZZ37sBtwEYaJBc429Ctwb2y/xdLvNM2vGbTIog+2BBuOzYhCu6XXsPg2AWVBs3hmUmRJvMM4wrytm/OMQXMWAG9GJYFZu29DPwefVxVmt/+n2r1TRmWVWNaKjxDqx52ZEL1UeSrb9IBRxMliXE3AnehWxpXjTcNxC0hfxz1IBP0UdRwAAAABJRU5ErkJggg==","id":"e333f225-1ff5-4f6d-b826-a859024a42ec","text":"Bacteria","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"73dea278-4c6b-4989-a64b-d922a0d411af","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABQ0lEQVR4XuWUzy4EQRjEi5MbLkhcHNiwPICENyAhwXoHdyGcPQYRN4REhAfAAcFdFhd/Lp4ACapU7+q2ltm9biW/pGfq+2p6prsHaFhNknWyRIZS60/lySJZI7OxocBD8kTeyQ7pjAt+SN42XPtADkghqQhqJuPkltyTvtT+0iB5JDdkjDSl9rcmyFEYt5ITuDFXrvBYb3FM2sI99ai3QjPkI4znSC85J9fwA9rhWV3CM1eNpB71VigO3CIb8LfSLPfIPvwZOoKnGilzYKlhmLyQNzL6i19z4Ah5JfPhWqo7sAveFnplreYK6Y58KXOg9uUFKcIL0gIv0FXwag7UWLPrKRXAK/8cvMyBU/DKKmwgqbDy5A6umUaVQJ3DU9jUcdqEt0c1aTvtwvXiDD6+ZSlwlSyQ/tj4R/qRLMM/liSwgfQJ3old2gw9XZMAAAAASUVORK5CYII=","id":"1f12f124-0d50-4d6c-b115-635dce0830c4","text":"LIVING BEINGS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
+$('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; }; tree.search.search_callback = (results, node) => results.split(' ').includes(node.original['data-nsd-label-uuid']); return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='https://graph.models.nasdanika.org';"},"children":[{"children":[{"data-nsd-label-uuid":"b5c3dd1f-1aa9-4c80-a085-9c50fa3d493c","icon":"fas fa-search","id":"ab3d5495-3198-4950-8c15-88e68507e27b","text":"Search","type":"leaf"},{"a_attr":{"onclick":"window.location='glossary.html';"},"data-nsd-label-uuid":"3e361f8d-ff5d-4841-949a-1a757b51af13","icon":"fas fa-book","id":"e3f78409-db07-4b91-882a-cc4c56087f1b","text":"Glossary","type":"leaf"}],"text":"Children"},{"children":[{"a_attr":{"onclick":"window.location='https://github.com/Nasdanika-Models/graph';"},"data-nsd-label-uuid":"c555e881-31f6-4629-88ce-269512a4647f","icon":"fab fa-github","id":"e79858d8-d954-40ab-9087-633d810c7433","text":"Sources","type":"leaf"}],"text":"Navigation"}],"data-nsd-label-uuid":"8d453422-711f-4ab4-9ae0-ab9e33edcd00","icon":"https://docs.nasdanika.org/images/nasdanika-logo.png","id":"fe3e4116-1e63-4b20-8d55-52d72ecf9a24","text":"Nasdanika Graph Model","type":"leaf"},{"a_attr":{"onclick":"window.location='index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/bird/index.html';"},"data-nsd-label-uuid":"c6f2a46f-8dd7-46a4-88f5-13a3f384124f","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABpUlEQVR4XrWUSyiFURSFl0dRlBTyCFHKY6BMzBhQZGBoYKQ8ykCG5gxkwoQiopQpIwp5lZFIkQEjA0mJpOSR11r2if/+978Pxaqv/nP2ueucs8/eF/hn5ZJhskKmSVlo+HcqJBfkmIySLXJHaryL4lEi6SL7ZJekw8wTyAzM+FfKJI/kg3STZrLoYtXkmSS7cdySiUx7ffNVsI1WSZMvFlMT5IQUu7Fyd0POyBp5JZukxMVjKoMcwIyVvyMyS5JcvJKswzapdXMxNUYWSD7sqjLxSg84Tq5IgS8WqH6yB3uodwSXjE68TSZ984HSVV5g19+A5S4lZIWpgTzB1kWVcndO+kip+z4kLfjJpaQy0saNnrmI6iG3MMMcMgc7jbponnS4dadkyH1HlU65BGtBmUpZsFPLXFUgtcFKqd2No0q5WYb18iCpgF0zj3SSIrdOj6hOiuvqOukIrHy8aBOZ6JVlrDX3CK6IMKXCcqdr1sNaURu1wppAxlOwMrokaV+/iiD17gDZIdcIX+w1fiMPsPqNKJmp1YT+cLNDw9+ScR0p9wf+RJ8EvFW3ZAxeBAAAAABJRU5ErkJggg==","id":"ffed4967-c2c6-40b4-9729-fbdbba758baa","text":"Bird","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/fish/index.html';"},"data-nsd-label-uuid":"3551e2b6-b21d-4b70-880c-6f60684de61e","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABcElEQVR4Xu3TyytEYRjH8Se3clmIyF0SpSRhYyEUYoENuSzY20rJbWFhp5QtuWQnskBSkpBcIhZKWdko7KyUhe8zzzkzZ8acxh/gV5/mzDzPO533Pc8R+Y+TTIxjH9c4wCI6kejp+1N6cYl+5CIBjdjBN94wiWR3QawcYcC5zsc2djGEerRjHldO3TfZzmcWLlCLOzQHO8Kjdd1JSmRB04Z3CRX1jx5QEuyInhFMRf6oORXbxiwa8IrysI7fmcYzPlHqLWTgBHFYxRMqvA1R0oJNFGEQt6hxi7p4w7nWkdCmWNEnXoVCFKBM7EZytJgm9hBScS62ja7AMv+MYsLzXY/pWGyXgew5htGDL7S6xSjRndyL3Uyd2JbzvA2VYnMVjw4s40ZsoP0yhi2x0SmOqIVlHU1ic3mIGaR76vqG9Ikd05r4zKE3+qYsiA2uvtN6Jy94FDv4D6yg2l0QK3qw3VgS+/Mzsac6JzYuSaHW/5Af+jo/dw/wAc0AAAAASUVORK5CYII=","id":"acfef360-bde3-486d-80eb-ef4615c82e2c","text":"Fish","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/index.html';"},"children":[{"children":[{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/streptococcus/index.html';"},"data-nsd-label-uuid":"b1b896ae-2c8d-4a88-9001-7332ba806b24","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB8UlEQVR4Xq3TS4iNcRzG8YeGGESibGYxRYhSknFJpHFbsKLYUC4rl5LMQhG5LwyJhVIKC0q55Jbc7xMhpawlWaAUVpLv4zlnvOdwxgx+9WnmnPf9//vdjvRv0R1D0av6wd/EADzFIzzDvMrHXY/NOI9NOII36FZ8obNRhyk4h8nYgnW4gx6F9zoVvuwunuMYnmABWrGn8N4vMQ5bsUhpfAMWYrVS3nXswgccUvpXs9yp+IxtSo/sC/bhBbZjApbgMMbmWGXUY42S9k2sxQVlgm72fuzAPSWrvTiAk6qR2Qm8xjR8wlyMxii8xwilV5OUcpswEX0xH9NVuNjZXcZx5WLv1jucxX0sx0OlVA9kdo6pP17iKk7hYOn7Hzf7gBd1pFLuitKBcjgTr8rgwneLldJv4KLSmt7lhzOVzJzRUXW8T564s3msDM6tcSseKGtVEcWLBmJQ4XM5nJGn7R5+wyUlEa9VzdioDMPb78mvUn6v/uw+e/e83LdKz9pLLUY/Zbou31m0YSm+Ks3fifV4i+FKz69gmA9XxxC80s/0/bOao1zijDxp/z2t7Kan6s2Y5cO/ixal0X7xGj4qpbrpt5V1Ga9M9kzpTIexEsvQjBnKBP2/d86DGoPd2KCs0B+jj1KCy3LvfOl/iUb0rP6yK/Ed7DZrmxg0HPUAAAAASUVORK5CYII=","id":"3c5e4b93-20e6-4d1f-8773-1a20614d5b76","text":"Streptococcus","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/lactobacyllus/index.html';"},"data-nsd-label-uuid":"4d192ec4-12bc-4c22-b9a2-fdf1f67109db","id":"f4a95200-7d72-4a6f-acb1-3cc97abcc042","text":"Lactobacyllus","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/helicobacter/index.html';"},"data-nsd-label-uuid":"2a5e6972-6740-4294-a58e-6412b9dcf1a4","id":"bceddbec-67a2-4fd5-8457-a12945447080","text":"Helicobacter","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/bifidobacterium/index.html';"},"data-nsd-label-uuid":"df35be5b-429a-4f9d-973d-971e420154ef","id":"1c5ed694-23d5-4017-ac71-2fa735767fe2","text":"Bifidobacterium","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/echericia-colli/index.html';"},"data-nsd-label-uuid":"3e484493-a69f-447a-b2cd-c5686c744408","id":"e29a7480-9302-49c9-bfe1-06fae59cc482","text":"Echericia Colli","type":"leaf"},{"a_attr":{"onclick":"window.location='references/elements/bacteria/references/elements/staphyllococcus/index.html';"},"data-nsd-label-uuid":"6a529dfb-7cfa-468e-a48f-5da240a49f80","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACOklEQVR4Xp2U6YuNYRjGL0v2NCb7MkY+GIPISJYwCCNMZpSMpRSyNZTlgw8kSpbs5QuRIkaIZMm+Df4sv+vcz3vOe04njKt+9b7Pft/39TxSzzQG5kHfyo7/UTN8govwAnqX9f6D5sIRaFNMvgOrYSncgimloX/XAbgPa+E4PIWDcAYWwA9YAS/hM5yDgZ5YTf2hW3GaCanNC7XATrig2Mjhj0r92+Bm+i4qS/RYeAB9cn2esANqYQgcVSy6Kzfmg3LF2gM/4RcshC8wKfUNgNcwGabCROiETak/0zfo5Q+v6hBXwUh4Aw3wTpEjb7QBdhemxYbGmy9SRHQWTqb+wqqeNAtmw0PYoghtkKII4+GaIm97FVV32+U03ikpnC6Td3RYXTAHLsFjRSpGwCE4DHXwRBH6SkVE3qBZFXLYHlyjsMQSGA7H4AqcgK2KW3IV5kNjGuv2e9ChnLLQtiuskeXLcpjj4KPCczZ1q2LBG4qxLtjtNL4oJ34/bK5od5Gc32Uqt1Y/+KoI2cZfn/oKsuemKwZ+V8nQGxU3xqexXTzJ9vCpvcg0RQFdzDINVljAmgnPFOH5Vjg3M6AJXkF9GudF/F9VPoHN7CTvUyR6mOJOn1eY3GZ2WtrTHMuvztDcf1GPYLliosOxB08rXpvFio18Ulsnk73o9vwVLcpP0xqFWX1rfN28uzdxqM9hNLxXFMGb3FW8QFXlYtiwPt261OYCvIXrCp9Zfon8SJxSKec9kqvtm1N2rf6k37FuYXzdoKigAAAAAElFTkSuQmCC","id":"1cf0a7f8-aff8-4233-9543-835c694a5ad3","text":"Staphyllococcus","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"593c3488-0b33-456c-809d-2d503db19e4c","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB4UlEQVR4Xp2UuyuHYRTHjzu5bQa3AYWUS1IG5LIolwHJQBaDwcCEQREJiwEDoyiDkmsYWFwSuRsUBoPyX/h+nef59Xr8fr9+fOtT73vO8573POc55xH5u+LAJHgC7+ABTINE76JQFQWOwAooAZ2gDEyAa/lH0CGwDPIcexEYBVOOPajSwC1ocx1GzaL+kBQOdkVrleT4rCrAm2v0pwgwD1ZF6xVITeDCNbqqBqeideOWAok7GAZrroPiSXaAc7APBkG58bH4h2AORBobVQCWQKvH9r21PvAKFkEXqBXtO6sDUAoWQIvHzh++gFhrSAFnYN042RbR1ukRM2OwS9FsqUwwDsbsogTwKJpdlmg9AonbZGY2GNfyoD5Asl00Itrpheadxd8GW6InF0zMbgP0e41XoN08M9iOaBOni/ZeI8gXnV3vKXJNDzgWZ1csJotPMTMGssoQzdRmzdJQ8aASfIIcY/PpGdSZZ37sBtwEYaJBc429Ctwb2y/xdLvNM2vGbTIog+2BBuOzYhCu6XXsPg2AWVBs3hmUmRJvMM4wrytm/OMQXMWAG9GJYFZu29DPwefVxVmt/+n2r1TRmWVWNaKjxDqx52ZEL1UeSrb9IBRxMliXE3AnehWxpXjTcNxC0hfxz1IBP0UdRwAAAABJRU5ErkJggg==","id":"8f7c93bc-1ecb-46d5-a706-8be16ab446c9","text":"Bacteria","type":"leaf"}],"text":"Elements"}],"data-nsd-label-uuid":"de4be59d-57a9-4b4a-9946-99275c72c7c2","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABQ0lEQVR4XuWUzy4EQRjEi5MbLkhcHNiwPICENyAhwXoHdyGcPQYRN4REhAfAAcFdFhd/Lp4ACapU7+q2ltm9biW/pGfq+2p6prsHaFhNknWyRIZS60/lySJZI7OxocBD8kTeyQ7pjAt+SN42XPtADkghqQhqJuPkltyTvtT+0iB5JDdkjDSl9rcmyFEYt5ITuDFXrvBYb3FM2sI99ai3QjPkI4znSC85J9fwA9rhWV3CM1eNpB71VigO3CIb8LfSLPfIPvwZOoKnGilzYKlhmLyQNzL6i19z4Ah5JfPhWqo7sAveFnplreYK6Y58KXOg9uUFKcIL0gIv0FXwag7UWLPrKRXAK/8cvMyBU/DKKmwgqbDy5A6umUaVQJ3DU9jUcdqEt0c1aTvtwvXiDD6+ZSlwlSyQ/tj4R/qRLMM/liSwgfQJ3old2gw9XZMAAAAASUVORK5CYII=","id":"3857ee6e-2973-44ee-9424-fa0bfe63d8c2","text":"LIVING BEINGS","type":"leaf"}]},"search":{"show_only_matches":true},"plugins":["state","search"],"state":{"key":"nsd-site-map-tree"}}));
 });</script>
 				
 		</div>
@@ -308,7 +325,7 @@ $('#nsd-site-map-tree').jstree(function(tree) { tree.state.filter = function(sta
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="4e086cef-aafe-4e72-aa90-676398af106c" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/graph" data-nsd-label-uuid="c555e881-31f6-4629-88ce-269512a4647f" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
