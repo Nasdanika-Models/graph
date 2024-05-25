@@ -15,14 +15,14 @@ import org.nasdanika.html.model.app.graph.emf.ActionGenerator;
 import org.nasdanika.models.echarts.graph.GraphPackage;
 import org.nasdanika.ncore.NcorePackage;
 
-public class GraphActionGenerator extends ActionGenerator<GraphNodeProcessorFactory> {
+public class GraphActionGenerator extends ActionGenerator {
 
 	public GraphActionGenerator(
-			Collection<? extends EObject> sources,
-			GraphNodeProcessorFactory nodeProcessorFactory, 
+			Collection<? extends EObject> sources, 
 			Collection<? extends EObject> references,
-			Function<? super EObject, URI> uriResolver) {
-		super(sources, nodeProcessorFactory, references, uriResolver);
+			Function<? super EObject, URI> uriResolver,
+			GraphNodeProcessorFactory nodeProcessorFactory) {
+		super(sources, references, uriResolver, nodeProcessorFactory);
 	}
 	
 	private static Map<EPackage, URI> REFERENCES = Map.ofEntries(
@@ -35,15 +35,15 @@ public class GraphActionGenerator extends ActionGenerator<GraphNodeProcessorFact
 			URI baseURI,
 			GraphNodeProcessorFactory nodeProcessorFactory) {
 		super(
-			Collections.singleton(source),
-			nodeProcessorFactory, 
+			Collections.singleton(source), 
 			REFERENCES.keySet(), 
 			eObj -> {
 				if (eObj == source) {
 					return baseURI;
 				}
 				return REFERENCES.get(eObj);
-			});
+			},
+			nodeProcessorFactory);
 	}
 		
 	public GraphActionGenerator(EObject source, GraphNodeProcessorFactory nodeProcessorFactory) {
