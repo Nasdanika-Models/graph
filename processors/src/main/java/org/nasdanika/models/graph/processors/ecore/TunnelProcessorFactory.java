@@ -26,9 +26,11 @@ public class TunnelProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "A connection which logically groups other connections",
 			documentation = """
-					....
+					Tunnel is a connection which logically groups other connections. 
+					For example, two composite nodes may have a tunnel connection which groups connections between their child elements. 
+					A real life example is a VPN tunnel between two networks.
 					"""
 //			icon = "..."
 	)
@@ -54,9 +56,9 @@ public class TunnelProcessorFactory {
 			nsURI = org.nasdanika.graph.model.ModelPackage.eNS_URI,
 			classID = org.nasdanika.graph.model.ModelPackage.TUNNEL,
 			featureID = org.nasdanika.graph.model.ModelPackage.TUNNEL__CONNECTIONS,
-			description = "...",
+			description = "Connections in this tunnel",
 			documentation = """
-					...
+					Connections in this tunnel
 					"""
 	)
 	public EAttributeNodeProcessor createConnectionsProcessor(

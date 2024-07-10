@@ -24,9 +24,10 @@ public class ConnectionProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Connections are contained by their source and uniquiely identified in the source by a string id",
 			documentation = """
-					....
+					Connections are contained by their source and uniquiely identified in the source by a string id. 
+					This allows to implement connection inheritance behaviors such as overriding (replacing), adding, or removing.
 					"""
 //			icon = "..."
 	)
@@ -52,9 +53,9 @@ public class ConnectionProcessorFactory {
 			nsURI = org.nasdanika.graph.model.ModelPackage.eNS_URI,
 			classID = org.nasdanika.graph.model.ModelPackage.CONNECTION,
 			featureID = org.nasdanika.graph.model.ModelPackage.CONNECTION__TARGET,
-			description = "...",
+			description = "Connection target",
 			documentation = """
-					...
+					Connection target
 					"""
 	)
 	public EAttributeNodeProcessor createTargetProcessor(
@@ -79,9 +80,9 @@ public class ConnectionProcessorFactory {
 			nsURI = org.nasdanika.graph.model.ModelPackage.eNS_URI,
 			classID = org.nasdanika.graph.model.ModelPackage.CONNECTION,
 			featureID = org.nasdanika.graph.model.ModelPackage.CONNECTION__BIDIRECTIONAL,
-			description = "...",
+			description = "Indicates that the connection is bidirectional",
 			documentation = """
-					...
+					Indicates that the connection is bidirectional
 					"""
 	)
 	public EAttributeNodeProcessor createBidirectionalProcessor(

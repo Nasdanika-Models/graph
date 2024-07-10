@@ -24,9 +24,10 @@ public class ConnectionSourceProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Source of connections uniquely identified by string ids",
 			documentation = """
-					....
+					Source of connections uniquely identified by string ids. 
+					It provides support for graph inheritance - replacing (overriding), adding, or removing connections.
 					"""
 //			icon = "..."
 	)
@@ -52,9 +53,9 @@ public class ConnectionSourceProcessorFactory {
 			nsURI = org.nasdanika.graph.model.ModelPackage.eNS_URI,
 			classID = org.nasdanika.graph.model.ModelPackage.CONNECTION_SOURCE,
 			featureID = org.nasdanika.graph.model.ModelPackage.CONNECTION_SOURCE__OUTGOING_CONNECTIONS,
-			description = "...",
+			description = "Outgoing connections uniquely identified by a string to support graph inheritance",
 			documentation = """
-					...
+					Outgoing connections uniquely identified by a string to support graph inheritance
 					"""
 	)
 	public EAttributeNodeProcessor createOutgoingConnectionsProcessor(

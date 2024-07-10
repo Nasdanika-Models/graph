@@ -24,9 +24,10 @@ public class NodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Node is both connection source and target",
 			documentation = """
-					....
+					Node is both connection source and target. 
+					I.e. it may have both incoming and outgoing connections.
 					"""
 //			icon = "..."
 	)

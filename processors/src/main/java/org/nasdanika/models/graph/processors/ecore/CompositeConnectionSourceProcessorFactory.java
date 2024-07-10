@@ -22,9 +22,10 @@ public class CompositeConnectionSourceProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Connection source which is also a sub-graph",
 			documentation = """
-					....
+					Connection source which is also a sub-graph. 
+					I.e. it may contain other graph elements.
 					"""
 //			icon = "..."
 	)

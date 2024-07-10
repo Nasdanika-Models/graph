@@ -22,9 +22,9 @@ public class CompositeConnectionTargetProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Connection target which is also as sub-graph",
 			documentation = """
-					....
+					Connection target which is also as sub-graph, i.e. it may contain other graph elements
 					"""
 //			icon = "..."
 	)

@@ -24,9 +24,10 @@ public class GraphElementProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Graph element uniquely identified in the containing graph by a string identifier",
 			documentation = """
-					....
+					Graph element uniquely identified in the containing graph by a string identifier (key). 
+					This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages.
 					"""
 //			icon = "..."
 	)

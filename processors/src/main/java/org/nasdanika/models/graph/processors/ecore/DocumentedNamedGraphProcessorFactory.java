@@ -22,9 +22,9 @@ public class DocumentedNamedGraphProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Graph with a name and documentation",
 			documentation = """
-					....
+					Graph with a name and documentation
 					"""
 //			icon = "..."
 	)

@@ -22,9 +22,9 @@ public class DocumentedNamedNodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Node with a name and documentation",
 			documentation = """
-					....
+					Node with a name and documentation
 					"""
 //			icon = "..."
 	)

@@ -24,9 +24,9 @@ public class DocumentedNamedSubGraphProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Sub-graph with a name and documentation",
 			documentation = """
-					....
+					Sub-graph with a name and documentation
 					"""
 //			icon = "..."
 	)

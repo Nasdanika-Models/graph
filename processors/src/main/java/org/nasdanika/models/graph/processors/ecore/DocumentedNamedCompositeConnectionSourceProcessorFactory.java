@@ -22,9 +22,9 @@ public class DocumentedNamedCompositeConnectionSourceProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Composite connection source with a name and documentation",
 			documentation = """
-					....
+					Composite connection source with a name and documentation
 					"""
 //			icon = "..."
 	)

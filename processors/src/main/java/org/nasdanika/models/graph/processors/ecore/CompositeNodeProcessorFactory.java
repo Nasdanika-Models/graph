@@ -22,9 +22,10 @@ public class CompositeNodeProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Node which is also a sub-graph",
 			documentation = """
-					....
+					Node which is also a sub-graph. 
+					I.e. it may contain other graph elements.
 					"""
 //			icon = "..."
 	)

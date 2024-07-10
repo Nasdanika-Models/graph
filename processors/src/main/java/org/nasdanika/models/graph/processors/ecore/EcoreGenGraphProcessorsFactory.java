@@ -112,33 +112,13 @@ public class EcoreGenGraphProcessorsFactory {
 	
 	@EPackageNodeProcessorFactory(
 			label = "Graph Model",
-			actionPrototype = """
-                    app-action:
-                        text: Param
-                        icon: fas fa-user					
-					""",
-			description = "A model of a family",
+			description = "Base classes for graph-like models",
 			documentation =  """
-				Family model is used to demonstrate different Nasdanika technologies such as:
+				Base classes for graph-like models such as process/flow and architecture models
 				
-				* Generating of metamodel (Ecore) documentation like this one
-				* Loading of models from MS Excel and Drawio diagrams
-				* Generation of HTML sites from loaded models		
+				TODO: Diagram with core concepts, adapting to graph code snippet, execution etc. reference to docs.nsd
 				
-				The model was created to mimic the model from [Eclipse Sirius Basic Family](https://wiki.eclipse.org/Sirius/Tutorials/BasicFamily) tutorial. 
-				This site uses fee icons from [Icons8](https://icons8.com/) and quotes [Wikipedia](https://www.wikipedia.org/) articles.
-				
-				The diagram below is interactive:
-				
-				 * Hover the mouse pointer over the shapes and connections to see tooltips
-				 * Click on the shapes and connections to navigate to the pages of the respective model elements.
-				   
-				Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. 				 				
-				
-				```drawio-resource
-				family.drawio
-				```
-						
+				Graph inheritance - all child elements are keyed by ID
 				"""
 	)
 	public EPackageNodeProcessor createEPackageProcessor(

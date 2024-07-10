@@ -1,11 +1,7 @@
-/**
- */
 package org.nasdanika.models.graph.processors.ecore;
 
 import java.util.function.BiConsumer;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
@@ -28,9 +24,10 @@ public class GraphProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Graph is a container of graph elements uniquely identified by a string",
 			documentation = """
-					....
+					Graph is a container of graph elements uniquely identified by a string. 
+					This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages.
 					"""
 //			icon = "..."
 	)
@@ -56,9 +53,10 @@ public class GraphProcessorFactory {
 			nsURI = org.nasdanika.graph.model.ModelPackage.eNS_URI,
 			classID = org.nasdanika.graph.model.ModelPackage.GRAPH,
 			featureID = org.nasdanika.graph.model.ModelPackage.GRAPH__ELEMENTS,
-			description = "...",
+			description = "Graph elements uniquely identified by a string",
 			documentation = """
-					...
+					Graph elements uniquely identified by a string. 
+					This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages.
 					"""
 	)
 	public EAttributeNodeProcessor createElementsProcessor(

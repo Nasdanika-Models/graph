@@ -24,9 +24,9 @@ public class DocumentedNamedTunnelProcessorFactory {
 	
 	@EClassifierNodeProcessorFactory(
 			// label = "...",
-			description = "...",
+			description = "Tunnel with a name and documentation",
 			documentation = """
-					....
+					Tunnel with a name and documentation
 					"""
 //			icon = "..."
 	)
