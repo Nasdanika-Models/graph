@@ -23,7 +23,7 @@ public class GraphElementProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			 label = "Graph Element",
 			description = "Graph element uniquely identified in the containing graph by a string identifier",
 			documentation = """
 					Graph element uniquely identified in the containing graph by a string identifier (key). 

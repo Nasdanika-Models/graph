@@ -113,13 +113,14 @@ public class EcoreGenGraphProcessorsFactory {
 	@EPackageNodeProcessorFactory(
 			label = "Graph Model",
 			description = "Base classes for graph-like models",
-			documentation =  """
-				Base classes for graph-like models such as process/flow and architecture models
-				
-				TODO: Diagram with core concepts, adapting to graph code snippet, execution etc. reference to docs.nsd
-				
-				Graph inheritance - all child elements are keyed by ID
-				"""
+			actionPrototype = """
+            app-action:
+              content:
+                content-markdown:
+                  source:
+                    content-resource:
+                      location: graph.md
+			"""
 	)
 	public EPackageNodeProcessor createEPackageProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
