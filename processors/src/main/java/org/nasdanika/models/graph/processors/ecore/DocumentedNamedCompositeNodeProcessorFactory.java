@@ -21,10 +21,10 @@ public class DocumentedNamedCompositeNodeProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Documented Named Composite Node",
 			description = "Composite node with a name and documentation",
 			documentation = """
-					Composite node with a name and documentation
+					[Composite node](../CompositeNode/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)

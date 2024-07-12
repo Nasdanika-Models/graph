@@ -21,10 +21,10 @@ public class DocumentedNamedGraphElementProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Documented Named Graph Element",
 			description = "Graph element with a name and documentation",
 			documentation = """
-					Graph element with a name and documentation
+					[Gaph element](../GraphElement/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)

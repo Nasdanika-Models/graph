@@ -21,10 +21,10 @@ public class CompositeConnectionTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Composite Connection Target",
 			description = "Connection target which is also as sub-graph",
 			documentation = """
-					Connection target which is also as sub-graph, i.e. it may contain other graph elements
+					[Connection target](../ConnectionTarget/index.html) which is also as [sub-graph](../SubGraph/index.html), i.e. it may contain other graph elements
 					"""
 //			icon = "..."
 	)

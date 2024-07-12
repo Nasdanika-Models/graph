@@ -23,10 +23,10 @@ public class ConnectionTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Connection Target",
 			description = "A graph element which can have incoming connections",
 			documentation = """
-					A graph element which can have incoming connections
+					A graph element which can have incoming [connections](../Connection/index.html)
 					"""
 //			icon = "..."
 	)
@@ -54,7 +54,7 @@ public class ConnectionTargetProcessorFactory {
 			featureID = org.nasdanika.graph.model.ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS,
 			description = "Incoming connections",
 			documentation = """
-					Incoming connections
+					Incoming [connections](../../../../Connection/index.html)
 					"""
 	)
 	public EAttributeNodeProcessor createIncomingConnectionsProcessor(

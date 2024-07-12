@@ -21,10 +21,10 @@ public class DocumentedNamedConnectionTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Documented Named Connection Target",
 			description = "Connection target with a name and documentation",
 			documentation = """
-					Connection target with a name and documentation
+					[Connection target](../ConnectionTarget/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)

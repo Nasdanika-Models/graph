@@ -23,10 +23,10 @@ public class ConnectionProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+//			label = "Connection",
 			description = "Connections are contained by their source and uniquiely identified in the source by a string id",
 			documentation = """
-					Connections are contained by their source and uniquiely identified in the source by a string id. 
+					Connections are contained by their [source](../ConnectionSource/index.html) and uniquiely identified in the source by a string id. 
 					This allows to implement connection inheritance behaviors such as overriding (replacing), adding, or removing.
 					"""
 //			icon = "..."

@@ -28,7 +28,7 @@ public class TunnelProcessorFactory {
 			// label = "...",
 			description = "A connection which logically groups other connections",
 			documentation = """
-					Tunnel is a connection which logically groups other connections. 
+					Tunnel is a connection which logically groups (aggregates) other connections. 
 					For example, two composite nodes may have a tunnel connection which groups connections between their child elements. 
 					A real life example is a VPN tunnel between two networks.
 					"""

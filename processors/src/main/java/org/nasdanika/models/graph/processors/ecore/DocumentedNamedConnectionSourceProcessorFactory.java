@@ -21,10 +21,10 @@ public class DocumentedNamedConnectionSourceProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Documented Named Connection Source",
 			description = "Connection source with a name and documentation",
 			documentation = """
-					Connection source with a name and documentation
+					[Connection source](../ConnectionSource/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)

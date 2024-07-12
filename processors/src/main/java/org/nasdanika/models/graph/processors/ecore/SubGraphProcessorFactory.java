@@ -23,7 +23,7 @@ public class SubGraphProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Sub-graph",
 			description = "A graph element which is also a graph",
 			documentation = """
 					A graph element which is also a graph, i.e. it may contain other graph elements. 

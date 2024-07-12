@@ -23,10 +23,10 @@ public class DocumentedNamedSubGraphProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			 label = "Documented Named Sub-Graph",
 			description = "Sub-graph with a name and documentation",
 			documentation = """
-					Sub-graph with a name and documentation
+					[Sub-graph](../SubGraph/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)

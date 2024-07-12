@@ -21,10 +21,10 @@ public class DocumentedNamedCompositeConnectionTargetProcessorFactory {
 	}
 	
 	@EClassifierNodeProcessorFactory(
-			// label = "...",
+			label = "Documented Named Composite Connection Target",
 			description = "Composite connection target with a name and documentation",
 			documentation = """
-					Composite connection target with a name and documentation
+					[Composite connection target](../CompositeConnectionTarget/index.html) with a name and documentation
 					"""
 //			icon = "..."
 	)
