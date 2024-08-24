@@ -29,7 +29,7 @@ import org.nasdanika.graph.model.DocumentedNamedGraph;
 import org.nasdanika.graph.model.DocumentedNamedSubGraph;
 import org.nasdanika.graph.model.GraphElement;
 import org.nasdanika.graph.model.util.GraphDrawioResourceFactory;
-import org.nasdanika.html.model.app.gen.ActionSiteGenerator;
+import org.nasdanika.html.model.app.gen.AppSiteGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphActionGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphNodeProcessorFactory;
 
@@ -70,7 +70,7 @@ public class TestGraph {
 		URI pageTemplateURI = URI.createFileURI(new File(pageTemplateResource).getAbsolutePath());
 		
 		String siteMapDomain = "https://graph.models.nasdanika.org/demo/graph";		
-		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
+		AppSiteGenerator actionSiteGenerator = new AppSiteGenerator() {
 			
 			protected boolean isDeleteOutputPath(String path) {
 				return !"CNAME".equals(path);				
@@ -170,7 +170,7 @@ public class TestGraph {
 		URI rootActionURI = URI.createFileURI(rootActionFile.getCanonicalFile().getAbsolutePath());	
 		URI pageTemplateURI = URI.createURI("page-template.yml").resolve(baseURI);
 		String siteMapDomain = "https://graph.models.nasdanika.org/demo/living-beings";		
-		ActionSiteGenerator actionSiteGenerator = new ActionSiteGenerator() {
+		AppSiteGenerator actionSiteGenerator = new AppSiteGenerator() {
 			
 			protected boolean isDeleteOutputPath(String path) {
 				return !"CNAME".equals(path);				
