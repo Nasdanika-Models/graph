@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.nasdanika.common.Context;
-import org.nasdanika.html.model.app.graph.emf.ActionGenerator;
+import org.nasdanika.html.model.app.graph.emf.HtmlAppGenerator;
 import org.nasdanika.models.echarts.graph.GraphPackage;
 import org.nasdanika.ncore.NcorePackage;
 
-public class GraphActionGenerator extends ActionGenerator {
+public class GraphHtmlAppGenerator extends HtmlAppGenerator {
 
-	public GraphActionGenerator(
+	public GraphHtmlAppGenerator(
 			Collection<? extends EObject> sources, 
 			Collection<? extends EObject> references,
 			Function<? super EObject, URI> uriResolver,
@@ -30,7 +30,7 @@ public class GraphActionGenerator extends ActionGenerator {
 			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
 			Map.entry(GraphPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")));
 		
-	public GraphActionGenerator(
+	public GraphHtmlAppGenerator(
 			EObject source,
 			URI baseURI,
 			GraphNodeProcessorFactory nodeProcessorFactory) {
@@ -46,11 +46,11 @@ public class GraphActionGenerator extends ActionGenerator {
 			nodeProcessorFactory);
 	}
 		
-	public GraphActionGenerator(EObject source, GraphNodeProcessorFactory nodeProcessorFactory) {
+	public GraphHtmlAppGenerator(EObject source, GraphNodeProcessorFactory nodeProcessorFactory) {
 		this(source, URI.createURI("tmp://" + UUID.randomUUID() + "/" + UUID.randomUUID() + "/"), nodeProcessorFactory);
 	}
 	
-	public GraphActionGenerator(EObject source) {
+	public GraphHtmlAppGenerator(EObject source) {
 		this(source, new GraphNodeProcessorFactory(Context.EMPTY_CONTEXT, null));
 	}
 	

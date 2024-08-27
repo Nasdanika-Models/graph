@@ -20,7 +20,6 @@ import org.junit.jupiter.api.Test;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.Diagnostic;
-import org.nasdanika.common.DiagramGenerator;
 import org.nasdanika.common.ExecutionException;
 import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.PrintStreamProgressMonitor;
@@ -30,7 +29,7 @@ import org.nasdanika.graph.model.DocumentedNamedSubGraph;
 import org.nasdanika.graph.model.GraphElement;
 import org.nasdanika.graph.model.util.GraphDrawioResourceFactory;
 import org.nasdanika.html.model.app.gen.AppSiteGenerator;
-import org.nasdanika.models.graph.processors.doc.GraphActionGenerator;
+import org.nasdanika.models.graph.processors.doc.GraphHtmlAppGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphNodeProcessorFactory;
 
 public class TestGraph {
@@ -53,11 +52,11 @@ public class TestGraph {
 								
 		File output = new File(actionModelsDir, "graph-actions.xmi");
 		
-		GraphActionGenerator actionGenerator = new GraphActionGenerator(
+		GraphHtmlAppGenerator htmlAppGenerator = new GraphHtmlAppGenerator(
 				graphResource.getContents().get(0),
 				new GraphNodeProcessorFactory(context, null));
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
@@ -150,11 +149,11 @@ public class TestGraph {
 								
 		File output = new File(actionModelsDir, "living-beings-actions.xmi");
 		
-		GraphActionGenerator actionGenerator = new GraphActionGenerator(
+		GraphHtmlAppGenerator htmlAppGenerator = new GraphHtmlAppGenerator(
 				livingBeingsResource.getContents().get(0),
 				new GraphNodeProcessorFactory(context, null));
 		
-		actionGenerator.generateActionModel(
+		htmlAppGenerator.generateHtmlAppModel(
 				diagnosticConsumer, 
 				output,
 				progressMonitor);
