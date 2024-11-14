@@ -4,8 +4,8 @@ import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.model.DocumentedNamedConnectionSource;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
-import org.nasdanika.html.model.app.Action;
-import org.nasdanika.html.model.app.graph.WidgetFactory;
+import org.nasdanika.models.app.Action;
+import org.nasdanika.models.app.graph.WidgetFactory;
 
 public class DocumentedNamedConnectionSourceNodeProcessor<T extends DocumentedNamedConnectionSource<?>> extends DocumentedNamedGraphElementNodeProcessor<T> implements DocumentedNamedConnectionSourceNodeProcessorMixIn<T> {
 

@@ -9,10 +9,10 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.emf.EReferenceConnection;
 import org.nasdanika.graph.model.Connection;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
-import org.nasdanika.html.model.app.Action;
-import org.nasdanika.html.model.app.Label;
-import org.nasdanika.html.model.app.graph.WidgetFactory;
-import org.nasdanika.html.model.app.graph.emf.EObjectNodeProcessor;
+import org.nasdanika.models.app.Action;
+import org.nasdanika.models.app.Label;
+import org.nasdanika.models.app.graph.WidgetFactory;
+import org.nasdanika.models.app.graph.emf.EObjectNodeProcessor;
 
 public class ConnectionNodeProcessor<T extends Connection<?>> extends EObjectNodeProcessor<T> implements ConnectionNodeProcessorMixIn<T> {
 

@@ -27,8 +27,7 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.model.DocumentedNamedGraph;
 import org.nasdanika.graph.model.DocumentedNamedSubGraph;
 import org.nasdanika.graph.model.GraphElement;
-import org.nasdanika.graph.model.util.GraphDrawioResourceFactory;
-import org.nasdanika.html.model.app.gen.AppSiteGenerator;
+import org.nasdanika.models.app.gen.AppSiteGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphHtmlAppGenerator;
 import org.nasdanika.models.graph.processors.doc.GraphNodeProcessorFactory;
 
@@ -37,7 +36,7 @@ public class TestGraph {
 	@Test
 	public void testGenerateGraphSite() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true))); // TODO - capability, generic
 		File graphDiagramFile = new File("graph.drawio").getCanonicalFile();
 		Resource graphResource = resourceSet.getResource(URI.createFileURI(graphDiagramFile.getAbsolutePath()), true);
 		
@@ -105,7 +104,7 @@ public class TestGraph {
 	@Test
 	public void testGenerateLivingBeingsSite() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true)));
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true))); // TODO - capability, generic
 		
 		// To load resources from classpath
 		resourceSet.getURIConverter().getURIHandlers().add(0, new URIHandlerImpl() {

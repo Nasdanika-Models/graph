@@ -4,8 +4,8 @@ import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.model.DocumentedNamedSubGraph;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
-import org.nasdanika.html.model.app.Action;
-import org.nasdanika.html.model.app.graph.WidgetFactory;
+import org.nasdanika.models.app.Action;
+import org.nasdanika.models.app.graph.WidgetFactory;
 
 public class DocumentedNamedSubGraphNodeProcessor<T extends DocumentedNamedSubGraph<?>> extends DocumentedNamedGraphElementNodeProcessor<T> implements DocumentedNamedSubGraphNodeProcessorMixIn<T> {
 
