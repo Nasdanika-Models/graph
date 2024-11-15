@@ -14,9 +14,12 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.resource.impl.URIHandlerImpl;
 import org.junit.jupiter.api.Test;
+import org.nasdanika.capability.CapabilityLoader;
+import org.nasdanika.capability.ServiceCapabilityFactory;
+import org.nasdanika.capability.ServiceCapabilityFactory.Requirement;
+import org.nasdanika.capability.emf.ResourceSetRequirement;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.Diagnostic;
@@ -35,13 +38,15 @@ public class TestGraph {
 	
 	@Test
 	public void testGenerateGraphSite() throws Exception {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true))); // TODO - capability, generic
+		CapabilityLoader capabilityLoader = new CapabilityLoader();
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		Requirement<ResourceSetRequirement, ResourceSet> requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);		
+		ResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);
+		
 		File graphDiagramFile = new File("graph.drawio").getCanonicalFile();
 		Resource graphResource = resourceSet.getResource(URI.createFileURI(graphDiagramFile.getAbsolutePath()), true);
 		
 		// Generating an action model
-		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
 		
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
@@ -103,8 +108,10 @@ public class TestGraph {
 	
 	@Test
 	public void testGenerateLivingBeingsSite() throws Exception {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("drawio", new GraphDrawioResourceFactory(uri -> resourceSet.getEObject(uri, true))); // TODO - capability, generic
+		CapabilityLoader capabilityLoader = new CapabilityLoader();
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		Requirement<ResourceSetRequirement, ResourceSet> requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);		
+		ResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);
 		
 		// To load resources from classpath
 		resourceSet.getURIConverter().getURIHandlers().add(0, new URIHandlerImpl() {
@@ -138,7 +145,6 @@ public class TestGraph {
 		assertEquals("staphyllococcus", ((GraphElement) bacteria.getElements().get(5)).getId());
 		
 		// Generating an action model
-		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
 		MutableContext context = Context.EMPTY_CONTEXT.fork();
 		
 		Consumer<Diagnostic> diagnosticConsumer = d -> d.dump(System.out, 0);		
