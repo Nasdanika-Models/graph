@@ -1,21 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="EN">
   <head>
     <title>Node</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/dark-head.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
@@ -34,55 +34,19 @@
 
   gtag('config', 'G-9BRJVLK8CC');
 </script>    
-
-<script src="../../../search-documents.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
-
-<script>
-// Script for full-text search of JsTree
-
-window.nsdJsTreeSearchCallback = function(str, node) { 
-    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
-    if (sf.search(node.text).isMatch) {
-		return true;
-	} 
-    let searchResult = this.search(str); 
-    for (const sr in searchResult) {
-        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
-            return true;
-        } 
-    } 
-    return false; 
-}.bind(lunr(function () {
-			  this.ref('id');
-			  this.field('title');
-			  this.field('content');
-
-			  for (const key in searchDocuments) {
-				  let doc = searchDocuments[key];
-				this.add({
-					id: doc['link-uuid'],
-					title: doc.title,
-					path: doc.path,
-					content: doc.content
-				});  
-			  }
-			}));
-</script>
 </head>
   <body>
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="84b8148e-a50c-41c7-a1ab-f0309a12be0b" class="nsd-app-header-title">
-            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon">Nasdanika Models</a>
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="e70f55df-e467-49d1-9e4b-be144e01f9f1" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="../../../search.html" data-nsd-label-uuid="7fbbd16e-2712-418e-89aa-8ec3909df27c" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="../../../search.html" data-nsd-label-uuid="f43df887-5fd1-44d3-9ba4-b3a11975cc53" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="../../../glossary.html" data-nsd-label-uuid="96d349cb-8eca-4c14-ab09-0347a5abb279" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="../../../glossary.html" data-nsd-label-uuid="d611603d-6b8d-415b-932e-e8900dc49705" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -90,33 +54,33 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="../../../index.html" title="Base classes for graph-like models" data-nsd-label-uuid="9bd5a838-b3f3-4555-9b77-a9f7fff7f560" class="navbar-brand">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EPackage.gif" class="nsd-app-label-icon">Graph Model</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_167" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <a href="../../../index.html" title="Base classes for graph-like models" data-nsd-label-uuid="ee7fbc99-a0eb-44af-be1a-19a95ba1e9ca" class="navbar-brand">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EPackage.gif" class="nsd-app-label-icon"/>Graph Model</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_li" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_167" class="collapse navbar-collapse">
+            <div id="nsd_li" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a href="../../../classifiers.html" data-nsd-label-uuid="f9ef3177-0b32-42aa-bc01-1a46d55abb7f" class="nav-link">Classifiers</a>
+                  <a href="../../../classifiers.html" data-nsd-label-uuid="641b952c-3883-43d2-9414-7e5769e9a284" class="nav-link">Classifiers</a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../../diagram.html" data-nsd-label-uuid="b7b9f224-4f6a-4cca-9fe8-610f0a8dd0aa" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                  <a href="../../../diagram.html" data-nsd-label-uuid="c939c4a2-c065-43c2-802e-8eec43917dda" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
                 </li>
                 <li class="nav-item">
-                  </li><li data-nsd-label-uuid="624470a4-373a-4ae0-be9d-b15619e161ec" class="dropdown">
+                  <li data-nsd-label-uuid="90d55718-dd2c-467e-b0b4-f6197842be31" class="dropdown">
                     <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
-                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon">Graphs</a>
+                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
                     <div class="dropdown-menu">
-                      <a href="../../../default-graph.html" data-nsd-label-uuid="e3c818f0-7dfd-4ced-896d-aa14106a0f53" class="dropdown-item">Default Graph</a>
-                      <a href="../../../circular-layout-graph.html" data-nsd-label-uuid="23f7de11-bcf7-4a2b-92c2-19c42740a3be" class="dropdown-item">Circular Graph</a>
-                      <a href="../../../force-layout-graph.html" data-nsd-label-uuid="aeaae684-5cc6-4420-911f-a5ee9b564ebc" class="dropdown-item">Force Graph</a>
+                      <a href="../../../default-graph.html" data-nsd-label-uuid="f7063a41-a4d9-4f1d-b79b-81276419d2bb" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph.html" data-nsd-label-uuid="bac9d48c-7cc4-4ea4-a69f-ee7173accc56" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph.html" data-nsd-label-uuid="64f205c2-554d-486c-8525-be9be2d042fa" class="dropdown-item">Force Graph</a>
                       <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
-                      <a href="../../../default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="f6426e8c-3cc8-4cf6-82cb-989f3e910389" class="dropdown-item">Default Graph</a>
-                      <a href="../../../circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="406aca18-93f8-489b-b3ca-bbf414aa5bbc" class="dropdown-item">Circular Graph</a>
-                      <a href="../../../force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="34530531-27f4-4865-9ac1-9a12bf18d9c6" class="dropdown-item">Force Graph</a>
+                      <a href="../../../default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="fd989c56-253c-4db8-86e3-2b7875a564da" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="42e3bc50-e74d-4139-ace5-f0a974c97013" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="50fd3f7b-2220-4e7f-a606-8ab4e59309ad" class="dropdown-item">Force Graph</a>
                     </div>
                   </li>
-                
+                </li>
               </ul>
             </div>
           </ul>
@@ -125,91 +89,91 @@ window.nsdJsTreeSearchCallback = function(str, node) {
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="../CompositeConnectionSource/index.html" title="Connection source which is also a sub-graph" data-nsd-label-uuid="ad908632-dff1-4c2a-b03e-3ac44da4bae7" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Composite Connection Source</a>
-            <a href="../CompositeConnectionTarget/index.html" title="Connection target which is also as sub-graph" data-nsd-label-uuid="59c79314-beca-4f7c-b4a9-bf33c999ce46" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Composite Connection Target</a>
-            <a href="../CompositeNode/index.html" title="Node which is also a sub-graph" data-nsd-label-uuid="39776a02-90fb-4ed5-8b68-8e18de4e4f15" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Composite Node</a>
-            <a href="../Connection/index.html" title="Connections are contained by their source and uniquiely identified in the source by a string id" data-nsd-label-uuid="544ad45c-1446-42a3-8dec-62037a0324e2" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Connection</a>
-            <a href="../ConnectionSource/index.html" title="Source of connections uniquely identified by string ids" data-nsd-label-uuid="ea11f3d6-b492-4a48-a173-ac70be990f69" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Connection Source</a>
-            <a href="../ConnectionTarget/index.html" title="A graph element which can have incoming connections" data-nsd-label-uuid="0236d1cf-2337-4469-a5a8-e264fd8272bc" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Connection Target</a>
-            <a href="../DocumentedNamedCompositeConnectionSource/index.html" title="Composite connection source with a name and documentation" data-nsd-label-uuid="261d8ee2-c266-4110-a193-d7604d9688f0" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Composite Connection Source</a>
-            <a href="../DocumentedNamedCompositeConnectionTarget/index.html" title="Composite connection target with a name and documentation" data-nsd-label-uuid="a8a86129-8847-4cf8-93bf-1e0e193e1ec7" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Composite Connection Target</a>
-            <a href="../DocumentedNamedCompositeNode/index.html" title="Composite node with a name and documentation" data-nsd-label-uuid="52d241fc-08ff-438b-9e9a-b8e59d3fd471" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Composite Node</a>
-            <a href="../DocumentedNamedConnection/index.html" title="Connection with a name and documentation" data-nsd-label-uuid="19e5b6d0-8b6d-48de-8310-c0a619c30d3f" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Connection</a>
-            <a href="../DocumentedNamedConnectionSource/index.html" title="Connection source with a name and documentation" data-nsd-label-uuid="f8b4de37-9501-46ba-b539-413e3157d68a" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Connection Source</a>
-            <a href="../DocumentedNamedConnectionTarget/index.html" title="Connection target with a name and documentation" data-nsd-label-uuid="f5a7ff07-bb06-4598-b6d3-0b64c4b64ec2" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Connection Target</a>
-            <a href="../DocumentedNamedGraph/index.html" title="Graph with a name and documentation" data-nsd-label-uuid="68ca49b9-e43a-4241-8838-e83e73157749" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Graph</a>
-            <a href="../DocumentedNamedGraphElement/index.html" title="Graph element with a name and documentation" data-nsd-label-uuid="8cf66295-2e53-4107-b89c-01f75df3adf0" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Graph Element</a>
-            <a href="../DocumentedNamedNode/index.html" title="Node with a name and documentation" data-nsd-label-uuid="f8100bdf-5836-447d-b796-c28ef9c870ff" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Node</a>
-            <a href="../DocumentedNamedSubGraph/index.html" title="Sub-graph with a name and documentation" data-nsd-label-uuid="2d656bdc-e37f-4223-9fbd-aa4c33dec5c5" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Sub-Graph</a>
-            <a href="../DocumentedNamedTunnel/index.html" title="Tunnel with a name and documentation" data-nsd-label-uuid="ea3e4874-2da1-4ed1-aebc-3685a5b3acd2" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Documented Named Tunnel</a>
-            <a href="../Graph/index.html" title="Graph is a container of graph elements uniquely identified by a string" data-nsd-label-uuid="c724d473-efd2-42fb-8e8a-4da483f17e5b" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Graph</a>
-            <a href="../GraphElement/index.html" title="Graph element uniquely identified in the containing graph by a string identifier" data-nsd-label-uuid="4d9120bb-42b0-4a74-a6e1-ace87c61c881" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"><i>Graph Element</i></a><span title="Node is both connection source and target" data-nsd-label-uuid="79035d5f-8b46-417c-bac2-166de811dbb7" class="list-group-item list-group-action active"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Node</span>
-            <a href="../SubGraph/index.html" title="A graph element which is also a graph" data-nsd-label-uuid="77fb2391-bedf-4c96-910c-530a41767b69" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Sub-graph</a>
-            <a href="../Tunnel/index.html" title="A connection which logically groups other connections" data-nsd-label-uuid="79d54c88-9473-4b22-9d95-65e4c21e936a" class="list-group-item list-group-action">
-              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Tunnel</a>
+            <a href="../CompositeConnectionSource/index.html" title="Connection source which is also a sub-graph" data-nsd-label-uuid="c54c87ed-f44d-4e19-800d-324f485e986a" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Composite Connection Source</a>
+            <a href="../CompositeConnectionTarget/index.html" title="Connection target which is also as sub-graph" data-nsd-label-uuid="c3380e25-a550-4340-af87-7544fa923a4d" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Composite Connection Target</a>
+            <a href="../CompositeNode/index.html" title="Node which is also a sub-graph" data-nsd-label-uuid="b5a8356f-c652-43b9-ab22-645d56fe0e3a" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Composite Node</a>
+            <a href="../Connection/index.html" title="Connections are contained by their source and uniquiely identified in the source by a string id" data-nsd-label-uuid="c4dbb679-6539-4c24-a84c-b7fecaa1e0b1" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Connection</a>
+            <a href="../ConnectionSource/index.html" title="Source of connections uniquely identified by string ids" data-nsd-label-uuid="14dc01eb-171a-483f-8dbb-5980b2ac8ade" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Connection Source</a>
+            <a href="../ConnectionTarget/index.html" title="A graph element which can have incoming connections" data-nsd-label-uuid="f4fae7aa-e711-4839-9901-5cfac573bf02" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Connection Target</a>
+            <a href="../DocumentedNamedCompositeConnectionSource/index.html" title="Composite connection source with a name and documentation" data-nsd-label-uuid="106f638f-86b3-44b6-92c0-0577f3e39b4f" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Composite Connection Source</a>
+            <a href="../DocumentedNamedCompositeConnectionTarget/index.html" title="Composite connection target with a name and documentation" data-nsd-label-uuid="8e19eba4-71e0-4ff2-a30e-0b48ea1225f7" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Composite Connection Target</a>
+            <a href="../DocumentedNamedCompositeNode/index.html" title="Composite node with a name and documentation" data-nsd-label-uuid="ba43010d-c6e2-4361-9ff6-fb359b0a106f" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Composite Node</a>
+            <a href="../DocumentedNamedConnection/index.html" title="Connection with a name and documentation" data-nsd-label-uuid="8d07d524-73a5-4e0c-8e27-649ee3cbf0cd" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Connection</a>
+            <a href="../DocumentedNamedConnectionSource/index.html" title="Connection source with a name and documentation" data-nsd-label-uuid="4e013b9b-e5e8-421e-82b1-f9c04885d225" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Connection Source</a>
+            <a href="../DocumentedNamedConnectionTarget/index.html" title="Connection target with a name and documentation" data-nsd-label-uuid="7a627d86-f7d1-41c8-a530-f9acd8c8d8be" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Connection Target</a>
+            <a href="../DocumentedNamedGraph/index.html" title="Graph with a name and documentation" data-nsd-label-uuid="f5a1f010-22db-4bdf-ac31-0e8a5dd76c8f" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Graph</a>
+            <a href="../DocumentedNamedGraphElement/index.html" title="Graph element with a name and documentation" data-nsd-label-uuid="54c9eac0-05d5-4dab-9bde-fe5f0dc95a44" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Graph Element</a>
+            <a href="../DocumentedNamedNode/index.html" title="Node with a name and documentation" data-nsd-label-uuid="5da2a937-2b90-4ca8-9e1a-d28a54d565d6" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Node</a>
+            <a href="../DocumentedNamedSubGraph/index.html" title="Sub-graph with a name and documentation" data-nsd-label-uuid="7ea6808b-9e82-49f4-9626-e1d9a40df42f" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Sub-Graph</a>
+            <a href="../DocumentedNamedTunnel/index.html" title="Tunnel with a name and documentation" data-nsd-label-uuid="f0f6b953-a861-4d86-9ef5-14aae5b2a84e" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Documented Named Tunnel</a>
+            <a href="../Graph/index.html" title="Graph is a container of graph elements uniquely identified by a string" data-nsd-label-uuid="9c26b1b3-98dc-4157-bb98-e9c9f3b3eda2" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Graph</a>
+            <a href="../GraphElement/index.html" title="Graph element uniquely identified in the containing graph by a string identifier" data-nsd-label-uuid="441784f1-ae94-4819-a493-099d727e4d15" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/><i>Graph Element</i></a><span title="Node is both connection source and target" data-nsd-label-uuid="6d372d0b-5d7c-49e5-9b40-4de15a1fd8a5" class="list-group-item list-group-action active"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Node</span>
+            <a href="../SubGraph/index.html" title="A graph element which is also a graph" data-nsd-label-uuid="e018c8a2-acd7-4750-8d02-3addbbec077d" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Sub-graph</a>
+            <a href="../Tunnel/index.html" title="A connection which logically groups other connections" data-nsd-label-uuid="42cc70db-8fe6-400d-9a9a-daec0f687b7f" class="list-group-item list-group-action">
+              <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Tunnel</a>
           </div>
         </div>
-        <div data-nsd-label-uuid="79035d5f-8b46-417c-bac2-166de811dbb7" data-nsd-action-uris="uuid:79035d5f-8b46-417c-bac2-166de811dbb7" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="6d372d0b-5d7c-49e5-9b40-4de15a1fd8a5" data-nsd-action-uris="uuid:6d372d0b-5d7c-49e5-9b40-4de15a1fd8a5" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <h1><span title="Node is both connection source and target" data-nsd-label-uuid="79035d5f-8b46-417c-bac2-166de811dbb7" class="nsd-app-content-panel-title"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon">Node<a href="https://ecore.models.nasdanika.org/references/eClassifiers/EClass/index.html" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
-                </h1>
+                <H1><span title="Node is both connection source and target" data-nsd-label-uuid="6d372d0b-5d7c-49e5-9b40-4de15a1fd8a5" class="nsd-app-content-panel-title"><img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Node<a href="https://ecore.models.nasdanika.org/references/eClassifiers/EClass/index.html" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                </H1>
               </div>
               <div class="col">
                 <ul class="nav nsd-app-content-panel-navs">
                   <li class="nav-item">
-                    <a href="attributes.html" data-nsd-label-uuid="d980f392-e3fe-43e4-9b34-6ef151053449" class="nav-link">
-                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif" class="nsd-app-label-icon">Attributes</a>
+                    <a href="attributes.html" data-nsd-label-uuid="1caaf6da-6e37-454c-b4ff-30803bd3d5fd" class="nav-link">
+                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif" class="nsd-app-label-icon"/>Attributes</a>
                   </li>
                   <li class="nav-item">
-                    <a href="inheritance.html" data-nsd-label-uuid="4067de9a-2c9b-434d-99ea-ba0ce0b85e23" class="nav-link">
-                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EGenericSuperType.gif" class="nsd-app-label-icon">Inheritance</a>
+                    <a href="inheritance.html" data-nsd-label-uuid="73315725-22c9-49d1-80f2-42517782b265" class="nav-link">
+                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EGenericSuperType.gif" class="nsd-app-label-icon"/>Inheritance</a>
                   </li>
                   <li class="nav-item">
-                    <a href="references.html" data-nsd-label-uuid="638188bb-54cc-4a60-90ff-df6c6ea846b7" class="nav-link">
-                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon">References</a>
+                    <a href="references.html" data-nsd-label-uuid="381bdad8-8235-4684-8671-55dd2d07bc31" class="nav-link">
+                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif" class="nsd-app-label-icon"/>References</a>
                   </li>
                   <li class="nav-item">
-                    <a href="type-parameters.html" data-nsd-label-uuid="eb4820c9-0e81-4c34-9d44-680a15ce756c" class="nav-link">
-                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/ETypeParameter.gif" class="nsd-app-label-icon">Type Parameters</a>
+                    <a href="type-parameters.html" data-nsd-label-uuid="89ed7068-db58-4aaf-a0c0-ab49f1d52e22" class="nav-link">
+                      <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/ETypeParameter.gif" class="nsd-app-label-icon"/>Type Parameters</a>
                   </li>
                   <li class="nav-item">
-                    <a href="diagram.html" data-nsd-label-uuid="1d8e8555-d1c5-4504-b715-bf9795ba8674" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                    <a href="diagram.html" data-nsd-label-uuid="4c318d6e-b572-4339-b2d3-0e9abbe1b133" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
                   </li>
                   <li class="nav-item">
-                    </li><li data-nsd-label-uuid="5620b376-d57d-46c9-8b57-6e47f8983a4d" class="dropdown">
+                    <li data-nsd-label-uuid="bb76bb83-d1a3-421b-b029-7e67fb55e7a6" class="dropdown">
                       <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
-                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon">Graphs</a>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
                       <div class="dropdown-menu">
-                        <a href="default-graph.html" data-nsd-label-uuid="c092ee00-6041-4b16-baf0-a6a0e42572b8" class="dropdown-item">Default Graph</a>
-                        <a href="circular-layout-graph.html" data-nsd-label-uuid="760cd165-06a5-43c0-90fb-ab2f4b59ba27" class="dropdown-item">Circular Graph</a>
-                        <a href="force-layout-graph.html" data-nsd-label-uuid="8fc4c1e5-1d09-4149-bdbd-d7cb163bbc07" class="dropdown-item">Force Graph</a>
+                        <a href="default-graph.html" data-nsd-label-uuid="d42a9c4c-1492-4bb0-bc89-c5c126900464" class="dropdown-item">Default Graph</a>
+                        <a href="circular-layout-graph.html" data-nsd-label-uuid="974ee377-824e-46ec-9dbe-c4ec6ea8b7a1" class="dropdown-item">Circular Graph</a>
+                        <a href="force-layout-graph.html" data-nsd-label-uuid="9d39a6ea-ddb0-4055-b9ae-49880276b720" class="dropdown-item">Force Graph</a>
                       </div>
                     </li>
-                  
+                  </li>
                   <li class="nav-item">
-                    <a href="load-specification.html" data-nsd-label-uuid="3861ab1c-c93d-4f35-b5f1-aca9f32cd49a" class="nav-link">Load specification</a>
+                    <a href="load-specification.html" data-nsd-label-uuid="c9158d9b-860d-449a-9bd7-586c36783c83" class="nav-link">Load specification</a>
                   </li>
                 </ul>
               </div>
@@ -231,7 +195,7 @@ window.nsdJsTreeSearchCallback = function(str, node) {
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/drawio" data-nsd-label-uuid="d6119a21-6614-468e-aee8-8d015aea9693" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/drawio" data-nsd-label-uuid="3ae298a0-297c-41d3-9a64-618182e9c761" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
