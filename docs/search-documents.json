@@ -10,240 +10,240 @@
     "content": " Node 1.1 Composite Node 1 Node 2.1 Composite Node 2 Connection A Sub-Node 1.1.2 My Graph Node 1.1 Composite Node 1 Node 2.1 Composite Node 2 Connection A Sub-Node 1.1.2 My Graph"
   },
   "references/eClassifiers/ConnectionSource/index.html": {
-    "link-uuid": "3e9592a2-8f1e-450c-9878-837f0e97d1eb",
+    "link-uuid": "bcc93b56-258a-45bf-afe0-175a7ab04f6c",
     "title": "Connection Source",
     "content": "Source of connections uniquely identified by string ids. It provides support for graph inheritance - replacing (overriding), adding, or removing connections."
   },
   "references/eClassifiers/DocumentedNamedConnectionSource/index.html": {
-    "link-uuid": "73d9368a-119d-4a74-ba1f-38ac900b680e",
+    "link-uuid": "2ff28830-d969-498a-8fd5-7819bf9acb06",
     "title": "Documented Named Connection Source",
     "content": "Connection source with a name and documentation"
   },
   "references/eClassifiers/ConnectionTarget/inheritance.html": {
     "path": "Connection Target/Inheritance",
-    "link-uuid": "ee8e8e32-5511-40ff-b57e-3a14dfbaba02",
+    "link-uuid": "87b339c3-8f06-4c7b-8945-1827aa21b7b0",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedCompositeConnectionTarget/index.html": {
-    "link-uuid": "ddbc2ab8-a7da-44ff-b221-2e13ab6413d8",
+    "link-uuid": "f9dc815a-123e-4eac-bd70-8b2b0b826dbe",
     "title": "Documented Named Composite Connection Target",
     "content": "Composite connection target with a name and documentation"
   },
   "references/eClassifiers/DocumentedNamedConnection/index.html": {
-    "link-uuid": "7bbc872e-4759-4dee-94b4-1892fefb671a",
+    "link-uuid": "908562e0-5e14-4606-bc78-4d4388287757",
     "title": "Documented Named Connection",
     "content": "Connection with a name and documentation"
   },
   "references/eClassifiers/Tunnel/inheritance.html": {
     "path": "Tunnel/Inheritance",
-    "link-uuid": "9fd080d4-5fa3-4a5b-83a3-6f6992e54ece",
+    "link-uuid": "f9984d94-6450-471b-a1a5-ef2615a334af",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Tunnel/references/eStructuralFeatures/connections/index.html": {
     "path": "Tunnel/References/connections",
-    "link-uuid": "129daeba-36f9-433b-8d5f-e2a2e699156a",
+    "link-uuid": "9080623b-d8c0-446e-8631-34150c37d1eb",
     "title": "connections",
     "content": "Type C Multiplicity 0..* Connections in this tunnel"
   },
   "references/eClassifiers/CompositeNode/index.html": {
-    "link-uuid": "e38d8da1-6924-46a4-85f1-12ccf38b078e",
+    "link-uuid": "78886d5b-2515-4c53-b35d-ca32af97ea70",
     "title": "Composite Node",
     "content": "Node which is also a sub-graph. I.e. it may contain other graph elements."
   },
   "references/eClassifiers/DocumentedNamedNode/inheritance.html": {
     "path": "Documented Named Node/Inheritance",
-    "link-uuid": "1fc84153-7a04-4b72-9bd8-7ae5387fdb58",
+    "link-uuid": "8729d6db-687b-4e0f-b932-01bc60603324",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedGraphElement/inheritance.html": {
     "path": "Documented Named Graph Element/Inheritance",
-    "link-uuid": "ef6333bc-62cc-4aed-bbc4-b9568f34acab",
+    "link-uuid": "0282ac11-7749-4c78-957a-7b3e8f950b42",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedSubGraph/index.html": {
-    "link-uuid": "b1d9775c-79de-4bfc-916b-bfd3cd630fa7",
+    "link-uuid": "dd55035a-720d-44ae-a0a3-9494b0f1e1d5",
     "title": "Documented Named Sub-Graph",
     "content": "Sub-graph with a name and documentation"
   },
   "index.html": {
-    "link-uuid": "a778bbc9-0677-473d-a957-8e2288a7ab42",
+    "link-uuid": "a86a6ef2-5fe0-48c3-9e18-fe3cea4e2598",
     "title": "Graph Model",
     "content": "Nasdanika graph model provides base classes (building blocks) for graph-like models such as process/flow and architecture models. The model can also be used AS-IS. Living Beings (source) demonstrated mapping of a Drawio diagram to this model and generation of HTML documentation. The mapping process is explained in the Beyond Diagrams book. The below diagram shows some of the model classes: Graph is a container of graph elements: Connection source - source and container of connections Connection target Sub-graph - both graph element and graph, allows to nest graphs Node is both connection source and connection target. I.e. it may have both outgoing and incoming connections. Then there are Composite flavors of connection source, connection target and node - they are also sub-graphs, i.e. may contain other graph elements. There is an aggregate connection - Tunnel. Not shown on the diagram are Documented Named flavors of the above classes, including Documented Named Composite flavors. Adapting to graph Graph model elements can be adapted to Graph interfaces with org.nasdanika.graph.model.adapters.GraphAdapterFactory as shown below: GraphAdapterFactory graphAdapterFactory = new GraphAdapterFactory();  \nTransformer&lt;EObject,ElementAdapter&lt;?&gt;&gt; graphFactory = new Transformer&lt;&gt;(graphAdapterFactory); // Reflective creation\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nMap&lt;EObject, ElementAdapter&lt;?&gt;&gt; registry = graphFactory.transform(Collections.singleton(graph), false, progressMonitor);\n Once you have a graph you may create processors on top of it. See Also Graph Drawio Connecting the dots Executable (computational) graphs &amp; diagrams Beyond Diagrams elements Graph Graph Element Sub-Graph Connection Source Connection Target Node target Connection Tunnel Composite Connection Source Composite Connection Target Composite Node connections outgoing connections Page-1"
   },
   "references/eClassifiers/ConnectionTarget/references/eStructuralFeatures/incomingConnections/index.html": {
     "path": "Connection Target/References/incomingConnections",
-    "link-uuid": "e5831840-9510-4974-8b39-32b9b50eafc3",
+    "link-uuid": "33eab82d-c425-4642-b717-799120d010aa",
     "title": "incomingConnections",
     "content": "Type C Multiplicity 0..* Incoming connections"
   },
   "references/eClassifiers/Graph/references/eStructuralFeatures/elements/index.html": {
     "path": "Graph/References/elements",
-    "link-uuid": "a67a171b-6472-4ff5-a5ed-31591fca36d5",
+    "link-uuid": "1b8e9f7e-d42e-460c-9363-bcac43603821",
     "title": "elements",
     "content": "Type E Multiplicity 0..* Graph elements uniquely identified by a string. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages."
   },
   "references/eClassifiers/DocumentedNamedGraphElement/index.html": {
-    "link-uuid": "cf095511-1e96-4ea4-8b7a-9b8216511f77",
+    "link-uuid": "864e7a36-e8cb-49a5-b451-8675d5d322ee",
     "title": "Documented Named Graph Element",
     "content": "Gaph element with a name and documentation"
   },
   "references/eClassifiers/CompositeConnectionTarget/index.html": {
-    "link-uuid": "4a6d41f3-5475-4927-90a8-6fbfdfb93baa",
+    "link-uuid": "39800fa5-bcdd-422d-958f-6f971bb98c59",
     "title": "Composite Connection Target",
     "content": "Connection target which is also as sub-graph, i.e. it may contain other graph elements"
   },
   "references/eClassifiers/DocumentedNamedCompositeConnectionSource/index.html": {
-    "link-uuid": "0b498207-d2da-416a-8732-64bd4ce02ca6",
+    "link-uuid": "85419450-d158-4420-9590-dd1d1fc93e7d",
     "title": "Documented Named Composite Connection Source",
     "content": "Composite connection source with a name and documentation"
   },
   "references/eClassifiers/DocumentedNamedCompositeConnectionTarget/inheritance.html": {
     "path": "Documented Named Composite Connection Target/Inheritance",
-    "link-uuid": "9baa5dfa-feab-43e9-bd11-a1309fc42eeb",
+    "link-uuid": "5180df79-7a5f-48f1-bd8d-e412bca33285",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/DocumentedNamedConnectionTarget/inheritance.html": {
     "path": "Documented Named Connection Target/Inheritance",
-    "link-uuid": "c29f9327-13d5-4d86-8c1d-1017cec6ec42",
+    "link-uuid": "6c66fb8c-f9e2-4996-b4c8-4c05bbbf3003",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/CompositeConnectionSource/inheritance.html": {
     "path": "Composite Connection Source/Inheritance",
-    "link-uuid": "fdc64637-009c-4c65-a3fa-81e93622de5c",
+    "link-uuid": "25332510-2e5d-4252-aaa3-5fdb62cea08a",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Node/index.html": {
-    "link-uuid": "28c23870-7f6b-4170-8e0a-64e7fa0d4c73",
+    "link-uuid": "3912c8ac-7c21-4e46-9ff1-237b0371cf3d",
     "title": "Node",
     "content": "Node is both connection source and target. I.e. it may have both incoming and outgoing connections."
   },
   "references/eClassifiers/DocumentedNamedGraph/index.html": {
-    "link-uuid": "ed9b790a-ac47-4c57-b5fe-13fa0471baf4",
+    "link-uuid": "10eda2f0-8308-4d1d-a840-f1e673937169",
     "title": "Documented Named Graph",
     "content": "Graph with a name and documentation"
   },
   "references/eClassifiers/DocumentedNamedTunnel/inheritance.html": {
     "path": "Documented Named Tunnel/Inheritance",
-    "link-uuid": "7d3fc297-fa26-4f19-aff5-7170f45334a4",
+    "link-uuid": "da2759b7-9b54-4bef-89f0-ef8d5c5a3791",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Tunnel/index.html": {
-    "link-uuid": "578dcf40-bb3c-4c12-9518-e06a3ba2f549",
+    "link-uuid": "4e247f6f-4a24-4bf9-9aaf-4f78a404fcaf",
     "title": "Tunnel",
     "content": "Tunnel is a connection which logically groups (aggregates) other connections. For example, two composite nodes may have a tunnel connection which groups connections between their child elements. A real life example is a VPN tunnel between two networks."
   },
   "references/eClassifiers/Node/inheritance.html": {
     "path": "Node/Inheritance",
-    "link-uuid": "a80b5a2d-bf9a-47b7-b966-6cb007ccece8",
+    "link-uuid": "cde9651e-03ab-4def-b74d-dca0326bc3de",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedGraph/inheritance.html": {
     "path": "Documented Named Graph/Inheritance",
-    "link-uuid": "407115e5-e499-441d-8587-4c3acd1408f4",
+    "link-uuid": "4df9444d-d464-45c1-8503-028d9ce219c0",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/DocumentedNamedConnectionTarget/index.html": {
-    "link-uuid": "038f58f4-2371-4a26-8bbf-859b5f2f6a97",
+    "link-uuid": "2b64c8f4-ba0c-4d3e-b062-888905ea82e2",
     "title": "Documented Named Connection Target",
     "content": "Connection target with a name and documentation"
   },
   "references/eClassifiers/Graph/inheritance.html": {
     "path": "Graph/Inheritance",
-    "link-uuid": "96c76585-e27e-4730-9571-90eddd0182fc",
+    "link-uuid": "3946fad4-a41b-42ac-92f3-8b04f505cede",
     "title": "Inheritance",
     "content": "Subtypes "
   },
   "references/eClassifiers/CompositeConnectionTarget/inheritance.html": {
     "path": "Composite Connection Target/Inheritance",
-    "link-uuid": "39c6379f-b562-4786-9333-3a7e374f1228",
+    "link-uuid": "611a8e46-e517-4c0d-99d3-c6676799b1e1",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/ConnectionTarget/index.html": {
-    "link-uuid": "95116473-153e-4e83-9f95-533f6ab6ac58",
+    "link-uuid": "1c224ca3-15c4-42a2-b218-c5ba2e262a3a",
     "title": "Connection Target",
     "content": "A graph element which can have incoming connections"
   },
   "references/eClassifiers/GraphElement/inheritance.html": {
     "path": "Graph Element/Inheritance",
-    "link-uuid": "ee34d071-dd2f-4461-abd9-c464f0890e8e",
+    "link-uuid": "5e808999-ac0e-4d6e-bb70-f3cb438238da",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Connection/inheritance.html": {
     "path": "Connection/Inheritance",
-    "link-uuid": "a7086bd7-1a75-4aec-894a-beb8ee438004",
+    "link-uuid": "237f1ab6-cb6f-4558-a04f-513b91591ee5",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedCompositeNode/inheritance.html": {
     "path": "Documented Named Composite Node/Inheritance",
-    "link-uuid": "b8befdaa-938a-4316-a8ed-7e624cd6ca1e",
+    "link-uuid": "5b986f55-932c-49f7-a8e7-5ec8ea26a490",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Connection/references/eStructuralFeatures/bidirectional/index.html": {
     "path": "Connection/Attributes/bidirectional",
-    "link-uuid": "64316963-18b1-43d2-8690-97b81d9c2404",
+    "link-uuid": "a84a7eae-068c-415c-b569-1d3574a76e12",
     "title": "bidirectional",
     "content": "Type EBoolean Multiplicity 0..1 Indicates that the connection is bidirectional"
   },
   "references/eClassifiers/SubGraph/inheritance.html": {
     "path": "Sub-graph/Inheritance",
-    "link-uuid": "c3a6e0b3-137e-4087-b011-e72548527c2d",
+    "link-uuid": "82f3dd28-5c83-4e31-9d73-6a6ca792dd3b",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Connection/references/eStructuralFeatures/target/index.html": {
     "path": "Connection/References/target",
-    "link-uuid": "bc3fbf8e-0a90-4c36-8ce6-317e7ca1a38e",
+    "link-uuid": "2f3f770d-2311-407d-9d4f-8598f23a37a0",
     "title": "target",
     "content": "Type T Multiplicity 1 Connection target"
   },
   "references/eClassifiers/CompositeNode/inheritance.html": {
     "path": "Composite Node/Inheritance",
-    "link-uuid": "bfc9d3a6-1d07-4ccf-8d06-ef26892ff255",
+    "link-uuid": "7c99cc2b-675e-46dc-ad32-1bc29c703bde",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/ConnectionSource/inheritance.html": {
     "path": "Connection Source/Inheritance",
-    "link-uuid": "5c01982b-059e-4755-a32a-cce0c3bebead",
+    "link-uuid": "ce30c443-3e2b-4629-a323-e1b02a051a63",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedCompositeNode/index.html": {
-    "link-uuid": "b7f9830f-e8a7-419e-be34-978b62543041",
+    "link-uuid": "040de0e2-69c7-41c2-9d01-bf951cf4d8e7",
     "title": "Documented Named Composite Node",
     "content": "Composite node with a name and documentation"
   },
   "references/eClassifiers/DocumentedNamedNode/index.html": {
-    "link-uuid": "fe99adeb-765a-418b-b495-c72f7f390542",
+    "link-uuid": "6a28f9f5-a10e-472c-a7a0-3701e30f0e15",
     "title": "Documented Named Node",
     "content": "Node with a name and documentation"
   },
   "references/eClassifiers/SubGraph/index.html": {
-    "link-uuid": "7ec9f577-8557-497d-bedd-8315f09493a8",
+    "link-uuid": "e54e24d9-08cb-4036-90cb-b7f9d0205121",
     "title": "Sub-graph",
     "content": "A graph element which is also a graph, i.e. it may contain other graph elements."
   },
   "references/eClassifiers/GraphElement/index.html": {
-    "link-uuid": "e085cbe8-8e2a-47cc-8c96-f5dd070751a8",
+    "link-uuid": "dd0c475a-8d43-41cb-bdbf-596d40dbbd2a",
     "title": "Graph Element",
     "content": "Graph element uniquely identified in the containing graph by a string identifier (key). This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages."
   },
   "references/eClassifiers/Graph/index.html": {
-    "link-uuid": "8aa79006-331b-4260-afc3-a030d307fabc",
+    "link-uuid": "b7dcbd6f-f140-4073-b240-633e81345e47",
     "title": "Graph",
     "content": "Graph is a container of graph elements uniquely identified by a string. This allows to implement graph inheritance - deriving a graph from another graph by removing, adding and replacing graph elements similar to how inheritance works in object-oriented languages."
   },
@@ -253,47 +253,47 @@
     "content": "Clear"
   },
   "references/eClassifiers/CompositeConnectionSource/index.html": {
-    "link-uuid": "1d0e6e35-504c-4261-873f-5d63972746e4",
+    "link-uuid": "efeee4b2-6434-4aba-991d-3460524b6946",
     "title": "Composite Connection Source",
     "content": "Connection source which is also a sub-graph. I.e. it may contain other graph elements."
   },
   "references/eClassifiers/ConnectionSource/references/eStructuralFeatures/outgoingConnections/index.html": {
     "path": "Connection Source/References/outgoingConnections",
-    "link-uuid": "a3b150ce-ed27-428e-8c05-47b824439dd8",
+    "link-uuid": "3e6e6bca-d8d5-4804-b90c-45717f6f4fde",
     "title": "outgoingConnections",
     "content": "Type C Multiplicity 0..* Outgoing connections uniquely identified by a string to support graph inheritance"
   },
   "references/eClassifiers/DocumentedNamedTunnel/index.html": {
-    "link-uuid": "897f79fb-b25a-465c-a7a1-fe0205473e38",
+    "link-uuid": "4c782284-d805-49ac-9c60-aff29bb4f38d",
     "title": "Documented Named Tunnel",
     "content": "Tunnel with a name and documentation"
   },
   "references/eClassifiers/Connection/index.html": {
-    "link-uuid": "565978cf-ade2-48a0-b676-eed67bd70b46",
+    "link-uuid": "01d6762b-5b7e-494c-a464-87bc78950d11",
     "title": "Connection",
     "content": "Connections are contained by their source and uniquiely identified in the source by a string id. This allows to implement connection inheritance behaviors such as overriding (replacing), adding, or removing."
   },
   "references/eClassifiers/DocumentedNamedSubGraph/inheritance.html": {
     "path": "Documented Named Sub-Graph/Inheritance",
-    "link-uuid": "ee7fc7c3-33fb-4c23-8c72-e8e34ce86fa8",
+    "link-uuid": "df967fd9-85c2-45db-be02-002c76c9b654",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedCompositeConnectionSource/inheritance.html": {
     "path": "Documented Named Composite Connection Source/Inheritance",
-    "link-uuid": "a22a217c-3946-404a-8d63-87069a50e319",
+    "link-uuid": "dd7c2b47-9561-4d5c-bf56-73412c4b3910",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/DocumentedNamedConnectionSource/inheritance.html": {
     "path": "Documented Named Connection Source/Inheritance",
-    "link-uuid": "74f1adb8-270e-4f9d-bddf-38b65bc3e9c8",
+    "link-uuid": "f75dd07f-c943-436f-9f6c-880abd728f44",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/DocumentedNamedConnection/inheritance.html": {
     "path": "Documented Named Connection/Inheritance",
-    "link-uuid": "3dbebba2-4035-4852-8570-5877477d511f",
+    "link-uuid": "91d78ba8-d3e9-4899-9267-ad9d183f3a91",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   }
