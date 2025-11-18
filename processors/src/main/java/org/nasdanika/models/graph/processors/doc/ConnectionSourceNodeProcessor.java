@@ -1,5 +1,6 @@
 package org.nasdanika.models.graph.processors.doc;
 
+import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.model.ConnectionSource;
@@ -12,7 +13,7 @@ public class ConnectionSourceNodeProcessor<T extends ConnectionSource<?>> extend
 	public ConnectionSourceNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);
 	}
 

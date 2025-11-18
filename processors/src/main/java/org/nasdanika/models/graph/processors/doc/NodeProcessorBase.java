@@ -27,7 +27,7 @@ public class NodeProcessorBase<T extends EObject> extends EObjectNodeProcessor<T
 	public NodeProcessorBase(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);
 	}	
 	
