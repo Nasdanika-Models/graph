@@ -11,7 +11,7 @@ import org.nasdanika.models.app.graph.WidgetFactory;
 public class ConnectionTargetNodeProcessor<T extends ConnectionTarget<?>> extends GraphElementNodeProcessor<T> implements ConnectionTargetNodeProcessorMixIn<T> {
 
 	public ConnectionTargetNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);

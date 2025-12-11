@@ -11,7 +11,7 @@ import org.nasdanika.models.app.graph.WidgetFactory;
 public class DocumentedNamedTunnelNodeProcessor<T extends DocumentedNamedTunnel<?,?>> extends TunnelNodeProcessor<T> implements DocumentedNamedTunnelNodeProcessorMixIn<T> {
 
 	public DocumentedNamedTunnelNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);

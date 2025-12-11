@@ -48,7 +48,7 @@ public class GraphNodeProcessorFactory {
 	private Context context;
 	private java.util.function.BiFunction<URI, ProgressMonitor, Action> prototypeProvider;
 
-	protected java.util.function.BiFunction<EObject, ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory> config) {
+	protected java.util.function.BiFunction<EObject, ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config) {
 		return (eObj, progressMonitor) -> {
 			if (prototypeProvider != null) {
 				for (URI identifier: NcoreUtil.getIdentifiers(((EObjectNode) config.getElement()).get())) {
@@ -77,9 +77,9 @@ public class GraphNodeProcessorFactory {
 	//	Graph.java	
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.Graph.class)
 	public Object createGraphNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new GraphNodeProcessor<Graph<?>>(config, context, getPrototypeProvider(config));
@@ -88,9 +88,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedGraph.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedGraph.class)
 	public Object createDocumentedNamedGraphNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedGraphNodeProcessor<DocumentedNamedGraph<?>>(config, context, getPrototypeProvider(config));
@@ -99,9 +99,9 @@ public class GraphNodeProcessorFactory {
 	//	CompositeConnectionSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.CompositeConnectionSource.class)
 	public Object createCompositeConnectionSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeConnectionSourceNodeProcessor<CompositeConnectionSource<?,?>>(config, context, getPrototypeProvider(config));
@@ -110,9 +110,9 @@ public class GraphNodeProcessorFactory {
 	//	CompositeConnectionTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.CompositeConnectionTarget.class)
 	public Object createCompositeConnectionTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeConnectionTargetNodeProcessor<CompositeConnectionTarget<?,?>>(config, context, getPrototypeProvider(config));
@@ -121,9 +121,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedCompositeConnectionSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedCompositeConnectionSource.class)
 	public Object createDocumentedNamedCompositeConnectionSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedCompositeConnectionSourceNodeProcessor<DocumentedNamedCompositeConnectionSource<?, ?>>(config, context, getPrototypeProvider(config));
@@ -132,9 +132,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedCompositeConnectionTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedCompositeConnectionTarget.class)
 	public Object createDocumentedNamedCompositeConnectionTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedCompositeConnectionTargetNodeProcessor<DocumentedNamedCompositeConnectionTarget<?, ?>>(config, context, getPrototypeProvider(config));
@@ -143,9 +143,9 @@ public class GraphNodeProcessorFactory {
 	//	SubGraph.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.SubGraph.class)
 	public Object createSubGraphNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new SubGraphNodeProcessor<SubGraph<?>>(config, context, getPrototypeProvider(config));
@@ -154,9 +154,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedSubGraph.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedSubGraph.class)
 	public Object createDocumentedNamedSubGraphNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedSubGraphNodeProcessor<DocumentedNamedSubGraph<?>>(config, context, getPrototypeProvider(config));
@@ -165,9 +165,9 @@ public class GraphNodeProcessorFactory {
 	//	GraphElement.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.GraphElement.class)
 	public Object createGraphElementNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new GraphElementNodeProcessor<GraphElement>(config, context, getPrototypeProvider(config));
@@ -176,9 +176,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedGraphElement.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedGraphElement.class)
 	public Object createDocumentedNamedGraphElementNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedGraphElementNodeProcessor<DocumentedNamedGraphElement>(config, context, getPrototypeProvider(config));
@@ -187,9 +187,9 @@ public class GraphNodeProcessorFactory {
 	//	ConnectionSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.ConnectionSource.class)
 	public Object createConnectionSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ConnectionSourceNodeProcessor<ConnectionSource<?>>(config, context, getPrototypeProvider(config));
@@ -198,9 +198,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedConnectionSource.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedConnectionSource.class)
 	public Object createDocumentedNamedConnectionSourceNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedConnectionSourceNodeProcessor<DocumentedNamedConnectionSourceImpl<?>>(config, context, getPrototypeProvider(config));
@@ -209,9 +209,9 @@ public class GraphNodeProcessorFactory {
 	//	ConnectionTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.ConnectionTarget.class)
 	public Object createConnectionTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ConnectionTargetNodeProcessor<ConnectionTarget<?>>(config, context, getPrototypeProvider(config));
@@ -220,9 +220,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedConnectionTarget.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedConnectionTarget.class)
 	public Object createDocumentedNamedConnectionTargetNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedConnectionTargetNodeProcessor<DocumentedNamedConnectionTarget<?>>(config, context, getPrototypeProvider(config));
@@ -231,9 +231,9 @@ public class GraphNodeProcessorFactory {
 	//	Node.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.Node.class)
 	public Object createNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new NodeNodeProcessor<Node<?>>(config, context, getPrototypeProvider(config));
@@ -242,9 +242,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedNode.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedNode.class)
 	public Object createDocumentedNamedNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedNodeNodeProcessor<DocumentedNamedNode<?>>(config, context, getPrototypeProvider(config));
@@ -253,9 +253,9 @@ public class GraphNodeProcessorFactory {
 	//	CompositeNode.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.CompositeNode.class)
 	public Object createCompositeNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new CompositeNodeNodeProcessor<CompositeNode<?, ?>>(config, context, getPrototypeProvider(config));
@@ -264,9 +264,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedCompositeNode.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedCompositeNode.class)
 	public Object createDocumentedNamedCompositeNodeNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedCompositeNodeNodeProcessor<DocumentedNamedCompositeNode<?, ?>>(config, context, getPrototypeProvider(config));
@@ -275,9 +275,9 @@ public class GraphNodeProcessorFactory {
 	//	Connection.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.Connection.class)
 	public Object createConnectionNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new ConnectionNodeProcessor<Connection<?>>(config, context, getPrototypeProvider(config));
@@ -286,9 +286,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedConnection.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedConnection.class)
 	public Object createDocumentedNamedConnectionNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedConnectionNodeProcessor<DocumentedNamedConnection<?>>(config, context, getPrototypeProvider(config));
@@ -297,9 +297,9 @@ public class GraphNodeProcessorFactory {
 	//	Tunnel.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.Tunnel.class)
 	public Object createTunnelNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new TunnelNodeProcessor<Tunnel<?,?>>(config, context, getPrototypeProvider(config));
@@ -308,9 +308,9 @@ public class GraphNodeProcessorFactory {
 	//	DocumentedNamedTunnel.java
 	@EObjectNodeProcessor(type = org.nasdanika.graph.model.DocumentedNamedTunnel.class)
 	public Object createDocumentedNamedTunnelNodeProcessor(
-			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 			boolean parallel, 
-			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
+			BiConsumer<Element,BiConsumer<ProcessorInfo<WidgetFactory, WidgetFactory, Object, Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
 		return new DocumentedNamedTunnelNodeProcessor<DocumentedNamedTunnel<?, ?>>(config, context, getPrototypeProvider(config));

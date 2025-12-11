@@ -18,7 +18,7 @@ import org.nasdanika.models.app.graph.emf.EObjectNodeProcessor;
 public class ConnectionNodeProcessor<T extends Connection<?>> extends EObjectNodeProcessor<T> implements ConnectionNodeProcessorMixIn<T> {
 
 	public ConnectionNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);

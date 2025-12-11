@@ -25,7 +25,7 @@ import org.nasdanika.models.app.graph.emf.OutgoingReferenceBuilder;
 public class NodeProcessorBase<T extends EObject> extends EObjectNodeProcessor<T> {
 	
 	public NodeProcessorBase(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);

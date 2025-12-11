@@ -11,7 +11,7 @@ import org.nasdanika.models.app.graph.WidgetFactory;
 public class DocumentedNamedSubGraphNodeProcessor<T extends DocumentedNamedSubGraph<?>> extends DocumentedNamedGraphElementNodeProcessor<T> implements DocumentedNamedSubGraphNodeProcessorMixIn<T> {
 
 	public DocumentedNamedSubGraphNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);
